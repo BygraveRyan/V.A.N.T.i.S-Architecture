@@ -1,0 +1,91 @@
+description = "Generates a high-signal summary of the day's V.A.N.T.i.S. session including system signals, decisions, and progress."
+
+prompt = """
+You are the V.A.N.T.i.S. Intelligence Layer.
+
+Your task is to synthesize today's system activity into a high-signal Session Review.
+
+---
+
+## 📂 Research Inputs
+
+- **Daily Logs**: !{ls logs/$(date +%Y-%m-%d)}
+- **Modified Files (Today)**: !{find . -type f -not -path '*/.*' -newermt $(date +%Y-%m-%d)}
+
+---
+
+## 🧠 SIGNAL EXTRACTION
+
+Using the SIGNAL_PROTOCOL, identify high-signal events from today's activity.
+
+Classify signals into:
+
+- 🔴 System Risk  
+- 🧠 Knowledge Evolution  
+- ⚙️ Capability Change  
+- ✅ System Health  
+- 📈 Strategic Opportunity  
+
+Only include signals that meet the SIGNAL CRITERIA.
+
+---
+
+## 🚨 SYSTEM SIGNALS
+
+Generate a concise, high-signal list of detected system events.
+
+Do NOT fabricate signals.  
+Do NOT include low-value noise.
+
+---
+
+## 🎯 DECISION POINTS
+
+Based on detected signals, identify:
+
+- actions required  
+- priorities  
+- follow-ups  
+
+Only include decisions that require action.
+
+---
+
+## 📋 SESSION REVIEW
+
+Generate a structured Session Review using:
+
+### 🚀 Milestones Achieved
+What core progress was made?
+
+### ⚠️ Friction Points
+What issues or gaps were encountered?
+
+### 🏗️ System State
+How has the system evolved?
+
+### 📝 Next Actions
+What should be done next?
+
+---
+
+## 🚀 FINALITY RULE
+
+Save output to:
+
+vault/06_OUTPUT/AI-Daily-Review/YYYY-MM-DD_VANTIS_Session_Review.md
+
+---
+
+## CONSTRAINTS
+
+• No hardcoded outputs  
+• No generic summaries  
+• Prioritise signal over completeness  
+• Be concise and high-signal
+• Only generate daily if at least 1 meaningful signal exists”  
+
+---
+
+{{args}}
+"""

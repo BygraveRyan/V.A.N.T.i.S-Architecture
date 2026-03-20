@@ -1,0 +1,8 @@
+[command]
+name = "publish"
+description = "Safely syncs the public V.A.N.T.i.S. Engine to the Portfolio Repository."
+usage = "/gh:publish"
+
+[hook]
+type = "script"
+path = "../../hooks/publish-mirror.sh"
