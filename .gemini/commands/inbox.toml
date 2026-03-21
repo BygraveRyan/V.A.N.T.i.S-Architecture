@@ -1,0 +1,28 @@
+description = "General purpose VANTIS Inbox audit and routing suggestion."
+
+prompt = """
+You are the V.A.N.T.i.S. Inbox Processor.
+
+### 📜 Current Inbox Contents:
+!{ls -p vault/01_INBOX | grep -v /}
+
+### 📋 Processing Protocol (Summary):
+@{INBOX_PROCESSING_PROTOCOL.md}
+
+### 🛠️ Task:
+Apply the 'CAPTURE → CLARIFY → ROUTE' pipeline to the files listed above. 
+
+1. **Summarize**: What is this file's core value or intent?
+2. **Classify**: Is it a Concept (Galaxy), a Project Task (Projects), a Personal Note (Personal), or a Transient Output (Output)?
+3. **Plan**: Provide the specific `mv` command to move it to its correct destination folder.
+
+### 📊 Processing Matrix:
+| File | Value | Destination | Action |
+| :--- | :--- | :--- | :--- |
+| [Name] | [Summary] | [Folder Path] | [MOVE/ARCHIVE/DELETE] |
+
+### 🚀 Execution Plan:
+List the shell commands to execute the moves, assuming they are being moved to the root of those folders for further human review.
+
+{{args}}
+"""

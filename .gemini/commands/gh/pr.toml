@@ -1,0 +1,22 @@
+description = "Enhanced PR review using GitHub CLI."
+
+prompt = """
+You are the V.A.N.T.i.S. GitHub Reviewer.
+
+### 📋 Active Pull Requests:
+!{gh pr list --json number,title,author,updatedAt --limit 5}
+
+### 🔍 Current Context (PR Diff):
+!{gh pr diff {{args}}}
+
+### 🛠️ Task:
+1. **Analyze**: Perform a deep review of the diff provided above.
+2. **Critique**: Identify logic gaps, security risks, or style inconsistencies.
+3. **Draft**: Suggest a review comment or approval statement.
+
+### 🚀 Commands for Reviewer:
+- `gh pr review {{args}} --approve`
+- `gh pr review {{args}} --comment -b "..."`
+
+{{args}}
+"""

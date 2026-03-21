@@ -1,0 +1,65 @@
+# /daily - Session Synthesis & Private Core PR
+# Logic: Synthesize activity into a Session Review and automate the Private Core merge.
+
+[command]
+name = "daily"
+description = "Synthesize today's session into a Review and automate Private Core PR."
+
+[[steps]]
+type = "shell"
+command = "date +%Y-%m-%d"
+label = "Getting today's date..."
+
+[[steps]]
+type = "shell"
+command = "ls logs/{{results.0}}/*.md"
+label = "Fetching today's logs..."
+
+[[steps]]
+type = "prompt"
+content = """
+You are the V.A.N.T.i.S. Intelligence Layer. Synthesize today's activity into a high-signal Session Review.
+
+**Research Inputs:**
+- Today's Logs: {{results.1}}
+
+**Output Structure:**
+# SESSION REVIEW: {{results.0}}
+**System Brain Status:** [Status Name]
+**Core Theme:** [Theme]
+
+---
+
+## 🧠 SIGNAL EXTRACTION (SIGNAL_PROTOCOL)
+Identify signals across System Health, Knowledge Evolution, Capability Change, and Strategic Opportunity.
+
+## 🚨 SYSTEM SIGNALS
+- 🔴 RISK: 
+- 🧠 EVOLUTION: 
+- ⚙️ CHANGE: 
+- ✅ HEALTH: 
+
+## 🎯 DECISION POINTS
+1. [Decision 1]
+2. [Decision 2]
+
+## 📋 SESSION REVIEW
+### 🚀 Milestones Achieved
+### ⚠️ Friction Points
+### 🏗️ System State
+### 📝 Next Actions
+
+**Finality Rule:** Save this to `vault/06_MACHINE/AI-Daily-Review/{{results.0}}_VANTIS_Session_Review.md`.
+"""
+label = "Generating Session Review..."
+
+[[steps]]
+type = "write"
+file = "vault/06_MACHINE/AI-Daily-Review/{{results.0}}_VANTIS_Session_Review.md"
+content = "{{results.2}}"
+label = "Saving Session Review..."
+
+[[steps]]
+type = "shell"
+command = "git checkout -b daily/{{results.0}} && git add . && git commit -m 'chore: daily session sync {{results.0}}' && git push origin daily/{{results.0}} && gh pr create --title 'Daily Sync: {{results.0}}' --body 'Automated daily session synchronization and audit trail preservation.' --base main --head daily/{{results.0}}"
+label = "Automating Private Core PR..."
