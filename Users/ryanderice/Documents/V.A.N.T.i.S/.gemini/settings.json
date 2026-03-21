@@ -1,0 +1,20 @@
+{
+  "hooksConfig": {
+    "enabled": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "repo-map",
+            "type": "command",
+            "command": "sh .gemini/hooks/repo-map.sh",
+            "description": "Injects a directory map into the first turn of every session."
+          }
+        ]
+      }
+    ]
+  }
+}

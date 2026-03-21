@@ -1,0 +1,22 @@
+description = "Synthesize today's session into a Review and automate Private Core PR."
+
+prompt = """
+You are the V.A.N.T.i.S. Intelligence Layer. Synthesize today's activity into a high-signal Session Review.
+
+### 📂 MASTER RESEARCH INPUTS (TODAY: $(date +%Y-%m-%d))
+- **Logs Found**: !{ls logs/$(date +%Y-%m-%d)/}
+
+---
+
+## 🏗️ INSTRUCTIONS
+1. Synthesize today's activity.
+2. Identify signals (System Health, Knowledge, Capability, Strategy).
+3. Draft "Why/How/Impact" commit message.
+
+---
+
+## 🚀 EXECUTION (Private Core Sync)
+!{git checkout -b daily/$(date +%Y-%m-%d) && git add . && git commit -m 'chore: daily session sync $(date +%Y-%m-%d)' && git push origin daily/$(date +%Y-%m-%d) && gh pr create --title 'Daily Sync: $(date +%Y-%m-%d)' --body 'Automated daily session synchronization.' --base main --head daily/$(date +%Y-%m-%d)}
+
+{{args}}
+"""

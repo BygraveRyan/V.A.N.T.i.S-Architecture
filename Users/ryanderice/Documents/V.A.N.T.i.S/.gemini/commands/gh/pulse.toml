@@ -1,0 +1,10 @@
+description = "💓 Performs a silent background backup sync to the Private Core 'main' branch."
+
+prompt = """
+You are the V.A.N.T.i.S. Pulse Synchronizer.
+
+### 🚀 Execution:
+!{bash .gemini/hooks/pulse-sync.sh}
+
+{{args}}
+"""
