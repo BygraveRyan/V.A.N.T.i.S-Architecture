@@ -1,7 +1,7 @@
 # VANTIS BOOT IMAGE
 Vectorised Astral Navigation & Thought Intelligence System
 
-Version: 1.0  
+Version: 1.1  
 Status: ACTIVE  
 System Mode: Cognitive Infrastructure  
 User: Ryan  
