@@ -16,6 +16,12 @@ Activate this skill:
 
 # Logging Process
 
+Step 0 — Automated System Versioning (ASV)
+Before generating the audit log, agents MUST run the versioning check:
+• Identify all modified/created files in the current turn.
+• For each file, execute: `node .gemini/hooks/version-incrementer.js <file_path>`.
+• This ensures that any Tier 1, 2, or 3 system files have their `Version: X.Y.Z` metadata incremented correctly before the audit log records the state.
+
 Step 1 — Identify Metadata
 • Determine the **Agent Name** (e.g., `IntelligenceLayer`, `InboxProcessor`).
 • Create a **Task Descriptor** (brief, hyphenated, e.g., `Convert-Protocol-To-Skill`).

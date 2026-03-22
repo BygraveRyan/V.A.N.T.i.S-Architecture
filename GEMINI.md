@@ -185,6 +185,8 @@ AI synthesis *must* land in 06_MACHINE for human verification before it can be m
 
 All AI actions must produce an audit log.
 
+**Mandatory ASV Check:** Before finalizing a log, the agent must run the Automated System Versioning hook (`node .gemini/hooks/version-incrementer.js <file_path>`) on all modified system files listed in the `CORE_SYSTEM_REGISTRY.md`.
+
 Location:
 
 logs/YYYY-MM-DD/
