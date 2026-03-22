@@ -1,6 +1,6 @@
 # VANTIS SYSTEM RULES
 
-Version: 1.2
+Version: 1.3
 
 ---
 
@@ -90,7 +90,17 @@ All reasoning must be explainable and auditable.
 
 # Rule 11 — Branched Evolution
 
-All systemic, architectural, or structural changes MUST be executed on a dedicated Git feature branch (feat/...). 
+All systemic, architectural, or structural changes MUST be executed on a dedicated Git feature branch (`feat/`, `fix/`, etc.). 
+
+**Branches MUST follow the pattern `<type>/<description>`:**
+
+| Type | Description | Example |
+|------|------------|--------|
+| feat/ | New features or system layers | feat/v-next |
+| fix/ | Bug fixes or rule enforcement | fix/logging-gap |
+| agent/ | Agent-specific logic | agent/inbox-processor-upgrade |
+| skill/ | Skill creation or modification | skill/precedent-detection |
+| docs/ | Documentation updates | docs/vault-map-update |
 
 1. Create a branch before modifying files.
 2. Commit with Why/How/Impact.

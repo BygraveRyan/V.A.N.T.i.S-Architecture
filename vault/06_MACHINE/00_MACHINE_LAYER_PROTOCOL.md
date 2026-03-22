@@ -39,3 +39,29 @@ Information in this directory should be considered transient and malleable. File
 > "The Machine proposes, but the Human disposes." 
 
 By confining raw output to `06_MACHINE`, V.A.N.T.i.S. maintains the pristine integrity of the user's "Second Brain" while granting the AI maximum freedom to think, draft, and propose without risk of contamination.
+
+---
+
+## 💾 LOG REFLEX PROTOCOL (v1.4)
+The **Log Reflex** is the automated system mechanism that ensures 100% audit trail compliance with minimal token overhead.
+
+### 1. The Trigger
+A Log Reflex MUST be initiated:
+- After every turn involving file creation, modification, or deletion.
+- Upon completion of a task or session.
+
+### 2. The Context Ledger
+The agent maintains an internal "Session Ledger" tracking:
+- `files_read`
+- `files_modified`
+- `skills_used`
+- `reasoning_delta` (the core logic shift for the turn).
+
+### 3. Automated Assembly
+The `audit-logger` skill transforms the Ledger into a standardized Markdown log in `logs/YYYY-MM-DD/`. 
+- **Deterministic Fields:** Timestamp, Agent, Files, Delta.
+- **Synthesized Fields:** Reasoning Summary, Outcome & Impact.
+
+### 4. System Versioning (ASV)
+Before the log is finalized, `node .gemini/hooks/version-incrementer.js` MUST be run on all modified core system files (`RULES.md`, `GEMINI.md`, etc.).
+
