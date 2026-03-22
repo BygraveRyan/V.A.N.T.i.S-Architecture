@@ -1,6 +1,6 @@
 # VANTIS SYSTEM RULES
 
-Version: 1.1
+Version: 1.2
 
 ---
 
@@ -97,6 +97,15 @@ All systemic, architectural, or structural changes MUST be executed on a dedicat
 3. Open a Pull Request for human review.
 
 Direct modification of the `main` branch is reserved for low-risk content (Pulse Syncs).
+
+---
+
+# Rule 12 — Template Validation
+
+To ensure high-signal portfolio quality, agents must verify all commit messages and Pull Request descriptions against the standardized repository templates.
+
+1. **Read Before Commit**: Agents must `cat .github/commit_template.md` before any `git commit` to ensure exact header matching.
+2. **Deterministic Headers**: Headers must match exactly: `### WHY - What problem are we solving?`, `### HOW - What did we actually change?`, `### IMPACT - What is the result?`, and `### TRACEABILITY - Linked Logs`.
 
 ---
 

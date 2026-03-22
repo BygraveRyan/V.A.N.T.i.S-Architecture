@@ -1,4 +1,3 @@
-# VANTIS_SYSTEM_DIAGRAM.md
 
 # VANTIS Cognitive Architecture
 

@@ -63,12 +63,12 @@ To maintain system integrity, the following protections are enforced on the `mai
 All commits MUST follow:
 <type>(<scope>): <short summary>
 
-Each commit must include:
+Each commit must include the following headers EXACTLY:
 
-• WHY — problem or motivation  
-• HOW — implementation details  
-• IMPACT — system-level outcome  
-• TRACEABILITY — linked VANTIS log  
+- ### WHY - What problem are we solving?
+- ### HOW - What did we actually change?
+- ### IMPACT - What is the result?
+- ### TRACEABILITY - Linked Logs
 
 ---
 
@@ -109,10 +109,21 @@ Each commit must be:
 
 All PRs MUST:
 
-• use `PULL_REQUEST_TEMPLATE.md`  
-• include linked audit logs  
+• use `.github/PULL_REQUEST_TEMPLATE.md` (via `gh pr create --body-file`)
+• include linked audit logs in the TRACEABILITY section
 • define affected VANTIS layers  
 • summarise vault changes  
+
+---
+
+### 3.5 Pull Request Naming Standards
+
+To maintain a scanable and professional repository history, PR titles MUST follow these semantic rules:
+
+1. **Architectural / Feature PRs**: **DO NOT include dates.** Titles must be descriptive and focus on the technical value.
+   - *Example*: `feat(asv): automated system versioning engine`
+2. **System Heartbeat / Sync PRs**: **MUST include dates.** Acts as a chronological pulse for automated mirror synchronization.
+   - *Example*: `feat(architecture): system-wide engine sync (2026-03-21)`
 
 ---
 

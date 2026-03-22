@@ -1,6 +1,6 @@
 # VANTIS SIGNAL PROTOCOL
 
-Version: 1.0  
+Version: 1.1  
 Layer: System  
 Status: Active  
 

@@ -1,6 +1,6 @@
 # LINKEDIN POST TEMPLATE
 
-Version: 1.0  
+Version: 1.0.1  
 Applies To: `vault/06_MACHINE/LinkedIn_Drafts/` and `vault/06_MACHINE/LinkedIn_History/`
 
 ---

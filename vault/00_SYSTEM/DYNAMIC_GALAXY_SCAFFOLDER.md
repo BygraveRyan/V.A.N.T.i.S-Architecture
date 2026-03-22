@@ -2,6 +2,7 @@
 id: <% tp.file.title %>
 type: concept
 status: seed
+Version: 1.0.1
 
 domain:
  - 
