@@ -2,7 +2,7 @@
 
 VANTIS Knowledge Graph Metadata Specification
 
-Version: 1.0
+Version: 1.2
 Applies To: Galaxy Knowledge Graph
 
 ---
@@ -154,7 +154,7 @@ Last update timestamp.
 Example:
 
 ```
-updated: 2026-03-14
+Updated: 2026-03-21
 ```
 
 ---

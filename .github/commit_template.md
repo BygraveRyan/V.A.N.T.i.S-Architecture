@@ -1,15 +1,13 @@
 # <type>(<scope>): <short summary>
 
-## WHY
-What problem does this solve?
-What triggered this change?
+### WHY - What problem are we solving?
+What problem does this solve? What triggered this change?
 
-## HOW
-What was implemented?
-Which files, agents, or skills were involved?
+### HOW - What did we actually change?
+What was implemented? Which files, agents, or skills were involved?
 
-## IMPACT
+### IMPACT - What is the result?
 What changes in system behaviour or capability?
 
-## TRACEABILITY
+### TRACEABILITY - Linked Logs
 Log: logs/YYYY-MM-DD/<log-file>.md

@@ -1,6 +1,6 @@
 # GALAXY_NOTE_TEMPLATE
 
-Version: 1.0  
+Version: 1.0.1  
 Applies To: 02_KNOWLEDGE/Galaxy
 
 ---

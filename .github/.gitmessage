@@ -1,14 +1,14 @@
 # <type>(<scope>): <subject>
 # Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
 
-## PURPOSE (The "Why")
+### WHY - What problem are we solving?
 # Why is this change required? What problem does it solve?
 
-## IMPLEMENTATION (The "How")
+### HOW - What did we actually change?
 # How did you solve the problem? What were the key technical changes?
 
-## IMPACT & RESULTS
+### IMPACT - What is the result?
 # What is the outcome? How does this affect the VANTIS system state?
 
----
-# Linked VANTIS Log: logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_Agent_Task.md
+### TRACEABILITY - Linked Logs
+# Link to VANTIS Audit Log: logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_Agent_Task.md

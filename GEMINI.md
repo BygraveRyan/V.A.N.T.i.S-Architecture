@@ -1,7 +1,7 @@
 # VANTIS INTELLIGENCE LAYER
 System Brain Configuration
 
-Version: 1.1
+Version: 1.3
 
 ---
 

@@ -1,4 +1,6 @@
 # V.A.N.T.i.S. System Evolution
+Version: 1.2
+
 > A chronological record of architectural upgrades, capability expansions, and strategic shifts within the Vectorised Astral Navigation & Thought Intelligence System.
 
 ---

@@ -1,45 +1,16 @@
-# /resume - Session Continuity Command
-# Logic: Find latest Session Review + last 5 Audit Logs to re-orient the agent.
-
-[command]
-name = "resume"
 description = "Load the latest session state and audit logs to resume development."
 
-[[steps]]
-type = "shell"
-command = "ls -t vault/06_MACHINE/AI-Daily-Review/*_Session_Review.md | head -n 1"
-label = "Locating latest Session Review..."
+prompt = """
+You are the V.A.N.T.i.S. Orientation Agent.
 
-[[steps]]
-type = "read"
-file = "{{results.0}}"
-label = "Reading latest Session Review..."
+### 🔍 RECOVERING STATE...
+- **Latest Review**: !{ls -t vault/06_MACHINE/AI-Daily-Review/*_Session_Review.md | head -n 1}
+- **Recent Logs**: !{ls -rt logs/*/*.md | tail -n 5}
 
-[[steps]]
-type = "shell"
-command = "ls -rt logs/*/*.md | tail -n 5"
-label = "Locating last 5 audit logs..."
+### 📋 STATE SUMMARY
+Analyze the outputs above and provide:
+1. **Active Objective**
+2. **Next Immediate Step**
 
-[[steps]]
-type = "read"
-file = "{{results.2}}"
-label = "Reading latest audit logs..."
-
-[[steps]]
-type = "prompt"
-content = """
-You have just loaded the latest session state for V.A.N.T.i.S.
-
-**Instructions:**
-1. Analyze the 'Next Actions' and 'Decision Points' from the provided Session Review.
-2. Cross-reference these with the 'Outcome' fields of the last 5 audit logs.
-3. Provide a 'State Summary' to the user (Markdown format).
-4. Clearly state the 'Active Objective' and the 'Next Immediate Step'.
-5. Do not proceed with execution until the user confirms the orientation.
-
-**Session Review Context:**
-{{results.1}}
-
-**Audit Log History:**
-{{results.3}}
+{{args}}
 """
