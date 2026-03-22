@@ -13,59 +13,97 @@ SOURCE_DIR=$(pwd)
 TEMP_DIR=$(mktemp -d -t vantis-mirror-XXXXXX)
 PUBLIC_REPO="https://github.com/BygraveRyan/V.A.N.T.i.S-Architecture.git"
 
-echo "📂 Staging public architecture files in temporary directory: $TEMP_DIR"
+# Whitelist of files to sync (Architecture only)
+WHITELIST=(
+  ".gemini/"
+  ".github/"
+  "vault/00_SYSTEM/"
+  "vault/06_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
+  "CHANGELOG.md"
+  "README.md"
+  "BOOT_IMAGE.md"
+  "GEMINI.md"
+  "AGENTS.md"
+  "RULES.md"
+  "VAULT_MAP.md"
+)
 
-# 1. Staging Public Files (Whitelisting only)
-# We specifically rsync only the directories and files that constitute the "Engine"
-rsync -av --relative \
-  .gemini/ \
-  .github/ \
-  vault/00_SYSTEM/ \
-  vault/06_MACHINE/00_MACHINE_LAYER_PROTOCOL.md \
-  CHANGELOG.md \
-  README.md \
-  BOOT_IMAGE.md \
-  GEMINI.md \
-  AGENTS.md \
-  RULES.md \
-  VAULT_MAP.md \
-  "$SOURCE_DIR/." "$TEMP_DIR/"
-
-# 2. Git Initialization and Deployment
+# 1. Git Initialization (In clean directory)
 cd "$TEMP_DIR"
-
-echo "⚙️ Initializing Git mirror..."
+echo "⚙️ Initializing Git mirror in clean directory..."
 git init --initial-branch=main
 git remote add origin "$PUBLIC_REPO"
-git fetch origin main || true
+git fetch origin
 
-# Use the current private branch name for the mirror to maintain naming consistency
+# Identify current private branch
 PRIVATE_BRANCH=$(git -C "$SOURCE_DIR" branch --show-current)
 DEPLOY_BRANCH="$PRIVATE_BRANCH"
-git checkout -b "$DEPLOY_BRANCH"
 
+# Create/Checkout the deployment branch (Always re-base on public main for clean PRs)
+echo "🌿 Preparing $DEPLOY_BRANCH based on public main..."
+if git show-ref --verify --quiet refs/heads/"$DEPLOY_BRANCH"; then
+    git branch -D "$DEPLOY_BRANCH"
+fi
+git checkout -b "$DEPLOY_BRANCH" origin/main
+
+# 2. Clean and Sync
+echo "🧹 Cleaning existing files to ensure a fresh snapshot..."
+# Remove everything except .git
+find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
+
+echo "📂 Staging public architecture files from $SOURCE_DIR..."
+for ITEM in "${WHITELIST[@]}"; do
+  if [ -e "$SOURCE_DIR/$ITEM" ]; then
+    # Create directory structure if needed
+    mkdir -p "$(dirname "$ITEM")"
+    # Copy file or directory recursively
+    cp -R "$SOURCE_DIR/$ITEM" "$ITEM"
+  fi
+done
+
+# Validation: Check for absolute path leak
+if find . -path "*/Users/*" | grep -q "."; then
+    echo "❌ ERROR: Absolute path leak detected in staging area! Deployment aborted."
+    find . -path "*/Users/*"
+    exit 1
+fi
+
+# 3. PR Metadata & Sync
+# Fetch PR details from private core
+PRIVATE_PR_JSON=$(gh pr view "$PRIVATE_BRANCH" --repo "https://github.com/BygraveRyan/V.A.N.T.i.S.git" --json title,body,number 2>/dev/null || echo "{}")
+TITLE=$(echo "$PRIVATE_PR_JSON" | jq -r '.title // "feat(architecture): system-wide engine synchronization"')
+BODY=$(echo "$PRIVATE_PR_JSON" | jq -r '.body // "Automated architectural synchronization from Private Core."')
+
+# Sanitize body
+PR_BODY_PUBLIC=$(echo "$BODY" | sed 's/vault\/04_PERSONAL/vault\/REDACTED_PERSONAL/g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
+PR_TITLE_PUBLIC="Engine Sync: $TITLE"
+
+# Commit and Deployment
 git add .
-git commit -m "feat(architecture): deploy V.A.N.T.i.S. engine sync" -m "Automated architectural synchronization from Private Core."
+# Only commit if there are changes
+if ! git diff-index --quiet HEAD --; then
+    git commit -m "feat(engine): mirror sync from private core ($PRIVATE_BRANCH)" -m "$PR_BODY_PUBLIC"
+    echo "🌐 Pushing to public portfolio branch ($DEPLOY_BRANCH)..."
+    git push origin "$DEPLOY_BRANCH" --force
+else
+    echo "ℹ️ No architectural changes detected. Skipping commit/push."
+fi
 
-echo "🌐 Pushing to public portfolio branch ($DEPLOY_BRANCH)..."
-git push origin "$DEPLOY_BRANCH"
+echo "📝 Managing Pull Request on public mirror..."
+if gh pr view "$DEPLOY_BRANCH" --repo "$PUBLIC_REPO" >/dev/null 2>&1; then
+    echo "🔄 Updating existing PR..."
+    gh pr edit "$DEPLOY_BRANCH" --repo "$PUBLIC_REPO" \
+      --title "$PR_TITLE_PUBLIC" \
+      --body "$PR_BODY_PUBLIC"
+else
+    echo "🆕 Creating new PR..."
+    gh pr create --repo "$PUBLIC_REPO" \
+      --title "$PR_TITLE_PUBLIC" \
+      --body "$PR_BODY_PUBLIC" \
+      --base main --head "$DEPLOY_BRANCH"
+fi
 
-echo "📝 Opening Pull Request on public mirror..."
-gh pr create --repo "$PUBLIC_REPO" \
-  --title "feat(architecture): system-wide engine synchronization ($(date +'%Y-%m-%d'))" \
-  --body "## WHY
-Automated architectural synchronization from the V.A.N.T.i.S. Private Core.
-
-## HOW
-- Whitelisted export of core system rules, protocols, and skills.
-- Synchronized the latest Machine Layer protocol updates.
-- Updated repository governance and branch protection standards.
-
-## IMPACT
-Ensures the public portfolio accurately reflects the current state of the V.A.N.T.i.S. engine while preserving private knowledge boundaries." \
-  --base main --head "$DEPLOY_BRANCH"
-
-# 3. Cleanup
+# 4. Cleanup
 echo "🧹 Cleaning up temporary deployment files..."
 rm -rf "$TEMP_DIR"
 
