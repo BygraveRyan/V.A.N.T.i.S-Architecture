@@ -40,10 +40,33 @@ A zero-friction capture system. Raw thoughts are ingested, clarified, and routed
 ---
 
 ## 🛠️ Stack & Setup
-- **Interface**: Gemini CLI
-- **Knowledge Base**: Obsidian (Markdown)
-- **Integration**: GitHub CLI (`gh`), Git
-- **Logic**: Custom TOML-based namespaced commands
+
+V.A.N.T.i.S. is designed for power users who want to bridge local-first knowledge with autonomous AI execution.
+
+### 1. Prerequisite: Gemini CLI
+The system's "Intelligence Layer" is powered by the **[Gemini CLI](https://github.com/google/gemini-cli)**.
+- Follow the official installation guide to set up the CLI.
+- Ensure you have a valid Google AI Studio API key configured.
+
+### 2. Knowledge Base: Obsidian
+The "Memory Layer" is a standard Markdown vault compatible with **[Obsidian](https://obsidian.md/)**.
+- Clone this repository into your local machine.
+- Open the folder as an Obsidian Vault.
+- **Recommended Plugins**:
+    - `Templater`: For dynamic concept scaffolding.
+    - `Dataview`: For real-time task and project indexing.
+
+### 3. V.A.N.T.i.S. Configuration
+Once the CLI and Vault are ready:
+1. Initialize the system by running the setup check:
+   ```bash
+   # Verify system protocols
+   /diagnose
+   ```
+2. Link your GitHub identity for native ops:
+   ```bash
+   gh auth login
+   ```
 
 ---
 *V.A.N.T.i.S. is not just a tool; it is a cognitive extension for the AI-native engineer.*
