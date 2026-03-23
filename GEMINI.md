@@ -1,7 +1,7 @@
 # VANTIS INTELLIGENCE LAYER
 System Brain Configuration
 
-Version: 1.4
+Version: 1.7
 
 ---
 
@@ -153,7 +153,7 @@ Security architecture → Security Architect
 
 ---
 
-# Skill Loading
+# Skill Loading & Trigger Matrix
 
 Skills exist in:
 
@@ -164,6 +164,17 @@ Skills are **lazy loaded**.
 Only the skill description is loaded initially.
 
 Full skill instructions are loaded when required.
+
+## ⚡ Skill Trigger Matrix
+Agents MUST proactively invoke the `activate_skill` tool based on the following task intents:
+
+- **Intent**: Modify System Architecture, Protocols, or Rules -> **Trigger**: `architectural-designer`
+- **Intent**: Draft or optimize LinkedIn content -> **Trigger**: `linkedin-content-generation`, `precedent-detection`
+- **Intent**: Process items from 01_INBOX or analyze research -> **Trigger**: `inbox-processor`, `concept-extraction`
+- **Intent**: Convert raw insights into permanent concepts or detect orphan notes -> **Trigger**: `memory-curator`
+- **Intent**: Identify cross-domain synergies or map conceptual precedents for a new project -> **Trigger**: `concept-mapper`
+- **Intent**: Execute Git Branching, Commits, or PRs -> **Trigger**: `github-ops`
+- **Intent**: Finalize a turn involving file modifications -> **Trigger**: `audit-logger`
 
 ---
 
