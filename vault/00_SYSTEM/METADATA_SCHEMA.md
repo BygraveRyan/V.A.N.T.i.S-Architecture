@@ -2,7 +2,7 @@
 
 VANTIS Knowledge Graph Metadata Specification
 
-Version: 1.3
+Version: 1.4
 Applies To: Galaxy Knowledge Graph
 
 ---
@@ -177,7 +177,17 @@ AI synthesis must land in `06_MACHINE` with `source: ai-candidate` before promot
 
 ---
 
-## confidence
+# Knowledge Lineage & Promotion (v1.4)
+To maintain the integrity of the Galaxy while ensuring efficient knowledge flow, the following promotion path is mandatory:
+
+1. **Synthesis (ai-candidate)**: AI generates a concept or insight based on research/logs. This MUST be saved in `06_MACHINE/ai-candidates/` with `source: ai-candidate`.
+2. **Review (ai-assisted)**: A human reviews the candidate. If the content is modified or verified, the `source` field is updated to `ai-assisted`.
+3. **Promotion (Galaxy)**: Once verified, the file is moved to `02_KNOWLEDGE/Galaxy/`. The agent MUST ensure all required metadata (ID, Type, Status, Domain) is present before the move.
+4. **Lineage Preservation**: The original `ai-candidate` note in `06_MACHINE` is archived to `06_MACHINE/Archive/` to maintain the audit trail of the concept's evolution.
+
+---
+
+# confidence
 
 Represents epistemic certainty.
 

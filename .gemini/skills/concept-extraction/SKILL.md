@@ -1,108 +1,45 @@
 # SKILL: Concept Extraction
+Version: 1.1.1
 
 Purpose
-
-Extract reusable conceptual knowledge from research material.
-
-This skill converts raw information into **concept candidates** that may later become Galaxy knowledge nodes.
-
-The skill follows the VANTIS knowledge lifecycle:
-
-Information → Insight → Concept
+Extract reusable conceptual knowledge from research material and propose **concept candidates** for the V.A.N.T.i.S. Galaxy.
 
 ---
 
 # When To Use
-
-Activate this skill when:
-
-• analysing research material
-• reading articles or documentation
-• reviewing AI-generated analysis
-• processing project research notes
-• identifying reusable knowledge
+- **Trigger**: Intent to process 01_INBOX or analyze research/documentation.
+- **Requirement**: Consult the **Skill Trigger Matrix** in `GEMINI.md`.
 
 ---
 
 # Concept Extraction Process
 
-Step 1 — Analyse the material
+## Step 1 — Analyze the material
+Identify key ideas focusing on mechanisms, principles, and conceptual relationships.
 
-Identify the key ideas contained within the text.
+## Step 2 — Extract Reusable Concepts
+Identify 3–5 reusable ideas that remain useful beyond the specific research context.
 
-Focus on:
-
-• mechanisms
-• principles
-• system behaviours
-• conceptual relationships
-
-Ignore:
-
-• project-specific details
-• temporary notes
-• implementation instructions
+## Step 3 — Propose Concept Candidates
+Use the standard `GALAXY_NOTE_TEMPLATE.md` structure with `source: ai-candidate`.
 
 ---
 
-Step 2 — Extract Reusable Concepts
+# 🛡️ PROTOCOL COMPLIANCE (v1.7)
 
-Identify **3–5 reusable ideas** that represent general principles.
+## Output & Lineage (v1.4)
+- All candidates MUST be saved to `06_MACHINE/ai-candidates/`.
+- All candidates MUST use `source: ai-candidate` metadata.
 
-These ideas should remain useful beyond the specific context of the material.
+## Audit Reflex
+- Every successful extraction MUST conclude with the execution of the `audit-logger` skill to generate a **Gold Standard Audit Log**.
 
----
-
-Step 3 — Propose Concept Candidates
-
-Use the Concept Proposal Format.
-
-Concept Candidate
-Name: concept-<concept-name>
-
-Explanation
-Explain the idea clearly.
-
-Why It Matters
-Describe why the concept is useful.
-
-Example
-Provide a practical example.
-
-Possible Related Concepts
-List conceptual links using:
-
-[[concept-name]]
-
-Confidence
-low | medium | high
-
----
-
-# Output Rules
-
-Concept candidates must **never be written directly to the Galaxy**.
-
-All outputs must be saved to:
-
-06_MACHINE/Concept_Candidates/
-
-The human user must review the concept candidate before creating a Galaxy concept node.
+## ASV Reflex
+- Any modifications to this skill's logic MUST be followed by: `node .gemini/hooks/version-incrementer.js .gemini/skills/concept-extraction/SKILL.md`.
 
 ---
 
 # Behaviour Rules
-
-AI responsibilities:
-
-• identify reusable knowledge
-• explain conceptual ideas
-• suggest possible concept links
-
-AI must never:
-
-• create Galaxy notes
-• modify existing Galaxy nodes
-• fabricate conceptual relationships
-
-The Galaxy represents **human understanding**.
+- Identify mechanisms, ignore implementation details.
+- Propose conceptual links using `related_concepts`.
+- **AI MUST NOT** write directly to the Galaxy.
