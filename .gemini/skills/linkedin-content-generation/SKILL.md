@@ -27,22 +27,20 @@ Scan the following for recent activity:
 - `04_PERSONAL/Daily/` (human insights)
 - `02_KNOWLEDGE/Galaxy/` (newly promoted concepts)
 
----
+Step 2 — Historical Precedent Analysis
 
-Step 2 — Precedent Grounding
+Before drafting, read the latest 3 posts from `vault/03_PROJECTS/LinkedIn_Operations/History/`.
+Analyse the tone, flow, and layout of high-performing posts (specifically [[2026-03-18_LinkedIn_Post_VANTIS_Reveal]]).
 
-Use the **`precedent-detection` skill** to identify the core Galaxy concepts behind the work.
-Example: If the work was on the Car App, the precedent is [[concept-finance-total-cost-of-ownership]].
+Step 3 — Narrative Construction (The "VANTIS" Framework)
 
----
-
-Step 3 — Narrative Construction
-
-Draft the post using the **"Mechanism-to-Value"** framework:
-1. **The Hook**: A specific problem or observation (from your Daily logs).
-2. **The Mechanism**: How you solved it or the concept behind it (from the Galaxy).
-3. **The Result**: The impact or ROI (from the Project seeds).
-4. **The CTA**: A thought-provoking question for the audience.
+Draft the post using the following flow:
+1. **The Hook**: A specific, relatable problem or observation (from Daily logs).
+2. **The Action**: What you built or implemented to solve it.
+3. **The Goal**: The higher-level purpose behind the build.
+4. **The Contrast**: Old way (Chaos/Amnesia) vs. New way (V.A.N.T.i.S.).
+5. **The Breakdown**: A numbered or bulleted list of the technical components.
+6. **The CTA**: A direct question to the audience.
 
 ---
 
@@ -50,6 +48,10 @@ Draft the post using the **"Mechanism-to-Value"** framework:
 
 Drafts must be saved to:
 `06_MACHINE/LinkedIn_Drafts/YYYY-MM-DD_Topic_Draft.md`
+
+Lifecycle Management:
+- **Drafts**: Live in `06_MACHINE/LinkedIn_Drafts/`.
+- **Published**: Move to `vault/03_PROJECTS/LinkedIn_Operations/History/` to preserve knowledge integrity.
 
 Each draft should include:
 - A "Source Insight" reference
