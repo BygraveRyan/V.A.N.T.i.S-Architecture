@@ -1,6 +1,6 @@
 # GALAXY_NOTE_TEMPLATE
 
-Version: 1.0.1  
+Version: 1.0.2  
 Applies To: 02_KNOWLEDGE/Galaxy
 
 ---
@@ -46,7 +46,7 @@ next_review:
 version: 1
 schema_version: 1
 
-source: human
+source: human-original
 confidence:
 
 related_concepts:

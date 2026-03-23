@@ -1,6 +1,6 @@
 # VANTIS SYSTEM RULES
 
-Version: 1.3
+Version: 1.4
 
 ---
 
@@ -23,7 +23,7 @@ AI generated notes are prohibited.
 
 # Rule 3 — Logging
 
-Every AI action must produce a system log entry following the standards in LOGGING_PROTOCOL.md.
+Every AI action must produce an audit log entry following the standards defined in the Intelligence Layer (GEMINI.md).
 
 ---
 

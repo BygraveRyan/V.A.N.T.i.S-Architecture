@@ -1,7 +1,7 @@
 # VANTIS INTELLIGENCE LAYER
 System Brain Configuration
 
-Version: 1.3
+Version: 1.4
 
 ---
 
@@ -185,7 +185,9 @@ AI synthesis *must* land in 06_MACHINE for human verification before it can be m
 
 All AI actions must produce an audit log.
 
-**Mandatory ASV Check:** Before finalizing a log, the agent must run the Automated System Versioning hook (`node .gemini/hooks/version-incrementer.js <file_path>`) on all modified system files listed in the `CORE_SYSTEM_REGISTRY.md`.
+**Mandatory System Reflex (ASV):** Before finalizing any interaction turn that involves system-level modifications, the agent MUST execute the Automated System Versioning hook:
+`node .gemini/hooks/version-incrementer.js <file_path>`
+This applies to all files registered in `vault/00_SYSTEM/CORE_SYSTEM_REGISTRY.md`. Failure to execute this reflex constitutes a governance violation.
 
 Location:
 

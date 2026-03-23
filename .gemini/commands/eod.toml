@@ -51,14 +51,25 @@ Draft a **"Why/How/Impact"** commit message that summarizes the entire day's wor
 
 ---
 
-## 🧩 HANDOFF FOR TOMORROW
+## 🧩 HANDOFF & SESSION STATE
 What is the single most important thing the system (and the user) should focus on first thing tomorrow morning?
+
+### 💾 DETERMINISTIC SESSION STATE
+Generate a **Session State** file based on `vault/00_SYSTEM/SESSION_STATE_TEMPLATE.md`.
+Ensure the following sections are filled with high-signal content:
+- **Active Objective**
+- **Next Steps**
+- **Active Research**
+- **Context Summary**
 
 ---
 
 ## 🚀 FINALITY RULE
-Save output to:
-vault/06_MACHINE/AI-Daily-Review/$(date +%Y-%m-%d)_VANTIS_DAILY_MASTER_AUDIT.md
+1. Save the Daily Master Audit to:
+`vault/06_MACHINE/AI-Daily-Review/$(date +%Y-%m-%d)_VANTIS_DAILY_MASTER_AUDIT.md`
+
+2. Save the Session State to:
+`vault/06_MACHINE/session_state/session-state_$(date +%Y-%m-%d).md`
 
 ---
 

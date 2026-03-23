@@ -1,7 +1,7 @@
 # LINKEDIN POST TEMPLATE
 
 Version: 1.0.1  
-Applies To: `vault/06_MACHINE/LinkedIn_Drafts/` and `vault/06_MACHINE/LinkedIn_History/`
+Applies To: `vault/06_MACHINE/LinkedIn_Drafts/` and `vault/03_PROJECTS/LinkedIn_Operations/History/`
 
 ---
 
@@ -41,6 +41,7 @@ updated: YYYY-MM-DD
 - [ ] Hook: Is the problem/observation clear?
 - [ ] Mechanism: Does it link to a Galaxy concept?
 - [ ] Value: Is the ROI or result stated?
+- [ ] Flow Logic: Does it follow the "VANTIS Reveal" structure (Hook -> Action -> Goal -> Contrast -> Breakdown -> CTA)?
 - [ ] CTA: Is there a question for the audience?
 - [ ] Image/Media: Placeholder or visual strategy?
 

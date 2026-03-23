@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.3
+Version: 1.0.4
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -39,6 +39,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
 | `vault/00_SYSTEM/GALAXY_NOTE_TEMPLATE.md` | Note Structure | Patch |
+| `vault/00_SYSTEM/SESSION_STATE_TEMPLATE.md` | Session Logic | Patch |
 | `vault/00_SYSTEM/LINKEDIN_POST_TEMPLATE.md` | Content Structure | Patch |
 | `vault/00_SYSTEM/DYNAMIC_GALAXY_SCAFFOLDER.md` | Templater Logic | Patch |
 | `vault/00_SYSTEM/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
@@ -52,4 +53,4 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-21*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-23*

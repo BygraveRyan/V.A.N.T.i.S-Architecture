@@ -2,7 +2,7 @@
 
 VANTIS Knowledge Graph Metadata Specification
 
-Version: 1.2
+Version: 1.3
 Applies To: Galaxy Knowledge Graph
 
 ---
@@ -154,7 +154,7 @@ Last update timestamp.
 Example:
 
 ```
-Updated: 2026-03-21
+Updated: 2026-03-23
 ```
 
 ---
@@ -166,16 +166,14 @@ Origin of the idea.
 Allowed values:
 
 ```
-human
-external
-ai-assisted
+human-original  (Fully human authored)
+ai-assisted     (AI drafted, Human verified/edited)
+ai-candidate    (AI generated, awaiting human verification in 06_MACHINE)
+external        (External reference or resource)
 ```
 
-Galaxy notes should normally be:
-
-```
-source: human
-```
+Galaxy notes should normally be `human-original` or `ai-assisted`.
+AI synthesis must land in `06_MACHINE` with `source: ai-candidate` before promotion.
 
 ---
 
