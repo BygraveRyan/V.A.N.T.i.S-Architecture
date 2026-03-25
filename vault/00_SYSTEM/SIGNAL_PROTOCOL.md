@@ -1,6 +1,6 @@
 # VANTIS SIGNAL PROTOCOL
 
-Version: 1.1  
+Version: 1.2  
 Layer: System  
 Status: Active  
 
@@ -10,15 +10,7 @@ Status: Active
 
 The Signal Protocol defines how VANTIS interprets system activity and identifies high-value events.
 
-Signals are used to:
-
-• highlight important system changes  
-• detect risks and opportunities  
-• guide decision-making  
-• reduce noise from raw logs  
-
 Signals sit between:
-
 Logs → Signals → Daily Summary → Action
 
 ---
@@ -26,121 +18,42 @@ Logs → Signals → Daily Summary → Action
 # SIGNAL TYPES
 
 ## 🔴 SYSTEM RISK
-
-Represents potential threats to system integrity.
-
-Examples:
-
-• logging failures  
-• rule violations  
-• vault boundary breaches  
-• missing traceability  
-
-Action:
-
-Immediate review required.
-
----
+Represents threats to system integrity (e.g., logging failures, rule violations, boundary breaches).
 
 ## 🧠 KNOWLEDGE EVOLUTION
-
-Represents changes to the knowledge graph.
-
-Examples:
-
-• concept promotion  
-• major refactoring  
-• new conceptual links  
-• schema updates  
-
-Action:
-
-Evaluate long-term impact.
-
----
+Represents changes to the Galaxy (e.g., concept promotion, refactoring, new links).
 
 ## ⚙️ CAPABILITY CHANGE
+Represents system expansion (e.g., new skills, agent updates, automation).
 
-Represents system capability expansion or modification.
-
-Examples:
-
-• new skill created  
-• agent updated  
-• automation added  
-• workflow changes  
-
-Action:
-
-Understand new system behaviour.
-
----
+## 🌌 KNOWLEDGE VELOCITY (NEW v1.2)
+Represents the growth and health of the knowledge graph.
+- **Knowledge Gap Detected**: Working on a project without a corresponding Galaxy concept.
+- **Candidate Stagnation**: High-value candidates in `06_MACHINE` awaiting review for >48h.
+- **Cross-Pollination**: Detecting semantic links between active projects and Galaxy nodes.
+- **Redundancy Alert**: Identification of "Too Similar" concepts during extraction.
 
 ## ✅ SYSTEM HEALTH
-
-Represents system stability and hygiene.
-
-Examples:
-
-• inbox = 0  
-• logs complete  
-• no rule violations  
-• clean vault structure  
-
-Action:
-
-No action required (monitor only).
-
----
+Represents stability and hygiene (e.g., inbox = 0, clean vault structure).
 
 ## 📈 STRATEGIC OPPORTUNITY
-
-Represents high-value insights or leverage points.
-
-Examples:
-
-• recurring idea detected  
-• LinkedIn content opportunity  
-• emerging pattern in thinking  
-• system evolution opportunity  
-
-Action:
-
-Prioritise for execution.
+Represents leverage points (e.g., recurring ideas, LinkedIn opportunities).
 
 ---
 
 # SIGNAL CRITERIA
-
 For an event to qualify as a signal, it must:
-
-• impact system behaviour  
-• affect knowledge quality  
-• represent a decision point  
-• indicate risk or opportunity  
-
-If none apply → it is NOT a signal.
+- Impact system behavior.
+- Affect knowledge quality.
+- Represent a decision point.
+- Indicate risk or opportunity.
 
 ---
 
 # USAGE
-
-Signals are:
-
-• extracted from logs  
-• surfaced in `/daily` summaries  
-• used to guide decisions  
-
-Signals must remain:
-
-• high-signal (low noise)  
-• actionable  
-• concise  
+Signals are extracted from logs and surfaced in `/daily` summaries to guide decisions.
 
 ---
 
 # FINAL PRINCIPLE
-
-Not everything that happens matters.
-
-Signals define what matters.
+Not everything that happens matters. Signals define what matters.
