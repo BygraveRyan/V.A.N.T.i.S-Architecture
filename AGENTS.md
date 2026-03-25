@@ -1,6 +1,6 @@
 # VANTIS AGENT SYSTEM
 
-Version: 1.6
+Version: 1.7
 
 ---
 
@@ -14,6 +14,17 @@ Each agent has:
 • activation conditions
 • operational scope
 • knowledge permissions
+
+---
+
+# 🤝 CROSS-AGENT COLLABORATION
+
+VANTIS supports multi-agent orchestration between Gemini (Control Plane) and Claude (Execution Plane).
+
+1. **Shared Context**: All agents MUST read `CLAUDE.md` and `GEMINI.md` to maintain architectural alignment.
+2. **Hand-offs**: State transitions between agents are managed via `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
+3. **Concurrency**: Agents operating in parallel MUST use separate Git branches or worktrees to prevent collisions.
+4. **Unified Logging**: All agents, regardless of provider, MUST produce audit logs in `logs/YYYY-MM-DD/` following the VANTIS standard.
 
 ---
 
