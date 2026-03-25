@@ -1,146 +1,76 @@
 # VANTIS SIGNAL PROTOCOL
 
-Version: 1.1  
-Layer: System  
-Status: Active  
+Version: 1.3
+Layer: System
+Status: Active
 
----
+--- 
 
-# PURPOSE
-
-The Signal Protocol defines how VANTIS interprets system activity and identifies high-value events.
-
-Signals are used to:
-
-• highlight important system changes  
-• detect risks and opportunities  
-• guide decision-making  
-• reduce noise from raw logs  
+## 🎯 PURPOSE
+To enable high-fidelity coordination between multiple AI agents (Gemini, Claude, etc.) and to define how VANTIS interprets system activity and identifies high-value events.
 
 Signals sit between:
-
-Logs → Signals → Daily Summary → Action
-
----
-
-# SIGNAL TYPES
-
-## 🔴 SYSTEM RISK
-
-Represents potential threats to system integrity.
-
-Examples:
-
-• logging failures  
-• rule violations  
-• vault boundary breaches  
-• missing traceability  
-
-Action:
-
-Immediate review required.
+**Logs → Signals → Daily Summary → Action**
 
 ---
 
-## 🧠 KNOWLEDGE EVOLUTION
+## 🤝 CROSS-AGENT SIGNALS (Tactical)
+These signals manage state transitions and hand-offs between active agents.
 
-Represents changes to the knowledge graph.
+| Signal | Priority | Description |
+|--------|----------|-------------|
+| `WAIT` | HIGH | Agent must pause for human or peer-agent input. |
+| `SYNC` | MEDIUM | Requesting synchronization of vault context or state. |
+| `DONE` | LOW | Task or sub-task complete; ready for hand-off. |
+| `WARN` | CRITICAL | Collision or governance violation detected. |
 
-Examples:
-
-• concept promotion  
-• major refactoring  
-• new conceptual links  
-• schema updates  
-
-Action:
-
-Evaluate long-term impact.
-
----
-
-## ⚙️ CAPABILITY CHANGE
-
-Represents system capability expansion or modification.
-
-Examples:
-
-• new skill created  
-• agent updated  
-• automation added  
-• workflow changes  
-
-Action:
-
-Understand new system behaviour.
+### Hand-off Protocol
+1. **State Persistence**: Before an agent terminates a turn, it MUST update the session state file if a hand-off is occurring.
+2. **State Location**: `vault/06_MACHINE/session_state/session-state_YYYY-MM-DD.md`.
+3. **Peer Awareness**: Agents MUST check the session state for `WAIT` or `SYNC` signals before initiating a turn.
 
 ---
 
-## ✅ SYSTEM HEALTH
+## 📡 SYSTEM SIGNALS (Strategic)
+These signals identify high-value events for system-level monitoring and summaries.
 
-Represents system stability and hygiene.
+### 🔴 SYSTEM RISK
+Represents threats to system integrity (e.g., logging failures, rule violations, boundary breaches).
 
-Examples:
+### 🧠 KNOWLEDGE EVOLUTION
+Represents changes to the Galaxy (e.g., concept promotion, refactoring, new links).
 
-• inbox = 0  
-• logs complete  
-• no rule violations  
-• clean vault structure  
+### ⚙️ CAPABILITY CHANGE
+Represents system expansion (e.g., new skills, agent updates, automation).
 
-Action:
+### 🌌 KNOWLEDGE VELOCITY
+Represents the growth and health of the knowledge graph.
+- **Knowledge Gap Detected**: Working on a project without a corresponding Galaxy concept.
+- **Candidate Stagnation**: High-value candidates in `06_MACHINE` awaiting review for >48h.
+- **Cross-Pollination**: Detecting semantic links between active projects and Galaxy nodes.
+- **Redundancy Alert**: Identification of "Too Similar" concepts during extraction.
 
-No action required (monitor only).
+### ✅ SYSTEM HEALTH
+Represents stability and hygiene (e.g., inbox = 0, clean vault structure).
 
----
-
-## 📈 STRATEGIC OPPORTUNITY
-
-Represents high-value insights or leverage points.
-
-Examples:
-
-• recurring idea detected  
-• LinkedIn content opportunity  
-• emerging pattern in thinking  
-• system evolution opportunity  
-
-Action:
-
-Prioritise for execution.
+### 📈 STRATEGIC OPPORTUNITY
+Represents leverage points (e.g., recurring ideas, LinkedIn opportunities).
 
 ---
 
-# SIGNAL CRITERIA
-
+## 📋 SIGNAL CRITERIA
 For an event to qualify as a signal, it must:
-
-• impact system behaviour  
-• affect knowledge quality  
-• represent a decision point  
-• indicate risk or opportunity  
-
-If none apply → it is NOT a signal.
+- Impact system behavior.
+- Affect knowledge quality.
+- Represent a decision point.
+- Indicate risk or opportunity.
 
 ---
 
-# USAGE
-
-Signals are:
-
-• extracted from logs  
-• surfaced in `/daily` summaries  
-• used to guide decisions  
-
-Signals must remain:
-
-• high-signal (low noise)  
-• actionable  
-• concise  
+## 🛠️ USAGE
+Signals are extracted from logs and surfaced in `/daily` summaries to guide decisions.
 
 ---
 
-# FINAL PRINCIPLE
-
-Not everything that happens matters.
-
-Signals define what matters.
+## 📜 FINAL PRINCIPLE
+Not everything that happens matters. Signals define what matters.

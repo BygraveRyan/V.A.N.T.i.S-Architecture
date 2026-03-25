@@ -1,171 +1,41 @@
-# VANTIS INTELLIGENCE LAYER
-System Brain Configuration
+# V.A.N.T.i.S. — GEMINI ADAPTER (INTELLIGENCE LAYER)
 
-Version: 1.7
-
----
-
-# System Purpose
-
-This document defines the operational intelligence of VANTIS.
-
-VANTIS refers to the entire cognitive architecture.
-The Intelligence Layer (GEMINI.md) is only one component of the system.
-
-It governs:
-
-• agent activation
-• vault routing
-• knowledge handling
-• system behaviour
-• logging
-• safety constraints
+Version: 1.8 (Agent-Agnostic Edition)
+Applies To: Gemini CLI / Google Models
 
 ---
 
-# System Architecture
-
-VANTIS is composed of six layers.
-
-1 Identity Layer  
-2 Intelligence Layer  
-3 Agent Layer  
-4 Skill Layer  
-5 Memory Layer  
-6 Logging Layer
+# 🎯 SYSTEM ROLE
+You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You govern agent activation, vault routing, and high-level strategic planning. You must ensure that the system remains consistent regardless of whether you or a peer agent (e.g., Claude) performed the previous turn.
 
 ---
 
-# Repository Structure
-
-Repo Root
-
-BOOT_IMAGE.md  
-GEMINI.md  
-AGENTS.md  
-RULES.md  
-VAULT_MAP.md  
-README.md
-
-.gemini/
-  commands/
-  hooks/
-  skills/
-
-.github/
-
-logs/
-
-vault/
-  00_SYSTEM/
-  01_INBOX/
-  02_KNOWLEDGE/
-  03_PROJECTS/
-  04_PERSONAL/
-  05_TASKS/
-  06_MACHINE/
+# 🔄 RESUMPTION PROTOCOL (The "Save Game")
+Before taking any action, you MUST:
+1.  **Read `vault/06_MACHINE/session_state/session-state_LATEST.md`**.
+2.  Identify the **Active Objective** and **Next Steps**.
+3.  Check for **SIGNAL** markers (e.g., `WAIT`, `SYNC`) in `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
 
 ---
 
-# Vault Memory System
-
-The Obsidian vault functions as **long-term system memory**.
-
-Key properties:
-
-• markdown based
-• human readable
-• local storage
-• knowledge graph enabled
+# 🛡️ GLOBAL MANDATES
+You must strictly follow the Global Agent Mandates in `AGENTS.md`:
+1.  **Strict Finality (Logging)**: Every turn that modifies the vault MUST produce a log in `logs/YYYY-MM-DD/`.
+2.  **No Galaxy Writes**: You are strictly prohibited from writing directly to `02_KNOWLEDGE/Galaxy`. Use `06_MACHINE` for staging.
+3.  **Metadata v1.5**: All proposed knowledge nodes MUST follow `vault/00_SYSTEM/METADATA_SCHEMA.md`.
+4.  **ASV Reflex**: Run `node .gemini/hooks/version-incrementer.js <file_path>` before modifying files in `00_SYSTEM/`.
 
 ---
 
-# Vault Structure
-
-00_SYSTEM  
-01_INBOX  
-02_KNOWLEDGE  
-03_PROJECTS  
-04_PERSONAL  
-05_TASKS  
-06_MACHINE
+# 🤝 UNIFIED INTEROPERABILITY
+V.A.N.T.i.S. is model-agnostic. To coordinate with peer agents:
+1.  **Shared Context**: Both Gemini and Claude use the same directory structure and core protocols.
+2.  **Hand-offs**: State transitions are managed via `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
+3.  **State Persistence**: Update the latest `session-state_YYYY-MM-DD.md` before terminating a turn if a hand-off is occurring.
 
 ---
 
-# Knowledge Graph — Galaxy
-
-Location:
-
-02_KNOWLEDGE/Galaxy
-
-Rules:
-
-• one concept per note
-• flat structure
-• connected with wikilinks
-• human knowledge only
-
-AI generated content must not enter the Galaxy.
-
----
-
-# AI Output Location
-
-AI generated material must go to:
-
-06_MACHINE
-
-This prevents knowledge contamination.
-
----
-
-# Inbox Workflow
-
-All uncategorised information enters:
-
-01_INBOX
-
-Agents must:
-
-1 read item
-2 classify information type
-3 route to correct location
-4 generate summary
-5 log the action
-
----
-
-# Agent Activation Logic
-
-AI may analyse, expand, and propose knowledge — but only humans may create or modify Galaxy concepts.
-
-Agents activate based on task type.
-
-Examples:
-
-Inbox organisation → Inbox Processor
-
-Knowledge synthesis → Knowledge Architect
-
-Memory consolidation → Memory Curator
-
-Security architecture → Security Architect
-
----
-
-# Skill Loading & Trigger Matrix
-
-Skills exist in:
-
-.gemini/skills/
-
-Skills are **lazy loaded**.
-
-Only the skill description is loaded initially.
-
-Full skill instructions are loaded when required.
-
-## ⚡ Skill Trigger Matrix
+# ⚡ SKILL TRIGGER MATRIX
 Agents MUST proactively invoke the `activate_skill` tool based on the following task intents:
 
 - **Intent**: Modify System Architecture, Protocols, or Rules -> **Trigger**: `architectural-designer`
@@ -178,107 +48,11 @@ Agents MUST proactively invoke the `activate_skill` tool based on the following 
 
 ---
 
-# Knowledge Routing Rules
-
-- **Human Knowledge (Direct):** 02_KNOWLEDGE/Galaxy
-- **Reference Material:** 02_KNOWLEDGE/Resources
-- **Project Work:** 03_PROJECTS
-- **Personal Reflections:** 04_PERSONAL
-- **Tasks & Reminders:** 05_TASKS
-- **AI-Generated Synthesis:** 06_MACHINE (**Mandatory Staging**)
-- **Unprocessed/Raw Notes:** 01_INBOX (Archived to `/Archive` after processing)
-
-AI synthesis *must* land in 06_MACHINE for human verification before it can be manually promoted to the Galaxy.
-
----
-
-# Logging Requirements
-
-All AI actions must produce an audit log.
-
-**Mandatory System Reflex (ASV):** Before finalizing any interaction turn that involves system-level modifications, the agent MUST execute the Automated System Versioning hook:
-`node .gemini/hooks/version-incrementer.js <file_path>`
-This applies to all files registered in `vault/00_SYSTEM/CORE_SYSTEM_REGISTRY.md`. Failure to execute this reflex constitutes a governance violation.
-
-Location:
-
-logs/YYYY-MM-DD/
-
-Log Format:
-
-timestamp  
-user_request  
-agent_activated  
-files_read  
-files_modified  
-reasoning_summary  
-outcome
-
-### Strict Finality Constraint
-
-No interaction turn may conclude if file modifications or creations have occurred without a corresponding audit log being generated. 
-
-Logging is not a "task"—it is the definition of a completed action.
-
----
-
-# Daily Memory Timeline
-
-Location:
-
-04_PERSONAL/Daily
-
-Purpose:
-
-Create narrative summaries of:
-
-• learning
-• insights
-• decisions
-• progress
-
-This is human memory.
-
-Not system logs.
-
----
-
-# Safety Constraints
-
-The AI must never:
-
-delete knowledge files  
-modify archive material  
-alter system rules without approval  
-overwrite Galaxy notes
-
----
-
-# Operational Behaviour
-
-The system must always:
-
-• **Prioritize Human Context**: Read `vault/04_PERSONAL/USER_CONTEXT.md` before initiating strategic planning, business brainstorming, or content generation.
-• **Branched Execution**: Strictly follow Rule 11 (RULES.md). All structural or systemic upgrades MUST occur on a dedicated Git branch (`feat/`) and be presented as a Pull Request.
-• reason before acting
-• explain decisions
-• log actions
-• maintain system integrity
-
-# Tooling & Integration
-
-- **GitHub Operations**: Prioritize the GitHub CLI (`gh`) for all repository interactions (PRs, Issues, Actions, Secrets). Use the `github-ops` skill to ensure structured output (`--json`) and proper logging. Avoid using abstracted MCP bridges for GitHub to maintain deep workspace visibility.
-- **Structured Data**: Always prefer tools and flags that return JSON or parseable structured data for agentic processing.
-
----
-
-# Development Lifecycle
-
-For every task, the system must follow a 4-step execution loop:
-
+# 🛠️ DEVELOPMENT LIFECYCLE (The 4-Step Loop)
 1. **PLAN**: Define the approach and the verification strategy.
-2. **ACT**: Apply targeted changes using the available tools.
+2. **ACT**: Apply targeted changes using available tools.
 3. **VALIDATE**: Run tests or manual checks to confirm success.
-4. **LOG**: Create a high-fidelity audit log in `logs/YYYY-MM-DD/`.
+4. **LOG**: Create a high-fidelity audit log.
 
-**Finality Rule:** A task is not complete until the audit log is persisted. Verification and Traceability are the foundations of V.A.N.T.i.S. operations.
+---
+*V.A.N.T.i.S. Core Protocol | Aligned with Metadata v1.5 and Signal v1.3*

@@ -1,466 +1,84 @@
-# METADATA_SCHEMA.md
+# METADATA_SCHEMA.md (ROBUST SCALING EDITION)
 
-VANTIS Knowledge Graph Metadata Specification
-
-Version: 1.4
+VANTIS Knowledge Engine v1.5
 Applies To: Galaxy Knowledge Graph
 
 ---
 
-# Purpose
+# PURPOSE
 
-This document defines the official metadata schema used by VANTIS for all knowledge nodes stored in the **Galaxy knowledge graph**.
-
-The schema ensures that:
-
-• knowledge remains structured
-• AI agents can retrieve information efficiently
-• the concept graph remains coherent and navigable
-• the system remains stable as it scales
-
-Every Galaxy note must include YAML frontmatter following this schema.
+This schema is designed for **high-velocity, high-volume knowledge scaling (100+ concepts)**. It ensures that every node in the VANTIS Galaxy is semantically distinct, semantically linked, and ready for multi-node synthesis.
 
 ---
 
-# Schema Philosophy
+# REQUIRED YAML STRUCTURE (v1.5)
 
-The VANTIS Galaxy is a **concept graph**, not a taxonomy.
+Every Galaxy node MUST include this frontmatter.
 
-Ideas are connected primarily through **relationships between concepts**, rather than hierarchical classification.
-
-The primary relationship field is:
-
-```
-related_concepts
-```
-
-Taxonomic hierarchy is intentionally minimized.
-
+```yaml
 ---
+id: concept-<domain>-<name>
+type: concept | framework | mental-model | method | definition | pattern
+status: seed | developing | evergreen | deprecated
 
-# Required Fields
-
-The following metadata fields are required for every Galaxy note.
-
-## id
-
-Unique identifier for the concept.
-
-Format:
-
-```
-concept-<domain>-<concept-name>
-```
-
-Example:
-
-```
-concept-ai-systems-knowledge-architecture
-```
-
-This identifier is used by:
-
-• graph relationships
-• AI retrieval systems
-• vector indexing systems
-
-IDs must remain stable once created.
-
----
-
-## type
-
-Defines the knowledge primitive.
-
-Allowed values:
-
-```
-concept
-framework
-mental-model
-method
-definition
-pattern
-```
-
-Example:
-
-```
-type: concept
-```
-
----
-
-## status
-
-Defines knowledge maturity.
-
-Allowed values:
-
-```
-seed
-developing
-evergreen
-deprecated
-```
-
-Example:
-
-```
-status: evergreen
-```
-
----
-
-## domain
-
-Primary conceptual domain.
-
-Domains represent high-level knowledge ecosystems.
-
-Example:
-
-```
+# CATEGORIZATION (For Robust Scaling)
 domain:
- - ai-systems
-```
+  - <primary-domain>
+abstraction_layer: foundational | component | systemic | strategic | ecosystem
+verified_distinct: true  # Human confirms no overlap with existing nodes
 
-Multiple domains may be listed.
-
----
-
-## created
-
-Creation date of the concept.
-
-Format:
-
-```
-YYYY-MM-DD
-```
-
-Example:
-
-```
-created: 2026-03-14
-```
-
----
-
-## updated
-
-Last update timestamp.
-
-Example:
-
-```
-Updated: 2026-03-23
-```
-
----
-
-## source
-
-Origin of the idea.
-
-Allowed values:
-
-```
-human-original  (Fully human authored)
-ai-assisted     (AI drafted, Human verified/edited)
-ai-candidate    (AI generated, awaiting human verification in 06_MACHINE)
-external        (External reference or resource)
-```
-
-Galaxy notes should normally be `human-original` or `ai-assisted`.
-AI synthesis must land in `06_MACHINE` with `source: ai-candidate` before promotion.
-
----
-
-# Knowledge Lineage & Promotion (v1.4)
-To maintain the integrity of the Galaxy while ensuring efficient knowledge flow, the following promotion path is mandatory:
-
-1. **Synthesis (ai-candidate)**: AI generates a concept or insight based on research/logs. This MUST be saved in `06_MACHINE/ai-candidates/` with `source: ai-candidate`.
-2. **Review (ai-assisted)**: A human reviews the candidate. If the content is modified or verified, the `source` field is updated to `ai-assisted`.
-3. **Promotion (Galaxy)**: Once verified, the file is moved to `02_KNOWLEDGE/Galaxy/`. The agent MUST ensure all required metadata (ID, Type, Status, Domain) is present before the move.
-4. **Lineage Preservation**: The original `ai-candidate` note in `06_MACHINE` is archived to `06_MACHINE/Archive/` to maintain the audit trail of the concept's evolution.
-
----
-
-# confidence
-
-Represents epistemic certainty.
-
-Allowed values:
-
-```
-low
-medium
-high
-```
-
----
-
-## related_concepts
-
-Defines relationships to other concept nodes.
-
-Example:
-
-```
-related_concepts:
- - concept-rag-architectures
- - concept-long-term-memory
-```
-
-These links form the **core concept graph of VANTIS**.
-
----
-
-# Optional Fields
-
-These fields provide additional context and operational functionality.
-
----
-
-## related_domains
-
-Domains connected to the concept but not primary.
-
-Example:
-
-```
-related_domains:
- - personal-knowledge-management
- - data-engineering
-```
-
----
-
-## level
-
-Knowledge complexity level.
-
-Allowed values:
-
-```
-foundational
-intermediate
-advanced
-expert
-```
-
----
-
-## review_interval
-
-Defines how often a concept should be reviewed.
-
-Example:
-
-```
-review_interval: 90d
-```
-
----
-
-## next_review
-
-Next scheduled review date.
-
-Example:
-
-```
-next_review: 2026-06-14
-```
-
----
-
-## version
-
-Version number of the concept.
-
-Example:
-
-```
+# CORE METADATA
+created: YYYY-MM-DD
+updated: 2026-03-23
 version: 1
-```
+schema_version: 1.5
 
-Increment when a concept undergoes major revision.
+# LINEAGE & SOVEREIGNTY
+source: human-original | ai-assisted | ai-candidate
+source_project: <project-id> | global
+confidence: low | medium | high
 
----
-
-## schema_version
-
-Defines which metadata schema version the note follows.
-
-Example:
-
-```
-schema_version: 1
-```
-
-This allows future schema evolution.
-
----
-
-## aliases
-
-Alternative names for the concept.
-
-Example:
-
-```
-aliases:
- - Knowledge Architecture
- - PKM Architecture
-```
-
----
-
-## tags
-
-Flexible discovery keywords.
-
-Example:
-
-```
-tags:
- - knowledge-architecture
- - ai-systems
-```
-
-Tags assist with retrieval but do not define structure.
-
----
-
-## embedding_version
-
-Vector embedding version used for indexing.
-
-Example:
-
-```
-embedding_version: v1
-```
-
----
-
-## last_indexed
-
-Timestamp when the note was last indexed by the vector retrieval system.
-
-Example:
-
-```
-last_indexed: 2026-03-14T21:30:00Z
-```
-
----
-
-# Concept Graph Rules
-
-The Galaxy operates as a **network of ideas**.
-
-To maintain graph quality, the following rules apply.
-
----
-
-## Minimum Concept Links
-
-Each concept should link to **at least two related concepts** when possible.
-
-Example:
-
-```
+# RELATIONSHIPS (Pure Concept Graph)
 related_concepts:
- - concept-rag-architectures
- - concept-long-term-memory
-```
-
-This ensures the graph remains interconnected.
-
----
-
-## Edge Case Rule
-
-If no meaningful concept links exist, the note may temporarily contain fewer than two links.
-
-However:
-
-• the system must **never fabricate links**
-• connections must always reflect genuine conceptual relationships
-
----
-
-# Knowledge Integrity Rule
-
-AI-generated content must never be inserted directly into the Galaxy.
-
-Galaxy notes represent **human knowledge**.
-
-AI synthesis must be stored in:
-
-```
-06_MACHINE
-```
-
-Only validated human insights should enter the knowledge graph.
-
----
-
-# Example Galaxy Note
-
-```
----
-id: concept-ai-systems-knowledge-architecture
-type: concept
-status: evergreen
-
-domain:
- - ai-systems
-
-related_domains:
- - personal-knowledge-management
- - data-engineering
-
-level: advanced
-
-created: 2026-03-14
-updated: 2026-03-14
-
-review_interval: 90d
-next_review: 2026-06-14
-
-version: 1
-schema_version: 1
-
-source: human
-confidence: high
-
-related_concepts:
- - concept-rag-architectures
- - concept-long-term-memory
-
+  - concept-id-1
+  - concept-id-2
 aliases:
- - Knowledge Architecture
- - PKM Architecture
+  - Alias 1
 
+# DISCOVERY
 tags:
- - knowledge-architecture
- - ai-systems
-
-embedding_version: v1
-last_indexed: 2026-03-14T21:30:00Z
+  - tag1
 ---
 ```
 
 ---
 
-# Schema Evolution
+# NEW FIELDS: THE "ROBUST ENGINE"
 
-If the metadata structure changes in the future:
+## abstraction_layer
+Defines the "depth" of the concept to help the AI traverse layers for comprehensive answers without enforcing rigid hierarchy.
+- **foundational**: Atomic truths.
+- **component**: Building blocks.
+- **systemic**: Architectural patterns.
+- **strategic**: High-level frameworks.
+- **ecosystem**: Platform-specific (e.g., GCP).
 
-• increment `schema_version`
-• update this document
-• migrate notes accordingly
+## verified_distinct
+A mandatory "Collision Detection" flag. During creation or overhaul, the agent must check the entire Galaxy for similar concepts. If an overlap >30% exists, the nodes MUST be merged instead of created.
+
+---
+
+# STANDARDIZED DOMAINS
+- `ai-systems`
+- `data-engineering`
+- `cloud-architecture`
+- `career-engineering`
+- `system-intelligence`
+- `security`
+
+---
+
+# SYNTHESIS RULES (The "30-Node" Goal)
+1. **Vertical Traversal**: When answering, the AI must pull from at least 3 Abstraction Layers (e.g., Ecosystem + Systemic + Foundational).
+2. **Plain-ID Links**: All `related_concepts` must be plain IDs (no wikilinks) to allow for automated graph analysis.
+3. **Semantic Anchors**: Every note must have at least **two** `related_concepts` to ensure no "island nodes" exist in the graph.
