@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.8
+Version: 1.0.9
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -11,6 +11,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
 | `GEMINI.md` | Intelligence Layer Core | Major.Minor |
+| `CLAUDE.md` | Claude Layer Core | Major.Minor |
 | `RULES.md` | System Guardrails | Major.Minor |
 | `AGENTS.md` | Agent Definitions | Major.Minor |
 | `VAULT_MAP.md` | Directory Architecture | Major.Minor |
@@ -24,12 +25,12 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
-| `vault/00_SYSTEM/METADATA_SCHEMA.md` | Galaxy Metadata Spec | Major.Minor |
-| `vault/00_SYSTEM/AGENT_PERMISSIONS.md` | Domain Restrictions | Major.Minor |
-| `vault/00_SYSTEM/SIGNAL_PROTOCOL.md` | Signal Interpretation | Major.Minor |
-| `vault/00_SYSTEM/CONCEPT_NAMING_PROTOCOL.md` | Naming Standards | Major.Minor |
-| `vault/00_SYSTEM/GALAXY_LINKING_RULES.md` | Graph Logic | Major.Minor |
-| `vault/00_SYSTEM/VANTIS_DIAGNOSTIC_PROTOCOL.md` | System Health Check | Major.Minor |
+| `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy Metadata Spec | Major.Minor |
+| `03_SYSTEM/Protocols/AGENT_PERMISSIONS.md` | Domain Restrictions | Major.Minor |
+| `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` | Signal Interpretation | Major.Minor |
+| `03_SYSTEM/Protocols/CONCEPT_NAMING_PROTOCOL.md` | Naming Standards | Major.Minor |
+| `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Graph Logic | Major.Minor |
+| `03_SYSTEM/Protocols/VANTIS_DIAGNOSTIC_PROTOCOL.md` | System Health Check | Major.Minor |
 
 ---
 
@@ -38,12 +39,12 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
-| `vault/00_SYSTEM/GALAXY_NOTE_TEMPLATE.md` | Note Structure | Patch |
-| `vault/00_SYSTEM/SESSION_STATE_TEMPLATE.md` | Session Logic | Patch |
-| `vault/00_SYSTEM/LINKEDIN_POST_TEMPLATE.md` | Content Structure | Patch |
-| `vault/00_SYSTEM/DYNAMIC_GALAXY_SCAFFOLDER.md` | Templater Logic | Patch |
-| `vault/00_SYSTEM/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
-| `vault/00_SYSTEM/CORE_SYSTEM_REGISTRY.md` | This File | Patch |
+| `03_SYSTEM/Protocols/GALAXY_NOTE_TEMPLATE.md` | Note Structure | Patch |
+| `03_SYSTEM/Protocols/SESSION_STATE_TEMPLATE.md` | Session Logic | Patch |
+| `03_SYSTEM/Protocols/LINKEDIN_POST_TEMPLATE.md` | Content Structure | Patch |
+| `03_SYSTEM/Protocols/DYNAMIC_GALAXY_SCAFFOLDER.md` | Templater Logic | Patch |
+| `03_SYSTEM/Protocols/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
+| `03_SYSTEM/Protocols/CORE_SYSTEM_REGISTRY.md` | This File | Patch |
 | `.gemini/SKILLS_INDEX.md` | Skills Discovery Index | Patch |
 
 ---
@@ -83,7 +84,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 ---
 
 ## 🚫 EXCLUSIONS
-- All files in `vault/00_SYSTEM/Archive/` are frozen and will NOT be incremented.
+- All files in `03_SYSTEM/Protocols/Archive/` are frozen and will NOT be incremented.
 - `README.md` is excluded (Public Portfolio use only).
 - All non-markdown files.
 

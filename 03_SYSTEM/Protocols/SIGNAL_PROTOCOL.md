@@ -1,6 +1,6 @@
 # VANTIS SIGNAL PROTOCOL
 
-Version: 1.3
+Version: 1.4
 Layer: System
 Status: Active
 
@@ -26,7 +26,7 @@ These signals manage state transitions and hand-offs between active agents.
 
 ### Hand-off Protocol
 1. **State Persistence**: Before an agent terminates a turn, it MUST update the session state file if a hand-off is occurring.
-2. **State Location**: `vault/06_MACHINE/session_state/session-state_YYYY-MM-DD.md`.
+2. **State Location**: `02_MACHINE/State/session-state_YYYY-MM-DD.md`.
 3. **Peer Awareness**: Agents MUST check the session state for `WAIT` or `SYNC` signals before initiating a turn.
 
 ---
@@ -46,7 +46,7 @@ Represents system expansion (e.g., new skills, agent updates, automation).
 ### 🌌 KNOWLEDGE VELOCITY
 Represents the growth and health of the knowledge graph.
 - **Knowledge Gap Detected**: Working on a project without a corresponding Galaxy concept.
-- **Candidate Stagnation**: High-value candidates in `06_MACHINE` awaiting review for >48h.
+- **Candidate Stagnation**: High-value candidates in `02_MACHINE` awaiting review for >48h.
 - **Cross-Pollination**: Detecting semantic links between active projects and Galaxy nodes.
 - **Redundancy Alert**: Identification of "Too Similar" concepts during extraction.
 

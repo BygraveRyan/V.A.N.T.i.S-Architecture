@@ -39,7 +39,7 @@ create_pr() {
 # ==========================================
 
 # PR 1: Core Intelligence
-mkdir -p vault/00_SYSTEM
+mkdir -p 03_SYSTEM/Protocols
 cp "$SOURCE_DIR/GEMINI.md" .
 cp "$SOURCE_DIR/AGENTS.md" .
 cp "$SOURCE_DIR/RULES.md" .
@@ -51,11 +51,11 @@ create_pr "feat/core-protocols" "feat(core): establish intelligence layer and co
 
 # PR 2: Security & Boundaries
 git checkout main
-mkdir -p vault/00_SYSTEM/Archive
-cp "$SOURCE_DIR/vault/00_SYSTEM/AGENT_PERMISSIONS.md" vault/00_SYSTEM/ || true
-cp "$SOURCE_DIR/vault/00_SYSTEM/Archive/LOGGING_PROTOCOL.md" vault/00_SYSTEM/Archive/ || true
+mkdir -p 03_SYSTEM/Protocols/Archive
+cp "$SOURCE_DIR/03_SYSTEM/Protocols/AGENT_PERMISSIONS.md" 03_SYSTEM/Protocols/ || true
+cp "$SOURCE_DIR/03_SYSTEM/Protocols/Archive/LOGGING_PROTOCOL.md" 03_SYSTEM/Protocols/Archive/ || true
 git add .
-create_pr "feat/security-boundaries" "feat(security): enforce ai boundaries and logging layer" "## 📖 The Story\n\n### WHY - What problem are we solving?\nIdentified a critical system risk: AI was writing directly to the knowledge graph and actions were untraceable, leading to 'Model Collapse.'\n\n### HOW - What did we actually change?\nImplemented strict agent permissions revoking AI write-access to the 02_KNOWLEDGE/Galaxy. Mandated a 4-step execution loop (Plan -> Act -> Validate -> Log).\n\n### IMPACT - What is the result?\nZero knowledge contamination. 100% auditability achieved."
+create_pr "feat/security-boundaries" "feat(security): enforce ai boundaries and logging layer" "## 📖 The Story\n\n### WHY - What problem are we solving?\nIdentified a critical system risk: AI was writing directly to the knowledge graph and actions were untraceable, leading to 'Model Collapse.'\n\n### HOW - What did we actually change?\nImplemented strict agent permissions revoking AI write-access to the 01_HUMAN/Knowledge/Galaxy. Mandated a 4-step execution loop (Plan -> Act -> Validate -> Log).\n\n### IMPACT - What is the result?\nZero knowledge contamination. 100% auditability achieved."
 
 # PR 3: Governance
 git checkout main
@@ -71,9 +71,9 @@ cp -r "$SOURCE_DIR/.gemini/skills" .gemini/ || true
 cp -r "$SOURCE_DIR/.gemini/commands" .gemini/ || true
 cp "$SOURCE_DIR/.gemini/SKILLS_INDEX.md" .gemini/ || true
 cp "$SOURCE_DIR/.gemini/settings.json" .gemini/ || true
-cp "$SOURCE_DIR/vault/00_SYSTEM/METADATA_SCHEMA.md" vault/00_SYSTEM/ || true
+cp "$SOURCE_DIR/03_SYSTEM/Protocols/METADATA_SCHEMA.md" 03_SYSTEM/Protocols/ || true
 git add .
-create_pr "feat/agentic-skills" "feat(engine): transition to native skills and github ops" "## 📖 The Story\n\n### WHY - What problem are we solving?\nMarkdown protocols were too slow for agentic execution. The root directory was cluttered, causing cognitive friction for the AI.\n\n### HOW - What did we actually change?\nExecuted 'The Metamorphosis': converted flat protocols into lazy-loaded .gemini/skills/ (audit-logger, inbox-processor) and consolidated system templates into 00_SYSTEM/.\n\n### IMPACT - What is the result?\nMassive reduction in AI cognitive load. The system is now a reactive, skill-first engine."
+create_pr "feat/agentic-skills" "feat(engine): transition to native skills and github ops" "## 📖 The Story\n\n### WHY - What problem are we solving?\nMarkdown protocols were too slow for agentic execution. The root directory was cluttered, causing cognitive friction for the AI.\n\n### HOW - What did we actually change?\nExecuted 'The Metamorphosis': converted flat protocols into lazy-loaded .gemini/skills/ (audit-logger, inbox-processor) and consolidated system templates into 03_SYSTEM/Protocols/.\n\n### IMPACT - What is the result?\nMassive reduction in AI cognitive load. The system is now a reactive, skill-first engine."
 
 # PR 5: Private Core Deployment
 git checkout main

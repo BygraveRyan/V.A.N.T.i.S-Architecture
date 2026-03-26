@@ -1,7 +1,7 @@
 # INBOX_PROCESSING_PROTOCOL
 
 Version: 1.0
-Applies To: 01_INBOX
+Applies To: 01_HUMAN/Inbox
 
 ---
 
@@ -56,7 +56,7 @@ Information enters the system and is stored in the Inbox.
 Location:
 
 ```
-01_INBOX
+01_HUMAN/Inbox
 ```
 
 Examples of Inbox files:
@@ -106,11 +106,11 @@ After clarification, the note should be routed to the appropriate location.
 Possible destinations include:
 
 ```
-02_KNOWLEDGE/Galaxy
-03_PROJECTS
-04_PERSONAL
-05_TASKS
-06_MACHINE
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Projects
+01_HUMAN/Personal
+01_HUMAN/Tasks
+02_MACHINE
 ```
 
 Routing depends on the nature of the information.
@@ -152,7 +152,7 @@ Examples:
 Location:
 
 ```
-03_PROJECTS
+01_HUMAN/Projects
 ```
 
 ---
@@ -170,7 +170,7 @@ Examples:
 Location:
 
 ```
-04_PERSONAL
+01_HUMAN/Personal
 ```
 
 ---
@@ -188,7 +188,7 @@ Examples:
 Location:
 
 ```
-05_TASKS
+01_HUMAN/Tasks
 ```
 
 ---
@@ -206,7 +206,7 @@ Examples:
 Location:
 
 ```
-06_MACHINE
+02_MACHINE
 ```
 
 AI outputs should **not enter the Galaxy directly**.
@@ -217,10 +217,10 @@ They must first be reviewed and curated.
 
 # STAGE 4 — ARCHIVE
 
-After routing and generating synthesis (in 06_MACHINE), the original Inbox note MUST be moved to:
+After routing and generating synthesis (in 02_MACHINE), the original Inbox note MUST be moved to:
 
 ```
-vault/01_INBOX/Archive
+01_HUMAN/Inbox/Archive
 ```
 
 This ensures:

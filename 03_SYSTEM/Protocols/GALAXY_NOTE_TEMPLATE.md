@@ -1,7 +1,7 @@
 # GALAXY_NOTE_TEMPLATE
 
 Version: 1.0.2  
-Applies To: 02_KNOWLEDGE/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 
 ---
 

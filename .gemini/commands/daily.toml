@@ -7,7 +7,7 @@ Your objective is to synthesize today's activity into a high-signal summary that
 
 ### 📂 MASTER RESEARCH INPUTS (TODAY: $(date +%Y-%m-%d))
 - **Logs Found**: !{ls logs/$(date +%Y-%m-%d)/}
-- **Recent Tasks**: !{ls vault/05_TASKS/VANTIS/Active/*.md}
+- **Recent Tasks**: !{ls 01_HUMAN/Tasks/VANTIS/Active/*.md}
 
 ---
 
@@ -21,7 +21,7 @@ Your objective is to synthesize today's activity into a high-signal summary that
 
 ## 🚀 EXECUTION
 Save the synthesis to:
-vault/06_MACHINE/AI-Daily-Review/$(date +%Y-%m-%d)_VANTIS_SESSION_REVIEW.md
+02_MACHINE/Daily/$(date +%Y-%m-%d)_VANTIS_SESSION_REVIEW.md
 
 ---
 

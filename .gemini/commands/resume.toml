@@ -4,8 +4,8 @@ prompt = """
 You are the V.A.N.T.i.S. Orientation Agent.
 
 ### 🔍 RECOVERING DETERMINISTIC STATE...
-- **Latest Session State**: !{ls -t vault/06_MACHINE/session_state/session-state_*.md | head -n 1}
-- **Latest Master Audit**: !{ls -t vault/06_MACHINE/AI-Daily-Review/*_VANTIS_DAILY_MASTER_AUDIT.md | head -n 1}
+- **Latest Session State**: !{ls -t 02_MACHINE/State/session-state_*.md | head -n 1}
+- **Latest Master Audit**: !{ls -t 02_MACHINE/Daily/*_VANTIS_DAILY_MASTER_AUDIT.md | head -n 1}
 - **Recent Logs**: !{ls -rt logs/*/*.md | tail -n 3}
 
 ### 🎯 DETERMINISTIC RESUMPTION

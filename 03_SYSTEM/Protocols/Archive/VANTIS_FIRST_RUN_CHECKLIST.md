@@ -32,13 +32,13 @@ If any file is missing, create it before proceeding.
 
 Inside the vault folder, create the following directories.
 
-00_SYSTEM
-01_INBOX
-02_KNOWLEDGE/Galaxy
-03_PROJECTS
-04_PERSONAL
-05_TASKS
-06_MACHINE
+03_SYSTEM/Protocols
+01_HUMAN/Inbox
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Projects
+01_HUMAN/Personal
+01_HUMAN/Tasks
+02_MACHINE
 
 This vault is the long-term memory layer of VANTIS.
 
@@ -48,7 +48,7 @@ This vault is the long-term memory layer of VANTIS.
 
 Create a file in:
 
-01_INBOX
+01_HUMAN/Inbox
 
 Example:
 
@@ -78,7 +78,7 @@ If yes → convert it into a concept.
 
 ~~Create a file in:~~
 
-~~02_KNOWLEDGE/Galaxy~~
+~~01_HUMAN/Knowledge/Galaxy~~
 
 ~~Example:~~
 
@@ -177,7 +177,7 @@ This confirms the Galaxy concept graph is operational.
 
 Create a file in:
 
-06_MACHINE
+02_MACHINE
 
 Example:
 

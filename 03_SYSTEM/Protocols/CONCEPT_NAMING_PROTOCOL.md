@@ -1,7 +1,7 @@
 # VANTIS Concept Naming Protocol
 
 Version: 1.1
-Applies To: 02_KNOWLEDGE/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 
 ---
 
