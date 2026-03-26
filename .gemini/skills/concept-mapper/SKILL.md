@@ -19,9 +19,9 @@ Analyze the current project or concept. Identify 3-5 "Core Mechanisms" (e.g., "D
 
 ## Step 2 — Semantic Sweep
 Search the following locations for matching keywords or mechanisms:
-- `vault/02_KNOWLEDGE/Galaxy/`
-- `vault/03_PROJECTS/`
-- `vault/06_MACHINE/`
+- `01_HUMAN/Knowledge/Galaxy/`
+- `01_HUMAN/Projects/`
+- `02_MACHINE/`
 
 ## Step 3 — Connection Synthesis
 For each match found, evaluate the relationship:
@@ -34,7 +34,7 @@ For each match found, evaluate the relationship:
 # 🛡️ PROTOCOL COMPLIANCE (v1.7)
 
 ## Output & Lineage
-- All connection proposals MUST be saved to `06_MACHINE/ai-candidates/`.
+- All connection proposals MUST be saved to `02_MACHINE/ai-candidates/`.
 - Proposals MUST include `source: ai-candidate` metadata.
 - Follow the **Knowledge Lineage & Promotion (v1.4)** path for any new concept candidates identified during the scan.
 

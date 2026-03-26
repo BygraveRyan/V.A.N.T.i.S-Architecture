@@ -7,7 +7,7 @@ Extract reusable conceptual knowledge from research material and propose **conce
 ---
 
 # When To Use
-- **Trigger**: Intent to process 01_INBOX or analyze research/documentation.
+- **Trigger**: Intent to process 01_HUMAN/Inbox or analyze research/documentation.
 - **Requirement**: Consult the **Skill Trigger Matrix** in `GEMINI.md`.
 
 ---
@@ -28,7 +28,7 @@ Use the standard `GALAXY_NOTE_TEMPLATE.md` structure with `source: ai-candidate`
 # 🛡️ PROTOCOL COMPLIANCE (v1.7)
 
 ## Output & Lineage (v1.4)
-- All candidates MUST be saved to `06_MACHINE/ai-candidates/`.
+- All candidates MUST be saved to `02_MACHINE/ai-candidates/`.
 - All candidates MUST use `source: ai-candidate` metadata.
 
 ## Audit Reflex

@@ -75,7 +75,7 @@ Domain: recommendation systems
 
 Search location:
 
-02_KNOWLEDGE/Galaxy
+01_HUMAN/Knowledge/Galaxy
 
 ---
 

@@ -1,6 +1,6 @@
 # V.A.N.T.i.S. — GEMINI ADAPTER (INTELLIGENCE LAYER)
 
-Version: 1.8 (Agent-Agnostic Edition)
+Version: 1.10 (Agent-Agnostic Edition)
 Applies To: Gemini CLI / Google Models
 
 ---
@@ -10,41 +10,27 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ---
 
-# 🗺️ V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
-- **ROOT**: Core Control Plane (`GEMINI.md`, `CLAUDE.md`, `AGENTS.md`, `README.md`).
-- **vault/**: The persistent repository containing:
-    - **00_SYSTEM**: Protocols, Signals, and Metadata Schema (READ ONLY).
-    - **01_INBOX**: Entry point for raw, unprocessed information.
-    - **02_KNOWLEDGE**: Human-curated Knowledge Graph (The Galaxy).
-    - **03_PROJECTS**: Active workstreams and business development labs.
-    - **04_PERSONAL**: Journals and Daily Reflections.
-    - **05_TASKS**: Action items and System Backlogs.
-    - **06_MACHINE**: AI Staging Area for Synthesis, Logs, and Session State.
-- **logs/**: Chronological audit trail of all agent turns.
-
----
-
 # 🔄 RESUMPTION PROTOCOL (The "Save Game")
 Before taking any action, you MUST:
-1.  **Read `vault/06_MACHINE/session_state/session-state_LATEST.md`**.
+1.  **Read `02_MACHINE/State/session-state_LATEST.md`**.
 2.  Identify the **Active Objective** and **Next Steps**.
-3.  Check for **SIGNAL** markers (e.g., `WAIT`, `SYNC`) in `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
+3.  Check for **SIGNAL** markers (e.g., `WAIT`, `SYNC`) in `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md`.
 
 ---
 
 # 🛡️ GLOBAL MANDATES
 You must strictly follow the Global Agent Mandates in `AGENTS.md`:
 1.  **Strict Finality (Logging)**: Every turn that modifies the vault MUST produce a log in `logs/YYYY-MM-DD/`.
-2.  **No Galaxy Writes**: You are strictly prohibited from writing directly to `02_KNOWLEDGE/Galaxy`. Use `06_MACHINE` for staging.
-3.  **Metadata v1.5**: All proposed knowledge nodes MUST follow `vault/00_SYSTEM/METADATA_SCHEMA.md`.
-4.  **ASV Reflex**: Run `node .gemini/hooks/version-incrementer.js <file_path>` before modifying files in `00_SYSTEM/`.
+2.  **No Galaxy Writes**: You are strictly prohibited from writing directly to `01_HUMAN/Knowledge/Galaxy`. Use `02_MACHINE` for staging.
+3.  **Metadata v1.5**: All proposed knowledge nodes MUST follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
+4.  **ASV Reflex**: Run `node .gemini/hooks/version-incrementer.js <file_path>` before modifying files in `03_SYSTEM/Protocols/`.
 
 ---
 
 # 🤝 UNIFIED INTEROPERABILITY
 V.A.N.T.i.S. is model-agnostic. To coordinate with peer agents:
 1.  **Shared Context**: Both Gemini and Claude use the same directory structure and core protocols.
-2.  **Hand-offs**: State transitions are managed via `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
+2.  **Hand-offs**: State transitions are managed via `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md`.
 3.  **State Persistence**: Update the latest `session-state_YYYY-MM-DD.md` before terminating a turn if a hand-off is occurring.
 
 ---
@@ -54,7 +40,7 @@ Agents MUST proactively invoke the `activate_skill` tool based on the following 
 
 - **Intent**: Modify System Architecture, Protocols, or Rules -> **Trigger**: `architectural-designer`
 - **Intent**: Draft or optimize LinkedIn content -> **Trigger**: `linkedin-content-generation`, `precedent-detection`
-- **Intent**: Process items from 01_INBOX or analyze research -> **Trigger**: `inbox-processor`, `concept-extraction`
+- **Intent**: Process items from 01_HUMAN/Inbox or analyze research -> **Trigger**: `inbox-processor`, `concept-extraction`
 - **Intent**: Convert raw insights into permanent concepts or detect orphan notes -> **Trigger**: `memory-curator`
 - **Intent**: Identify cross-domain synergies or map conceptual precedents for a new project -> **Trigger**: `concept-mapper`
 - **Intent**: Execute Git Branching, Commits, or PRs -> **Trigger**: `github-ops`

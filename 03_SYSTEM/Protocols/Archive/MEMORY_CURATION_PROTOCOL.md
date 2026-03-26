@@ -1,7 +1,7 @@
 # MEMORY_CURATION_PROTOCOL
 
 Version: 1.0
-Applies To: 02_KNOWLEDGE/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 
 ---
 
@@ -51,8 +51,8 @@ Examples include:
 Typical storage locations:
 
 ```
-01_INBOX
-06_MACHINE
+01_HUMAN/Inbox
+02_MACHINE
 ```
 
 At this stage the information is **unstructured and temporary**.
@@ -76,8 +76,8 @@ RAG systems perform significantly better when combined with vector databases and
 Insights may appear in:
 
 ```
-06_MACHINE
-03_PROJECTS
+02_MACHINE
+01_HUMAN/Projects
 ```
 
 Insights are still **contextual** and may relate to a specific situation or research session.
@@ -175,7 +175,7 @@ Look for insights that represent **general principles or ideas**.
 Create a new file in:
 
 ```
-02_KNOWLEDGE/Galaxy
+01_HUMAN/Knowledge/Galaxy
 ```
 
 Use the structure defined in:
@@ -282,7 +282,7 @@ AI-generated material should never be written directly to the Galaxy.
 AI outputs must be stored in:
 
 ```
-06_MACHINE
+02_MACHINE
 ```
 
 Humans may later refine these outputs and convert them into permanent concept notes.

@@ -2,7 +2,7 @@
 
 VANTIS Agent Domain Permissions
 
-Version: 1.1
+Version: 1.2
 
 ---
 
@@ -45,22 +45,22 @@ Build and maintain the Galaxy knowledge graph.
 Read Access
 
 ```
-02_KNOWLEDGE/Galaxy
-02_KNOWLEDGE/Resources
-03_PROJECTS
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Knowledge/Resources
+01_HUMAN/Projects
 ```
 
 Write Access
 
 ```
-06_MACHINE
+02_MACHINE
 ```
 
 Restricted
 
 ```
 logs
-00_SYSTEM
+03_SYSTEM/Protocols
 ```
 
 ---
@@ -76,23 +76,23 @@ Transform insights into structured knowledge.
 Read Access
 
 ```
-01_INBOX
-02_KNOWLEDGE/Galaxy
-03_PROJECTS
-06_MACHINE
+01_HUMAN/Inbox
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Projects
+02_MACHINE
 ```
 
 Write Access
 
 ```
-06_MACHINE
-04_PERSONAL/Daily
+02_MACHINE
+01_HUMAN/Daily
 ```
 
 Restricted
 
 ```
-00_SYSTEM
+03_SYSTEM/Protocols
 logs
 ```
 
@@ -109,23 +109,23 @@ Organize and categorize incoming information.
 Read Access
 
 ```
-01_INBOX
+01_HUMAN/Inbox
 ```
 
 Write Access
 
 ```
-02_KNOWLEDGE
-03_PROJECTS
-05_TASKS
-06_MACHINE
+01_HUMAN/Knowledge
+01_HUMAN/Projects
+01_HUMAN/Tasks
+02_MACHINE
 ```
 
 Restricted
 
 ```
 logs
-00_SYSTEM
+03_SYSTEM/Protocols
 ```
 
 ---
@@ -141,20 +141,20 @@ Perform research synthesis.
 Read Access
 
 ```
-02_KNOWLEDGE
-03_PROJECTS
+01_HUMAN/Knowledge
+01_HUMAN/Projects
 ```
 
 Write Access
 
 ```
-06_MACHINE
+02_MACHINE
 ```
 
 Restricted
 
 ```
-00_SYSTEM
+03_SYSTEM/Protocols
 logs
 ```
 
@@ -171,22 +171,22 @@ Develop security architectures and review security documentation.
 Read Access
 
 ```
-02_KNOWLEDGE/Resources/Security
-03_PROJECTS/Security
+01_HUMAN/Knowledge/Resources/Security
+01_HUMAN/Projects/Security
 ```
 
 Write Access
 
 ```
-03_PROJECTS/Security
-06_MACHINE
+01_HUMAN/Projects/Security
+02_MACHINE
 ```
 
 Restricted
 
 ```
-04_PERSONAL
-02_KNOWLEDGE/Galaxy
+01_HUMAN/Personal
+01_HUMAN/Knowledge/Galaxy
 logs
 ```
 
@@ -203,22 +203,22 @@ Develop professional visibility and marketing content.
 Read Access
 
 ```
-03_PROJECTS
-02_KNOWLEDGE
+01_HUMAN/Projects
+01_HUMAN/Knowledge
 ```
 
 Write Access
 
 ```
-06_MACHINE
+02_MACHINE
 ```
 
 Restricted
 
 ```
-04_PERSONAL
+01_HUMAN/Personal
 logs
-00_SYSTEM
+03_SYSTEM/Protocols
 ```
 
 ---

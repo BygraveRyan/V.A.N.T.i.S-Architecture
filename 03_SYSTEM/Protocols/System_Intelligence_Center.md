@@ -15,7 +15,7 @@
 
 ```dataview
 TABLE vision AS "Vision", status AS "Status"
-FROM "vault/03_PROJECTS"
+FROM "01_HUMAN/Projects"
 WHERE vision != null OR status != null
 SORT file.mday DESC
 LIMIT 10
@@ -28,14 +28,14 @@ LIMIT 10
 
 ```dataview
 TABLE source AS "Source", status AS "Status", domain AS "Domain"
-FROM "vault/02_KNOWLEDGE/Galaxy"
+FROM "01_HUMAN/Knowledge/Galaxy"
 SORT file.mday DESC
 LIMIT 10
 ```
 
 ### 🧬 AI Candidates (Awaiting Promotion)
 ```dataview
-LIST FROM "vault/06_MACHINE/Concept_Candidates"
+LIST FROM "02_MACHINE/Synthesis"
 LIMIT 10
 ```
 
@@ -46,7 +46,7 @@ LIMIT 10
 
 ```dataview
 TABLE topic AS "Topic", status AS "Status"
-FROM "vault/06_MACHINE/LinkedIn_Drafts"
+FROM "02_MACHINE/Research/LinkedIn_Drafts"
 SORT file.cday DESC
 ```
 
@@ -66,13 +66,13 @@ LIMIT 10
 
 ### 🧬 Orphaned Concepts (Low Connectivity)
 ```dataview
-LIST FROM "vault/02_KNOWLEDGE/Galaxy"
+LIST FROM "01_HUMAN/Knowledge/Galaxy"
 WHERE length(related_concepts) < 2 AND length(file.outlinks) < 2
 ```
 
 ### 📥 Inbox Items (Process Required)
 ```dataview
-LIST FROM "vault/01_INBOX"
+LIST FROM "01_HUMAN/Inbox"
 WHERE !contains(file.path, "Archive")
 ```
 

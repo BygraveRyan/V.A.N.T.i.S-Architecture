@@ -10,7 +10,7 @@ const path = require('path');
  */
 
 const filePath = process.argv[2];
-const registryPath = 'vault/00_SYSTEM/CORE_SYSTEM_REGISTRY.md';
+const registryPath = '03_SYSTEM/Protocols/CORE_SYSTEM_REGISTRY.md';
 
 if (!filePath || !fs.existsSync(filePath)) {
   console.log('Usage: node version-incrementer.js <file_path>');

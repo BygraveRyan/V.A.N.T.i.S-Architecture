@@ -24,8 +24,8 @@ PRIVATE_REPO_GH="BygraveRyan/V.A.N.T.i.S"
 WHITELIST=(
   ".gemini/"
   ".github/"
-  "vault/00_SYSTEM/"
-  "vault/06_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
+  "03_SYSTEM/Protocols/"
+  "02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
   "CHANGELOG.md"
   "README.md"
   "BOOT_IMAGE.md"
@@ -127,7 +127,7 @@ for PRIVATE_BRANCH in "${BRANCHES[@]}"; do
 
   # Sanitise: redact personal paths and log references
   PR_BODY_PUBLIC=$(echo "$PR_BODY" \
-    | sed 's/vault\/04_PERSONAL/vault\/REDACTED_PERSONAL/g' \
+    | sed 's/vault\/01_HUMAN/Personal/vault\/REDACTED_PERSONAL/g' \
     | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
   PR_TITLE_PUBLIC="Engine Sync: $PR_TITLE"
 

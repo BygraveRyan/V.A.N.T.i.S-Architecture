@@ -1,6 +1,6 @@
 
 Version: 1.1
-Applies To: 02_KNOWLEDGE/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 System: VANTIS
 
 ---
@@ -57,13 +57,13 @@ Large topics must be decomposed into multiple linked concept nodes.
 The Galaxy must remain completely flat.
 
 Location:
-02_KNOWLEDGE/Galaxy
+01_HUMAN/Knowledge/Galaxy
 
 Subfolders are not allowed.
 
 Example:
 
-02_KNOWLEDGE/Galaxy/
+01_HUMAN/Knowledge/Galaxy/
     concept-rag-architectures.md
     concept-vector-databases.md
     concept-knowledge-graphs.md
@@ -220,7 +220,7 @@ AI generated material must never be written directly to the Galaxy.
 
 AI outputs belong in:
 
-06_MACHINE
+02_MACHINE
 
 Humans may later refine ideas and convert them into permanent concept notes.
 

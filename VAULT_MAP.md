@@ -1,10 +1,10 @@
 # VANTIS VAULT MAP
 
-Version: 1.2
+Version: 1.4
 
 ---
 
-# 00_SYSTEM
+# 03_SYSTEM/Protocols
 
 System documentation and protocols.
 (Note: Core system configuration files like BOOT_IMAGE, GEMINI, AGENTS, RULES, and VAULT_MAP are located at the repository root).
@@ -19,7 +19,7 @@ VANTIS_PROMPT_LIBRARY
 
 ---
 
-# 01_INBOX
+# 01_HUMAN/Inbox
 
 Temporary capture location.
 
@@ -36,7 +36,7 @@ Items must be processed by Inbox Processor.
 
 ---
 
-# 02_KNOWLEDGE
+# 01_HUMAN/Knowledge
 
 Permanent knowledge storage.
 
@@ -76,7 +76,7 @@ Examples:
 
 ---
 
-# 03_PROJECTS
+# 01_HUMAN/Projects
 
 Active project work.
 
@@ -89,7 +89,7 @@ deliverables
 
 ---
 
-# 04_PERSONAL
+# 01_HUMAN/Personal
 
 Human memory.
 
@@ -101,7 +101,7 @@ life insights
 
 ---
 
-# 05_TASKS
+# 01_HUMAN/Tasks
 
 Task management.
 
@@ -113,7 +113,7 @@ Examples:
 
 ---
 
-# 06_MACHINE
+# 02_MACHINE
 
 AI generated material.
 

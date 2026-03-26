@@ -17,8 +17,8 @@ PUBLIC_REPO="https://github.com/BygraveRyan/V.A.N.T.i.S-Architecture.git"
 WHITELIST=(
   ".gemini/"
   ".github/"
-  "vault/00_SYSTEM/"
-  "vault/06_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
+  "03_SYSTEM/Protocols/"
+  "02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
   "CHANGELOG.md"
   "README.md"
   "BOOT_IMAGE.md"
@@ -75,7 +75,7 @@ TITLE=$(echo "$PRIVATE_PR_JSON" | jq -r '.title // "feat(architecture): system-w
 BODY=$(echo "$PRIVATE_PR_JSON" | jq -r '.body // "Automated architectural synchronization from Private Core."')
 
 # Sanitize body
-PR_BODY_PUBLIC=$(echo "$BODY" | sed 's/vault\/04_PERSONAL/vault\/REDACTED_PERSONAL/g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
+PR_BODY_PUBLIC=$(echo "$BODY" | sed 's/vault\/01_HUMAN/Personal/vault\/REDACTED_PERSONAL/g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
 PR_TITLE_PUBLIC="Engine Sync: $TITLE"
 
 # Commit and Deployment

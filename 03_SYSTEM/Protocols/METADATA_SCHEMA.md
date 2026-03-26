@@ -29,9 +29,9 @@ verified_distinct: true  # Human confirms no overlap with existing nodes
 
 # CORE METADATA
 created: YYYY-MM-DD
-updated: 2026-03-23
+Updated: 2026-03-26
 version: 1
-schema_version: 1.5
+schema_Version: 1.6
 
 # LINEAGE & SOVEREIGNTY
 source: human-original | ai-assisted | ai-candidate

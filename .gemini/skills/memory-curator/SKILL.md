@@ -21,7 +21,7 @@ Evaluate information using the **Information → Insight → Concept** framework
 - Is it mechanical (explains **how** or **why**)?
 
 ## Step 2 — Draft Concept Candidate
-Create a `concept-candidate-*` file in `06_MACHINE/ai-candidates/`.
+Create a `concept-candidate-*` file in `02_MACHINE/ai-candidates/`.
 - Use the standard `GALAXY_NOTE_TEMPLATE.md` structure.
 - Focus on mechanisms and principles, not just facts.
 

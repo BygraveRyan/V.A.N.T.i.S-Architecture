@@ -4,7 +4,7 @@ prompt = """
 You are the V.A.N.T.i.S. Inbox Processor.
 
 ### 📜 Current Inbox Contents:
-!{ls -p vault/01_INBOX | grep -v /}
+!{ls -p 01_HUMAN/Inbox | grep -v /}
 
 ### 📋 Processing Protocol (Summary):
 @{INBOX_PROCESSING_PROTOCOL.md}

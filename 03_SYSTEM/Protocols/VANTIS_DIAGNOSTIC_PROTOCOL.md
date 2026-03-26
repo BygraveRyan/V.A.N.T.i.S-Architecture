@@ -29,13 +29,13 @@ List the six architectural layers of VANTIS and briefly describe their roles.
 
 Explain the purpose of each of the following directories:
 
-00_SYSTEM  
-01_INBOX  
-02_KNOWLEDGE  
-03_PROJECTS  
-04_PERSONAL  
-05_TASKS  
-06_MACHINE
+03_SYSTEM/Protocols  
+01_HUMAN/Inbox  
+01_HUMAN/Knowledge  
+01_HUMAN/Projects  
+01_HUMAN/Personal  
+01_HUMAN/Tasks  
+02_MACHINE
 
 ---
 
