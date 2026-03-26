@@ -1,47 +1,62 @@
-# SKILL: Audit Logger (v1.4)
+# SKILL: Audit Logger (v1.5)
 
 Purpose
-Ensure high-fidelity audit trails via automated **Log Reflex** processing.
+Ensure high-fidelity audit trails. Operates in two tiers: **Automated (tokenless)** for all sessions, and **Reasoning (model-authored)** for significant architectural decisions only.
 
 ---
 
-# When To Use
-- **Manual:** Whenever a file is modified.
-- **Reflex:** Automatically triggered at the end of every task turn involving workspace changes.
+# Audit Tiers
+
+## Tier 1 — Automated (Tokenless) — DEFAULT
+**Mechanism**: Claude Code `PostToolUse` + `Stop` command hooks.
+- `session-ledger.sh` captures every file modification in real-time to `.gemini/tmp/session-ledger.jsonl`.
+- `compile-audit-log.sh` compiles the ledger + `git diff --stat` into a structured log at session end.
+- **Zero model tokens consumed.** Runs silently on every session.
+- Output: `logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_AutoLog_Session-Audit.md`
+
+## Tier 2 — Reasoning Log (Model-Authored) — SIGNIFICANT CHANGES ONLY
+Invoke this skill manually when:
+- Executing a multi-file architectural change (feat/ branch)
+- Completing a task from `vault/05_TASKS/VANTIS/`
+- Any turn where the **WHY** behind a change is non-obvious from the git diff alone
 
 ---
 
-# Logging Process (Reflex-Driven)
+# When to Invoke This Skill (Tier 2)
 
-Step 0 — Automated System Versioning (ASV)
-Before log generation, run: `node .gemini/hooks/version-incrementer.js <file_path>` for all Tier 1, 2, or 3 system files modified.
+- **Trigger**: Finalizing a turn involving vault modifications that warrant reasoning context.
+- Tier 1 already handles mechanical logging. Tier 2 adds the narrative layer when it matters.
 
-Step 1 — The Context Ledger (JSON Payload)
-The agent provides a `context_ledger` object (serialized in thought):
+---
+
+# Tier 2 Logging Process
+
+Step 0 — ASV Reflex
+Run: `node .gemini/hooks/version-incrementer.js <file_path>` for all Tier 1–3 system files modified.
+
+Step 1 — Context Ledger
 ```json
 {
-  "agent": "IntelligenceLayer",
+  "agent": "Claude",
   "task": "Hyphenated-Task-Name",
-  "files_read": ["file1.md", "file2.md"],
+  "files_read": ["file1.md"],
   "files_modified": ["file1.md"],
   "skills_used": ["skill-name"],
-  "reasoning_delta": "The core logic of why this change happened.",
-  "outcome_impact": "The result of the change."
+  "reasoning_delta": "Why this change happened.",
+  "outcome_impact": "What is better now."
 }
 ```
 
-Step 2 — Generate Filename
-`logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_AgentName_TaskDescriptor.md`.
+Step 2 — Filename
+`logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_Claude_TaskDescriptor.md`
 
-Step 3 — Assembly
-Construct the Markdown log using the ledger data.
-- **Frontmatter:** Include `delta` (calculated from Git or session state).
-- **Sections:** User Request, Reasoning, Files Read, Files Modified, Outcome.
+Step 3 — Sections
+- User Request, Reasoning Summary, Files Read, Files Modified (table with ASV status), Outcome + Signals.
 
 ---
 
-# Deterministic Assembly Rules
-1. **Delta Generation:** High-signal summary (e.g., "+1 Skill, -1 Protocol").
-2. **Formatting:** Use the "Gold Standard" format from `logs/2026-03-20_235500_IntelligenceLayer_Private-Core-Mirror-Deployment.md`.
-3. **No Silent Actions**: Every file change requires a log entry.
-4. **Immutability**: Never edit or delete existing logs.
+# Deterministic Rules
+1. **Tier 1 is always on** — never disable the tokenless hooks.
+2. **Tier 2 is additive** — it supplements, never replaces, Tier 1.
+3. **Immutability** — never edit or delete existing logs.
+4. **No Silent Actions** — if Tier 1 misses something (e.g., Gemini session), write a Tier 2 log.
