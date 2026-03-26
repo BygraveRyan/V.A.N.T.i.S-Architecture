@@ -1,6 +1,6 @@
 # VANTIS AGENT SYSTEM
 
-Version: 1.7
+Version: 1.8
 
 ---
 
@@ -17,6 +17,20 @@ Each agent has:
 
 ---
 
+# 🗺️ V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
+- **ROOT**: Core Control Plane (`GEMINI.md`, `CLAUDE.md`, `AGENTS.md`, `README.md`).
+- **vault/**: The persistent repository containing:
+    - **00_SYSTEM**: Protocols, Signals, and Metadata Schema (READ ONLY).
+    - **01_INBOX**: Entry point for raw, unprocessed information.
+    - **02_KNOWLEDGE**: Human-curated Knowledge Graph (The Galaxy).
+    - **03_PROJECTS**: Active workstreams and business development labs.
+    - **04_PERSONAL**: Journals and Daily Reflections.
+    - **05_TASKS**: Action items and System Backlogs.
+    - **06_MACHINE**: AI Staging Area for Synthesis, Logs, and Session State.
+- **logs/**: Chronological audit trail of all agent turns.
+
+---
+
 # 🤝 CROSS-AGENT COLLABORATION
 
 VANTIS supports multi-agent orchestration between Gemini (Control Plane) and Claude (Execution Plane).
@@ -25,6 +39,34 @@ VANTIS supports multi-agent orchestration between Gemini (Control Plane) and Cla
 2. **Hand-offs**: State transitions between agents are managed via `vault/00_SYSTEM/SIGNAL_PROTOCOL.md`.
 3. **Concurrency**: Agents operating in parallel MUST use separate Git branches or worktrees to prevent collisions.
 4. **Unified Logging**: All agents, regardless of provider, MUST produce audit logs in `logs/YYYY-MM-DD/` following the VANTIS standard.
+
+---
+
+# 🏗️ PARALLEL AGENT CONFIG PATTERN
+
+V.A.N.T.i.S. uses a **Parallel Layers, Shared Vault** architecture. Each agent has its own native config layer that wires into the same shared vault. Agent configs are fully isolated — neither bleeds into the other.
+
+```
+SHARED (agent-agnostic)              AGENT-SPECIFIC (native wiring)
+────────────────────────             ──────────────────────────────
+vault/                               .gemini/          .claude/
+AGENTS.md                              hooks/            commands/
+CLAUDE.md                              commands/         settings.local.json
+GEMINI.md                              skills/  ◄─── both agents read here
+vault/00_SYSTEM/ (protocols)           settings.json
+vault/06_MACHINE/ (session state)
+logs/ (audit trail)
+```
+
+### Rules for Adding a New Agent
+When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
+1. Create a `.<agent>/` config directory at the repo root.
+2. Add an `<AGENT>.md` adapter file at the repo root (equivalent to `CLAUDE.md` / `GEMINI.md`).
+3. Wire the agent's native hook system to call `repo-map.sh` on session start.
+4. Wire a post-tool hook to trigger `audit-logger` skill on vault modifications.
+5. Create `.<agent>/commands/` with equivalents for all operational slash commands.
+6. Register the new agent in this file under a new agent section.
+7. Do NOT move or duplicate `.gemini/skills/` — skills are shared as-is.
 
 ---
 

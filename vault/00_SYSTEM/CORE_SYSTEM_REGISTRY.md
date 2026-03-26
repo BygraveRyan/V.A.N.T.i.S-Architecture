@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.7
+Version: 1.0.8
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -65,10 +65,27 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
+## 🖥️ TIER 5: CLAUDE LAYER
+*Claude Code native configuration and commands. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
+
+| File Path | Description | Versioning Logic |
+| :--- | :--- | :--- |
+| `.claude/settings.local.json` | Claude Code hooks and permissions | Patch |
+| `.claude/commands/resume.md` | Deterministic session resumption command | Patch |
+| `.claude/commands/daily.md` | Daily session review command | Patch |
+| `.claude/commands/eod.md` | End-of-day master audit command | Patch |
+| `.claude/commands/inbox.md` | Inbox audit and routing command | Patch |
+| `.claude/commands/gh/pr.md` | PR review command | Patch |
+| `.claude/commands/gh/issue.md` | Issue management command | Patch |
+| `.claude/commands/gh/pulse.md` | Pulse sync backup command | Patch |
+| `.claude/commands/gh/publish.md` | Portfolio mirror deploy command | Patch |
+
+---
+
 ## 🚫 EXCLUSIONS
 - All files in `vault/00_SYSTEM/Archive/` are frozen and will NOT be incremented.
 - `README.md` is excluded (Public Portfolio use only).
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-23*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-26*
