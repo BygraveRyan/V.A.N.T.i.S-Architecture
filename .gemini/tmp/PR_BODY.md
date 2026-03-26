@@ -6,20 +6,22 @@
 ## 📖 The Story
 
 ### WHY - What problem are we solving?
-The previous sync process was failing due to absolute path leaks (nesting local machine paths in the public repo) and Git history mismatches. I refactored `publish-mirror.sh` to: 1. Use a strict whitelist with relative `cp` operations to ensure a clean root structure. 2. Implement a "Snapshot Reset" logic that wipes the staging area before syncing, ensuring deletions in the core are reflected in the engine. 3. Added a safety validation step to detect and abort if absolute paths (e.g., `/Users/`) are detected in the staging area. 4. Forced the deployment branch to always base itself on the public `main` to guarantee common history for PR creation. 5. Integrated `jq` to pull high-signal storytelling metadata from the private PR.  
+<!-- Explain the friction or limitation in the current architecture. e.g., "V.A.N.T.i.S. lacks a personal context layer..." -->
 
 
 ### HOW - What did we actually change?
-See HOW section in logs/2026-03-22/2026-03-22_143000_IntelligenceLayer_Robust-Engine-Sync-Fix.md
+See HOW section in logs/2026-03-26/2026-03-26_120000_Claude_Claude-Architecture-Overhaul.md
 
 
 ### IMPACT - What is the result?
-Successfully executed the refactored script. The public repository (V.A.N.T.i.S-Architecture) has been cleaned of the nested folder mess. PR #8 has been created on the public repo with sanitized, high-signal documentation. 
+V.A.N.T.i.S. multi-agent architecture is now symmetric. Claude Code has full operational parity with Gemini CLI:  - **8 slash commands** available natively in Claude Code (`.claude/commands/`) - **Hooks wired** in `settings.local.json`: PostToolUse audit reflex + Stop handoff prompt - **Full permissions** allow-list covering all standard git/gh/node/bash operations - **AGENTS.md** now documents the Parallel Agent Config Pattern — any future agent (GPT, local model) has a clear onboarding blueprint - **CORE_SYSTEM_REGISTRY.md** updated with Tier 5 Claude Layer entries for ASV coverage - **Skills remain agent-agnostic** in `.gemini/skills/` — no duplication, no migration  ### Signals - ⚙️ **CAPABILITY CHANGE**: Claude Code now a fully operational primary agent for all V.A.N.T.i.S. workflows. - ✅ **SYSTEM HEALTH**: Agent config parity achieved; governance gaps closed. - 🧠 **KNOWLEDGE EVOLUTION**: Parallel Agent Config Pattern documented as an architectural standard in `AGENTS.md`. 
 
 
 ---
 
 ## 🛠️ Audit & Testing
-- [x] Related Audit Log / Task ID: logs/2026-03-22/2026-03-22_143000_IntelligenceLayer_Robust-Engine-Sync-Fix.md 
+
+### TRACEABILITY - Linked Logs
+- [x] Related Audit Log / Task ID: logs/2026-03-26/2026-03-26_120000_Claude_Claude-Architecture-Overhaul.md 
 - [ ] Tests / Validations Run:
 - [ ] Scope is small and atomic (One Idea = One PR).

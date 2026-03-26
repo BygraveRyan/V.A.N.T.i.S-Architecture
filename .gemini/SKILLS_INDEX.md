@@ -1,8 +1,8 @@
 # V.A.N.T.i.S. Skills Index
-Version: 1.0.3
+Version: 1.0.5
 
 Purpose
-This file provides a discoverable index of all Gemini skills available within the V.A.N.T.i.S. system.
+This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are **agent-agnostic** — defined as pure Markdown protocols readable and executable by any agent (Gemini CLI, Claude Code, or future agents). They are housed in `.gemini/skills/` for historical reasons but are not Gemini-exclusive.
 
 ---
 

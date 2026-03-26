@@ -10,6 +10,20 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ---
 
+# 🗺️ V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
+- **ROOT**: Core Control Plane (`GEMINI.md`, `CLAUDE.md`, `AGENTS.md`, `README.md`).
+- **vault/**: The persistent repository containing:
+    - **00_SYSTEM**: Protocols, Signals, and Metadata Schema (READ ONLY).
+    - **01_INBOX**: Entry point for raw, unprocessed information.
+    - **02_KNOWLEDGE**: Human-curated Knowledge Graph (The Galaxy).
+    - **03_PROJECTS**: Active workstreams and business development labs.
+    - **04_PERSONAL**: Journals and Daily Reflections.
+    - **05_TASKS**: Action items and System Backlogs.
+    - **06_MACHINE**: AI Staging Area for Synthesis, Logs, and Session State.
+- **logs/**: Chronological audit trail of all agent turns.
+
+---
+
 # 🔄 RESUMPTION PROTOCOL (The "Save Game")
 Before taking any action, you MUST:
 1.  **Read `vault/06_MACHINE/session_state/session-state_LATEST.md`**.
