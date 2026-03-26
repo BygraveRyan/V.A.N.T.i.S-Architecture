@@ -17,8 +17,8 @@ PUBLIC_REPO="https://github.com/BygraveRyan/V.A.N.T.i.S-Architecture.git"
 WHITELIST=(
   ".gemini/"
   ".github/"
-  "vault/00_SYSTEM/"
-  "vault/06_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
+  "03_SYSTEM/Protocols/"
+  "02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
   "CHANGELOG.md"
   "README.md"
   "BOOT_IMAGE.md"
@@ -37,7 +37,12 @@ git fetch origin
 
 # Identify current private branch
 PRIVATE_BRANCH=$(git -C "$SOURCE_DIR" branch --show-current)
-DEPLOY_BRANCH="$PRIVATE_BRANCH"
+# Never deploy directly to public main — use a named sync branch
+if [ "$PRIVATE_BRANCH" = "main" ]; then
+  DEPLOY_BRANCH="sync/main-$(date +%Y-%m-%d)"
+else
+  DEPLOY_BRANCH="$PRIVATE_BRANCH"
+fi
 
 # Create/Checkout the deployment branch (Always re-base on public main for clean PRs)
 echo "🌿 Preparing $DEPLOY_BRANCH based on public main..."
@@ -75,7 +80,7 @@ TITLE=$(echo "$PRIVATE_PR_JSON" | jq -r '.title // "feat(architecture): system-w
 BODY=$(echo "$PRIVATE_PR_JSON" | jq -r '.body // "Automated architectural synchronization from Private Core."')
 
 # Sanitize body
-PR_BODY_PUBLIC=$(echo "$BODY" | sed 's/vault\/04_PERSONAL/vault\/REDACTED_PERSONAL/g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
+PR_BODY_PUBLIC=$(echo "$BODY" | sed 's|vault/01_HUMAN|REDACTED_PERSONAL|g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
 PR_TITLE_PUBLIC="Engine Sync: $TITLE"
 
 # Commit and Deployment

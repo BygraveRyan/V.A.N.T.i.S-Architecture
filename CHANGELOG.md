@@ -10,7 +10,7 @@ Version: 1.2
 *   **Protocol-to-Skill Conversion:** Shed legacy markdown protocols (Logging, Inbox Processing, Memory Curation) and rebuilt them as active, lazy-loaded `.gemini/skills/`. This reduced cognitive noise and improved agentic execution speed.
 *   **Native GitHub Operations:** Deprecated the abstracted GitHub MCP server. Built the `github-ops` skill and native `/gh` commands (`/gh:pr`, `/gh:run`, `/gh:issue`) to execute repository governance directly via the `gh` CLI.
 *   **Hybrid-Public Architecture:** Finalized a `.gitignore` policy that separates the public "Engine" (skills, rules, README) from the private "Brain" (personal vault data), preparing the repo for portfolio display.
-*   **Workspace Purification:** Consolidated loose system templates (`GALAXY_NOTE_TEMPLATE.md`, `METADATA_SCHEMA.md`) into `vault/00_SYSTEM/` and established the `Idea Incubator` for isolating speculative project seeds.
+*   **Workspace Purification:** Consolidated loose system templates (`GALAXY_NOTE_TEMPLATE.md`, `METADATA_SCHEMA.md`) into `03_SYSTEM/Protocols/` and established the `Idea Incubator` for isolating speculative project seeds.
 
 ---
 
@@ -35,13 +35,13 @@ Version: 1.2
 *   **The 4-Step Loop:** Identified a critical "Logging Gap." Refactored `GEMINI.md` to mandate a strict execution lifecycle: **Plan -> Act -> Validate -> Log**, making logging the definition of "Done."
 *   **Command Hooking:** Developed two specialized slash commands: `/inbox:review` (for architectural routing) and `/daily` (for automated session review generation).
 *   **LinkedIn Operations Hub:** Established a Dataview-powered tracking dashboard to drive data-led content strategy.
-*   **Vault Boundary Enforcement:** Corrected an AI write-violation into the `04_PERSONAL` folder, redirecting all AI synthesis to `vault/06_MACHINE/` to protect human-only domains.
+*   **Vault Boundary Enforcement:** Corrected an AI write-violation into the `01_HUMAN/Personal` folder, redirecting all AI synthesis to `02_MACHINE/` to protect human-only domains.
 
 ---
 
 ## 📅 March 16, 2026 | Architectural Reconciliation
 **Core Theme:** Fixing early permission conflicts and establishing Layer 6.
-*   **Permission Hardening:** Updated `AGENT_PERMISSIONS.md` to explicitly revoke all AI write-access to the `02_KNOWLEDGE/Galaxy` folder, ensuring only humans can promote concepts.
+*   **Permission Hardening:** Updated `AGENT_PERMISSIONS.md` to explicitly revoke all AI write-access to the `01_HUMAN/Knowledge/Galaxy` folder, ensuring only humans can promote concepts.
 *   **Layer 6 Codification:** Formally established the Logging Layer by authoring `LOGGING_PROTOCOL.md`, ensuring all system actions are chronologically auditable.
 *   **System Map Synchronization:** Created missing `Resources` and `Security` directories to align the physical directory structure with the logical `VAULT_MAP.md`.
 
@@ -50,5 +50,5 @@ Version: 1.2
 ## 📅 March 15, 2026 | Initialization & Inbox Discipline
 **Core Theme:** Establishing the core pipeline for unstructured data.
 *   **The Inbox Pipeline:** Defined the strict `Inbox Processor` workflow (Capture -> Clarify -> Route -> Archive).
-*   **Knowledge Integrity:** Established the rule that AI-generated intelligence must be staged as "Concept Candidates" in `vault/06_MACHINE` rather than directly entering the Galaxy.
+*   **Knowledge Integrity:** Established the rule that AI-generated intelligence must be staged as "Concept Candidates" in `02_MACHINE` rather than directly entering the Galaxy.
 *   **First Processing Run:** Successfully routed raw notes into structured Project Summaries and proposed the first batch of AI-Native system candidates.
