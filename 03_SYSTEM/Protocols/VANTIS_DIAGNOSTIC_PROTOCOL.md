@@ -1,6 +1,6 @@
 You are operating inside the VANTIS cognitive system.
 
-Version: 1.1
+Version: 1.2
 
 Before performing any tasks, run a system understanding diagnostic.
 
@@ -97,7 +97,7 @@ List the most important system safety constraints.
 
 ---
 
-## 🛠️ AUTOMATED REMEDIATION (`--fix`)
+## [OPERATIONS] AUTOMATED REMEDIATION (`--fix`)
 When the diagnostic identifies a protocol violation, the Guardian role may execute the `--fix` flag to automate remediation.
 
 ### Remediation Workflow:

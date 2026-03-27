@@ -1,0 +1,113 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(node .gemini/hooks/*)",
+      "Bash(bash .gemini/hooks/*)",
+      "Bash(sh .gemini/hooks/*)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(cat *)",
+      "Bash(tree *)",
+      "Bash(grep *)",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(rm *)",
+      "Bash(chmod *)",
+      "Bash(jq *)",
+      "Bash(wc *)",
+      "Bash(date *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git worktree *)",
+      "Bash(gh pr *)",
+      "Bash(ln -sf session-state_2026-03-27.md session-state_LATEST.md)",
+      "Bash(ln:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/repo-map.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/precompact-snapshot.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh pre"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/suggest-compact.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh post"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/session-ledger.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $(git rev-parse --show-toplevel) && bash .gemini/hooks/compile-audit-log.sh"
+          },
+          {
+            "type": "command",
+            "command": "cd $(git rev-parse --show-toplevel) && node .gemini/hooks/cost-tracker.js"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+# ==========================================
+# V.A.N.T.i.S. ARCHITECTURE
+# ==========================================
+# This repository is 100% PRIVATE.
+# All vault/ directories and logs/ are tracked for cross-device sync.
+# The public portfolio is managed via /gh:publish to a separate mirror repo.
+
+# --- 1. TECHNICAL & OS GARBAGE ---
+.DS_Store
+.obsidian/workspace.json
+.obsidian/plugins/terminal/data.json
+.obsidian/appearance.json
+**/__pycache__/
+**/.venv/
+**/.pytest_cache/
+*.pyc
+
+# --- 2. EMBEDDED REPOS & RESEARCH ASSETS ---
+# Research clones that contain their own .git — must not be tracked as submodules
+02_MACHINE/Research/everything-claude-code/
+
+# --- 3. EPHEMERAL SESSION FILES ---
+.gemini/tmp/
+.obsidian/themes/
+
+# --- 4. AGENT CONFIG EXCEPTIONS ---
+# This is a 100% private repo. Agent config is part of the architecture and must be tracked.
+# These override the global gitignore which excludes .claude/ by default.
+!.claude/settings.local.json
+!.claude/commands/
+!.claude/commands/**
+
+# --- 5. SECURITY & SECRETS ---
+.env*
+*.key
+*.pem
+credentials.json
+secrets.yaml
+# NEVER commit the token file if you use the GitHub MCP or gh CLI.
+.gh_token*

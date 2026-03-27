@@ -1,11 +1,11 @@
 # V.A.N.T.i.S. SHARED OPERATIONAL RULES
 
-Version: 1.1
+Version: 1.2
 Applies To: All V.A.N.T.i.S. Agents (Gemini, Claude, GPT, Local)
 
 ---
 
-# 🔄 RESUMPTION & HANDOVER PROTOCOL (The "Save Game")
+# [RESUMPTION] RESUMPTION & HANDOVER PROTOCOL (The "Save Game")
 Before taking any action, you MUST:
 
 1.  **Read Session State**: 
@@ -20,7 +20,7 @@ Before terminating a session for handoff:
 
 ---
 
-# 🛡️ GLOBAL AGENT MANDATES
+# [GOVERNANCE] GLOBAL AGENT MANDATES
 **These rules apply to all agents at all times. Failure to comply constitutes a governance violation.**
 *Note: Update compact summaries in adapters (CLAUDE.md/GEMINI.md) when changing mandates.*
 
@@ -33,7 +33,7 @@ Before terminating a session for handoff:
 
 ---
 
-# ⚡ SKILL TRIGGER MATRIX
+# [TRIGGERS] SKILL TRIGGER MATRIX
 Agents MUST proactively invoke the `activate_skill` tool based on the following task intents:
 
 | Task Intent | Trigger Skill |
@@ -48,7 +48,7 @@ Agents MUST proactively invoke the `activate_skill` tool based on the following 
 
 ---
 
-# 🤝 UNIFIED INTEROPERABILITY
+# [COLLABORATION] UNIFIED INTEROPERABILITY
 V.A.N.T.i.S. is model-agnostic. To coordinate with peer agents:
 
 1.  **Shared Context**: All agents use the same directory structure and core protocols.
@@ -58,7 +58,7 @@ V.A.N.T.i.S. is model-agnostic. To coordinate with peer agents:
 
 ---
 
-# 🛠️ DEVELOPMENT LIFECYCLE (The 5-Step Loop)
+# [OPERATIONS] DEVELOPMENT LIFECYCLE (The 5-Step Loop)
 1. **PLAN**: Define the approach and the verification strategy.
 2. **ACT**: Apply targeted changes using available tools.
 3. **VALIDATE**: Run tests or manual checks to confirm success.

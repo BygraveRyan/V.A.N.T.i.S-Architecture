@@ -6,12 +6,12 @@ Applies To: All multi-role agent sessions
 
 ---
 
-## 🏛️ OVERVIEW
+## [OVERVIEW] OVERVIEW
 The Council Orchestration Protocol governs the interaction between specialized subagents (Universals) during complex tasks. It ensures architectural integrity through mandatory "Lead/Validator" pairings and role-specific gates.
 
 ---
 
-## 🤝 1. LEAD/VALIDATOR PAIRING
+## [COLLABORATION] 1. LEAD/VALIDATOR PAIRING
 For tasks requiring high architectural or security oversight, agents MUST operate in a pairing:
 
 | Task Complexity | Lead Role | Validator Role |
@@ -27,7 +27,7 @@ For tasks requiring high architectural or security oversight, agents MUST operat
 
 ---
 
-## 🛡️ 2. MANDATORY GATES (TRIGGER EVENTS)
+## [GOVERNANCE] 2. MANDATORY GATES (TRIGGER EVENTS)
 Certain actions trigger a mandatory role switch or review:
 
 ### A. Architectural Gate
@@ -44,7 +44,7 @@ Certain actions trigger a mandatory role switch or review:
 
 ---
 
-## 🧬 3. DYNAMIC ROLE POSTURES
+## [POSTURE] 3. DYNAMIC ROLE POSTURES
 When a role is activated (via `activate_skill` or subagent call), the agent MUST adopt the corresponding **Posture** and **Decision Patterns** defined in `03_SYSTEM/Protocols/Universals/<role>.md`.
 
 ### Activation Flow:
@@ -54,7 +54,7 @@ When a role is activated (via `activate_skill` or subagent call), the agent MUST
 
 ---
 
-## 🔄 4. ESCALATION PATHS
+## [RESUMPTION] 4. ESCALATION PATHS
 If a conflict arises between the Lead and Validator:
 1. **Consensus Search**: Attempt to align via an ADR (Architecture Decision Record).
 2. **Human-in-the-Loop (HITL)**: If no consensus, the agent MUST pause and ask the user for a tie-breaking decision.
