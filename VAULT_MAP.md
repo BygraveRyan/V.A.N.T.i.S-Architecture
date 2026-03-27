@@ -9,7 +9,8 @@ Version: 1.6
 
 | Task Intent | Read These Files | Skip |
 | :--- | :--- | :--- |
-| **Orientation / Resume** | `session-state_YYYY-MM-DD.md`, `AGENTS.md`, `SHARED_RULES.md` | Everything else |
+| **Orientation / Resume** | `session-state_YYYY-MM-DD.md`, `AGENTS.md` | Everything else |
+| **[INTENT] Note Creation** | `GALAXY_NOTE_TEMPLATE.md`, `SESSION_STATE_TEMPLATE.md` | Everything else |
 | **Inbox Processing** | `01_HUMAN/Inbox/*` (new files only), `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
 | **Knowledge / Galaxy Work** | `03_SYSTEM/Protocols/METADATA_SCHEMA.md`, `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Inbox, Projects |
 | **Project Work** | `01_HUMAN/Projects/<project>/` (targeted subfolder only) | Galaxy, Inbox |
