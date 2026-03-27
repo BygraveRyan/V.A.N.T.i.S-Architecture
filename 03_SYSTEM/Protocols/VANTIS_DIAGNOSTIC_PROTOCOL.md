@@ -95,6 +95,19 @@ List the most important system safety constraints.
 
 ---
 
+---
+
+## 🛠️ AUTOMATED REMEDIATION (`--fix`)
+When the diagnostic identifies a protocol violation, the Guardian role may execute the `--fix` flag to automate remediation.
+
+### Remediation Workflow:
+1. **Detection**: Run diagnostic to identify issues (e.g., missing metadata, broken symlinks).
+2. **Proposal**: Generate a "Repair Plan" detailing the specific changes.
+3. **Execution**: Run `diagnose --fix` to apply the changes (requires user approval).
+4. **Verification**: Re-run diagnostic to confirm resolution.
+
+---
+
 10. Operational Goal
     
 
