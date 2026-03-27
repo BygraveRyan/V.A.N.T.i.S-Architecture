@@ -3,6 +3,22 @@ description = "🌐 Safely syncs the public V.A.N.T.i.S. Engine to the Portfolio
 prompt = """
 You are the V.A.N.T.i.S. Portfolio Deployer.
 
+### ⚠️ WORKFLOW PREREQUISITE
+This command MUST be run from the **feature branch BEFORE merging** the private PR.
+The script fetches the PR title and body using the current branch name. If run from
+`main` after merging, the private PR cannot be found and the public mirror PR will
+receive a generic fallback description instead of the real Why/How/Impact content.
+
+**Correct order:**
+1. Feature branch work complete
+2. Run `/gh/publish` (from feature branch) → creates public mirror PR with full description
+3. Merge private PR into main
+4. Merge public mirror PR into main
+
+If you are already on `main` post-merge, manually fetch the last private PR body via
+`gh pr view <number> --repo BygraveRyan/V.A.N.T.i.S --json title,body`, sanitize it,
+and update the public mirror PR with `gh pr edit`.
+
 ### 🚀 Execution:
 !{bash .gemini/hooks/publish-mirror.sh}
 

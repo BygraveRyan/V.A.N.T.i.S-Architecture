@@ -1,5 +1,5 @@
 # V.A.N.T.i.S. Skills Index
-Version: 1.0.6
+Version: 1.0.7
 
 Purpose
 This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are **agent-agnostic** — defined as pure Markdown protocols readable and executable by any agent (Gemini CLI, Claude Code, or future agents). They are housed in `.gemini/skills/` for historical reasons but are not Gemini-exclusive.
@@ -37,6 +37,13 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Purpose:** Perform agentic "Similarity Scans" to identify cross-domain synergies.
 **Capabilities:** Mechanism extraction and conceptual relationship mapping.
 **Output Location:** `02_MACHINE/Synthesis/`
+
+---
+
+## context-budget (v1.0.0)
+**Location:** `.gemini/skills/context-budget.md`
+**Purpose:** Audit V.A.N.T.i.S. context window consumption and recommend optimizations.
+**Capabilities:** Component inventory, token estimation, and issue detection.
 
 ---
 

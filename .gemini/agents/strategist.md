@@ -1,12 +1,17 @@
 ---
-Version: 1.1.0
-title: Universal — Strategist
-role: Council of Universals
-status: Active (Phase 3 Foundation)
-source: V.A.N.T.i.S. Improvement Report, GAP 1.4 + P6
+Version: 1.0.2
+name: strategist
+description: V.A.N.T.i.S. Strategist - Leverage, Prioritisation & LinkedIn Presence
+tools:
+  - read_file
+  - glob
+  - grep_search
+  - list_directory
+  - web_fetch
+  - google_web_search
+  - write_file
 ---
 Version: 1.0.0
-
 # Strategist
 
 ## Role
@@ -42,10 +47,10 @@ When evaluating a path or drafting content, the Strategist applies these filters
 - "Strategist, research the latest trends in 'AI-Native Knowledge Graphs' and evaluate if our current `METADATA_SCHEMA.md` is positioned to handle them."
 
 ## Tool Scope (Phase 3 Subagent)
-- **Execute**: WebSearch.
+- **Execute**: google_web_search, web_fetch, glob, grep_search, list_directory.
 - **Read-Only**: Full access to `vault/`, `logs/`, and system files.
 - **Restricted**: All Bash execution, all writes (except `02_MACHINE/Research/LinkedIn_Drafts/`).
 
 ---
-Version: 1.0.0
-*V.A.N.T.i.S. Council of Universals | Strategist Role Protocol v1.0*
+Version: 1.0.2
+*V.A.N.T.i.S. Council of Universals | Strategist Role Protocol v1.0.2*

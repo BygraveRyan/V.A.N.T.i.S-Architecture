@@ -118,7 +118,7 @@ VANTIS maintains **two distinct memory systems**.
 Location
 
 ```
-01_HUMAN/Daily/
+04_PERSONAL/Daily/
 ```
 
 Purpose
@@ -164,13 +164,13 @@ logs/2026-03-14/interaction-001.md
 The Obsidian vault acts as the **long-term memory layer of the system**.
 
 ```
-03_SYSTEM/Protocols
-01_HUMAN/Inbox
-01_HUMAN/Knowledge
-01_HUMAN/Projects
-01_HUMAN/Personal
-01_HUMAN/Tasks
-02_MACHINE
+00_SYSTEM
+01_INBOX
+02_KNOWLEDGE
+03_PROJECTS
+04_PERSONAL
+05_TASKS
+06_MACHINE
 ```
 
 ---
@@ -180,7 +180,7 @@ The Obsidian vault acts as the **long-term memory layer of the system**.
 Location
 
 ```
-01_HUMAN/Knowledge/Galaxy
+02_KNOWLEDGE/Galaxy
 ```
 
 Rules
@@ -203,17 +203,17 @@ flowchart TD
 
 Input[New Information]
 
-Inbox[01_HUMAN/Inbox]
+Inbox[01_INBOX]
 
 Processor[Inbox Processor Agent]
 
-Knowledge[01_HUMAN/Knowledge]
+Knowledge[02_KNOWLEDGE]
 
-Projects[01_HUMAN/Projects]
+Projects[03_PROJECTS]
 
-Tasks[01_HUMAN/Tasks]
+Tasks[05_TASKS]
 
-Output[02_MACHINE]
+Output[06_MACHINE]
 
 Input --> Inbox
 Inbox --> Processor
@@ -331,13 +331,13 @@ VANTIS enforces strict separation between **human knowledge** and **AI generated
 Human knowledge
 
 ```
-01_HUMAN/Knowledge/Galaxy
+02_KNOWLEDGE/Galaxy
 ```
 
 AI output
 
 ```
-02_MACHINE
+06_MACHINE
 ```
 
 System logs

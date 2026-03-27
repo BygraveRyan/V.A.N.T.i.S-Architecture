@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.9
+Version: 1.0.12
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -31,6 +31,12 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `03_SYSTEM/Protocols/CONCEPT_NAMING_PROTOCOL.md` | Naming Standards | Major.Minor |
 | `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Graph Logic | Major.Minor |
 | `03_SYSTEM/Protocols/VANTIS_DIAGNOSTIC_PROTOCOL.md` | System Health Check | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` | Shared Operational Rules | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/architect.md` | Architect Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/strategist.md` | Strategist Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/researcher.md` | Researcher Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/guardian.md` | Guardian Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/aliases.sh` | Role Shell Aliases | Major.Minor |
 
 ---
 
@@ -80,6 +86,15 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `.claude/commands/gh/issue.md` | Issue management command | Patch |
 | `.claude/commands/gh/pulse.md` | Pulse sync backup command | Patch |
 | `.claude/commands/gh/publish.md` | Portfolio mirror deploy command | Patch |
+| `.claude/agents/architect.md` | Claude Architect Subagent | Patch |
+| `.claude/agents/strategist.md` | Claude Strategist Subagent | Patch |
+| `.claude/agents/researcher.md` | Claude Researcher Subagent | Patch |
+| `.claude/agents/guardian.md` | Claude Guardian Subagent | Patch |
+| `.gemini/agents/architect.md` | Gemini Architect Subagent | Patch |
+| `.gemini/agents/strategist.md` | Gemini Strategist Subagent | Patch |
+| `.gemini/agents/researcher.md` | Gemini Researcher Subagent | Patch |
+| `.gemini/agents/guardian.md` | Gemini Guardian Subagent | Patch |
+| `.gemini/settings.json` | Gemini CLI configuration | Patch |
 
 ---
 
@@ -89,4 +104,4 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-26*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-27*

@@ -15,6 +15,64 @@
           }
         ]
       }
+    ],
+    "BeforeTool": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "suggest-compact",
+            "type": "command",
+            "command": "bash .gemini/hooks/suggest-compact.sh",
+            "description": "Suggests manual compaction at logical intervals."
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "session-ledger",
+            "type": "command",
+            "command": "bash .gemini/hooks/session-ledger.sh",
+            "description": "Captures file modifications in real-time."
+          }
+        ]
+      }
+    ],
+    "PreCompress": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "pre-compress-snapshot",
+            "type": "command",
+            "command": "bash .gemini/hooks/precompact-snapshot.sh",
+            "description": "Captures the agent's context and working state before summarization."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "audit-log-compiler",
+            "type": "command",
+            "command": "bash .gemini/hooks/compile-audit-log.sh",
+            "description": "Compiles the session ledger into a structured audit log."
+          },
+          {
+            "name": "cost-tracker",
+            "type": "command",
+            "command": "node .gemini/hooks/cost-tracker.js",
+            "description": "Tracks session token usage and estimated cost."
+          }
+        ]
+      }
     ]
   }
 }

@@ -1,12 +1,16 @@
 ---
-Version: 1.1.0
-title: Universal — Guardian
-role: Council of Universals
-status: Active (Phase 3 Foundation)
-source: V.A.N.T.i.S. Improvement Report, GAP 1.4 + P6
+Version: 1.0.1
+name: guardian
+description: V.A.N.T.i.S. Guardian - Governance Compliance, Audit Trail & Mandate Enforcement
+tools:
+  - read_file
+  - glob
+  - grep_search
+  - list_directory
+  - write_file
+  - run_shell_command
 ---
 Version: 1.0.0
-
 # Guardian
 
 ## Role

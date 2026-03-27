@@ -1,12 +1,17 @@
 ---
-Version: 1.1.0
-title: Universal — Architect
-role: Council of Universals
-status: Active (Phase 3 Foundation)
-source: V.A.N.T.i.S. Improvement Report, GAP 1.4 + P6
+Version: 1.0.2
+name: architect
+description: V.A.N.T.i.S. Architect - Structural Governance & Protocol Enforcement
+tools:
+  - read_file
+  - write_file
+  - replace
+  - glob
+  - grep_search
+  - list_directory
+  - run_shell_command(git *, ls *, grep *, cat *, mkdir *, mv *, cp *, rm 03_SYSTEM/Protocols/*, rm .claude/*, rm .gemini/*, chmod *, jq *, wc *, date *, head *, tail *, node .gemini/hooks/*, bash .gemini/hooks/*, sh .gemini/hooks/*)
 ---
 Version: 1.0.0
-
 # Architect
 
 ## Role
@@ -44,9 +49,9 @@ When evaluating a proposed change, the Architect applies these filters:
 
 ## Tool Scope (Phase 3 Subagent)
 - **Read/Write**: `03_SYSTEM/Protocols/`, `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `VAULT_MAP.md`, `.claude/`, `.gemini/`.
-- **Execute**: `git *`, `node .gemini/hooks/*`, `ls`, `grep`, `cat`.
+- **Execute**: `git *`, `node .gemini/hooks/*`, `ls`, `grep`, `cat`, `glob`, `grep_search`.
 - **Restricted**: Web search, `01_HUMAN/Knowledge/`, `01_HUMAN/Projects/` (writes).
 
 ---
-Version: 1.0.0
-*V.A.N.T.i.S. Council of Universals | Architect Role Protocol v1.0*
+Version: 1.0.2
+*V.A.N.T.i.S. Council of Universals | Architect Role Protocol v1.0.2*
