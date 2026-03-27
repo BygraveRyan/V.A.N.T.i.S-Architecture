@@ -70,6 +70,34 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 
 ---
 
+# 🧩 SKILLS VS SUBAGENTS
+> **Source:** V.A.N.T.i.S. Improvement Report, GAP 1.4. These are distinct constructs — conflating them is a Phase 3 design error.
+
+## Skills
+- **What:** Prompt-level behavioural instructions written as agent-agnostic Markdown.
+- **Location:** `.gemini/skills/` — readable by both Claude and Gemini.
+- **Use for:** Reusable task patterns (e.g., `audit-logger`, `inbox-processor`, `github-ops`).
+- **Scope:** No native tool permissions — the agent invoking the skill inherits the session's tool set.
+
+## Subagents
+- **What:** Claude-native workers with explicitly scoped tool permissions, spawnable as independent processes.
+- **Location:** `.claude/agents/` — Claude Code only.
+- **Use for:** Phase 3 Council of Universals roles that require strict capability isolation.
+- **Scope:** Each subagent defines its own `allowedTools` — cannot access tools outside its scope.
+
+## Phase 3 Council — Planned Subagent Tool Scopes
+
+| Council Role | Tool Scope | Restricted From |
+| :--- | :--- | :--- |
+| **Architect** | Read/Write system files, Edit, Bash(git *) | Web search, Galaxy writes |
+| **Strategist** | Read-only + WebSearch | Vault writes, Bash execution |
+| **Researcher** | WebSearch + Galaxy Read | Execution, system file writes |
+| **Guardian** | Audit log read, hook inspection | All writes outside `logs/` |
+
+> Implementation path: `.claude/agents/<role>.md` per role. See `03_SYSTEM/Protocols/Universals/` for role context files (Phase 3 scaffold).
+
+---
+
 # 🛡️ GLOBAL AGENT MANDATES
 **These rules apply to all agents at all times. Failure to comply constitutes a governance violation.**
 

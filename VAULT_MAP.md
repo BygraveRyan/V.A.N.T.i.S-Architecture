@@ -1,6 +1,23 @@
 # VANTIS VAULT MAP
 
-Version: 1.4
+Version: 1.5
+
+---
+
+# ROUTING TABLE
+> **Agent Directive:** Use this table FIRST. Read ONLY the files listed for your task intent. Do not explore broadly.
+
+| Task Intent | Read These Files | Skip |
+| :--- | :--- | :--- |
+| **Orientation / Resume** | `session-state_YYYY-MM-DD.md`, `AGENTS.md` | Everything else |
+| **Inbox Processing** | `01_HUMAN/Inbox/*` (new files only), `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
+| **Knowledge / Galaxy Work** | `03_SYSTEM/Protocols/METADATA_SCHEMA.md`, `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Inbox, Projects |
+| **Project Work** | `01_HUMAN/Projects/<project>/` (targeted subfolder only) | Galaxy, Inbox |
+| **Protocol Modification** | `03_SYSTEM/Protocols/<file>.md`, `AGENTS.md` — run ASV reflex first | Everything else |
+| **LinkedIn / Content** | `02_MACHINE/Drafts/`, `01_HUMAN/Projects/` (relevant project) | Galaxy, Inbox |
+| **Git / Publish / PR** | `AGENTS.md` (§ GitHub Ops) | Protocols, Galaxy |
+| **EOD / Daily Audit** | `02_MACHINE/State/session-state_YYYY-MM-DD.md`, `logs/YYYY-MM-DD/*.md` | Galaxy, Projects |
+| **Architecture Change** | `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `VAULT_MAP.md` | Galaxy, Inbox |
 
 ---
 
