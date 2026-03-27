@@ -1,12 +1,12 @@
 # VANTIS SIGNAL PROTOCOL
 
-Version: 1.4
+Version: 1.5
 Layer: System
 Status: Active
 
 --- 
 
-## 🎯 PURPOSE
+## [OBJECTIVE] PURPOSE
 To enable high-fidelity coordination between multiple AI agents (Gemini, Claude, etc.) and to define how VANTIS interprets system activity and identifies high-value events.
 
 Signals sit between:
@@ -14,7 +14,7 @@ Signals sit between:
 
 ---
 
-## 🤝 CROSS-AGENT SIGNALS (Tactical)
+## [COLLABORATION] CROSS-AGENT SIGNALS (Tactical)
 These signals manage state transitions and hand-offs between active agents.
 
 | Signal | Priority | Description |
@@ -31,34 +31,34 @@ These signals manage state transitions and hand-offs between active agents.
 
 ---
 
-## 📡 SYSTEM SIGNALS (Strategic)
+## [INTERFACE] SYSTEM SIGNALS (Strategic)
 These signals identify high-value events for system-level monitoring and summaries.
 
-### 🔴 SYSTEM RISK
+### [RISK] SYSTEM RISK
 Represents threats to system integrity (e.g., logging failures, rule violations, boundary breaches).
 
-### 🧠 KNOWLEDGE EVOLUTION
+### [INTELLIGENCE] KNOWLEDGE EVOLUTION
 Represents changes to the Galaxy (e.g., concept promotion, refactoring, new links).
 
-### ⚙️ CAPABILITY CHANGE
+### [CAPABILITY] CAPABILITY CHANGE
 Represents system expansion (e.g., new skills, agent updates, automation).
 
-### 🌌 KNOWLEDGE VELOCITY
+### [VELOCITY] KNOWLEDGE VELOCITY
 Represents the growth and health of the knowledge graph.
 - **Knowledge Gap Detected**: Working on a project without a corresponding Galaxy concept.
 - **Candidate Stagnation**: High-value candidates in `02_MACHINE` awaiting review for >48h.
 - **Cross-Pollination**: Detecting semantic links between active projects and Galaxy nodes.
 - **Redundancy Alert**: Identification of "Too Similar" concepts during extraction.
 
-### ✅ SYSTEM HEALTH
+### [STATUS] SYSTEM HEALTH
 Represents stability and hygiene (e.g., inbox = 0, clean vault structure).
 
-### 📈 STRATEGIC OPPORTUNITY
+### [OPPORTUNITY] STRATEGIC OPPORTUNITY
 Represents leverage points (e.g., recurring ideas, LinkedIn opportunities).
 
 ---
 
-## 📋 SIGNAL CRITERIA
+## [MANDATES] SIGNAL CRITERIA
 For an event to qualify as a signal, it must:
 - Impact system behavior.
 - Affect knowledge quality.
@@ -67,10 +67,10 @@ For an event to qualify as a signal, it must:
 
 ---
 
-## 🛠️ USAGE
+## [OPERATIONS] USAGE
 Signals are extracted from logs and surfaced in `/daily` summaries to guide decisions.
 
 ---
 
-## 📜 FINAL PRINCIPLE
+## [LOGS] FINAL PRINCIPLE
 Not everything that happens matters. Signals define what matters.

@@ -1,0 +1,54 @@
+{
+  "commands": [
+    {
+      "directory": ".codex/commands"
+    }
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/repo-map.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh post"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/session-ledger.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $(git rev-parse --show-toplevel) && bash .gemini/hooks/compile-audit-log.sh"
+          },
+          {
+            "type": "command",
+            "command": "cd $(git rev-parse --show-toplevel) && node .gemini/hooks/cost-tracker.js"
+          }
+        ]
+      }
+    ]
+  }
+}

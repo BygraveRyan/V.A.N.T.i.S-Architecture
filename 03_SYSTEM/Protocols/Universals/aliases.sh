@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# V.A.N.T.i.S. Council of Universals — Shell Aliases (v1.2.0)
+# V.A.N.T.i.S. Council of Universals — Shell Aliases (v1.2.1)
 #
 # Optimized for Phase 5 Cognitive Orchestration.
 # Injects role-specific postures and Lead/Validator rules at activation.
@@ -32,5 +32,5 @@ alias claude-guardian="claude --system-prompt \"$SHARED_COUNCIL_CONTEXT $GUARDIA
 # Gemini CLI uses native subagent discovery from .gemini/agents/*.md.
 # These files already contain the full posture definitions.
 
-echo "✅ V.A.N.T.i.S. Phase 5 Council aliases loaded (Optimized)."
+echo "[STATUS] V.A.N.T.i.S. Phase 5 Council aliases loaded (Optimized)."
 echo "   Available: claude-architect, claude-strategist, claude-researcher, claude-guardian"

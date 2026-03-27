@@ -1,11 +1,11 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.12
+Version: 1.0.14
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
 ---
 
-## 🛠️ TIER 1: THE ENGINE
+## [OPERATIONS] TIER 1: THE ENGINE
 *High-level identity and operational protocols. Increments Major.Minor (e.g., 1.1 -> 1.2).*
 
 | File Path | Description | Versioning Logic |
@@ -20,7 +20,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
-## 📜 TIER 2: PROTOCOLS
+## [LOGS] TIER 2: PROTOCOLS
 *Standard specifications for data and knowledge flow. Increments Major.Minor (e.g., 1.0 -> 1.1).*
 
 | File Path | Description | Versioning Logic |
@@ -36,11 +36,17 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `03_SYSTEM/Protocols/Universals/strategist.md` | Strategist Role | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/researcher.md` | Researcher Role | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/guardian.md` | Guardian Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/Knowledge_Architect.md` | Knowledge Architect Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/Memory_Curator.md` | Memory Curator Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/Inbox_Processor.md` | Inbox Processor Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/Security_Architect.md` | Security Architect Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/Research_Analyst.md` | Research Analyst Role | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Roles/LinkedIn_Strategist.md` | LinkedIn Strategist Role | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/aliases.sh` | Role Shell Aliases | Major.Minor |
 
 ---
 
-## 📐 TIER 3: LOGIC & UI
+## [STRUCTURE] TIER 3: LOGIC & UI
 *Templates, dashboards, and automated scaffolding. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
 
 | File Path | Description | Versioning Logic |
@@ -55,7 +61,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
-## ⚡ TIER 4: SKILLS
+## [TRIGGERS] TIER 4: SKILLS
 *Modular system capabilities. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
 
 | File Path | Description | Versioning Logic |
@@ -72,7 +78,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
-## 🖥️ TIER 5: CLAUDE LAYER
+## [INTERFACE] TIER 5: CLAUDE LAYER
 *Claude Code native configuration and commands. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
 
 | File Path | Description | Versioning Logic |
@@ -98,7 +104,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
-## 🚫 EXCLUSIONS
+## [GOVERNANCE] EXCLUSIONS
 - All files in `03_SYSTEM/Protocols/Archive/` are frozen and will NOT be incremented.
 - `README.md` is excluded (Public Portfolio use only).
 - All non-markdown files.
