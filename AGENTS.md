@@ -64,22 +64,34 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 - **Use for:** Reusable task patterns (e.g., `audit-logger`, `inbox-processor`, `github-ops`).
 - **Scope:** No native tool permissions — the agent invoking the skill inherits the session's tool set.
 
-## Subagents
+## Subagents (The Council of Universals)
 - **What:** Claude-native workers with explicitly scoped tool permissions, spawnable as independent processes.
 - **Location:** `.claude/agents/` — Claude Code only.
-- **Use for:** Phase 3 Council of Universals roles that require strict capability isolation.
-- **Scope:** Each subagent defines its own `allowedTools` — cannot access tools outside its scope.
+- **Use for:** Phase 3/5 Council roles that require strict capability isolation and peer-review loops.
+- **Orchestration**: All multi-role sessions are governed by `03_SYSTEM/Protocols/Council_Orchestration_Protocol.md`.
 
-## Phase 3 Council — Planned Subagent Tool Scopes
+### Council Role & Tool Scopes (v1.2.0)
 
-| Council Role | Tool Scope | Restricted From |
+| Council Role | Primary Tool Scope | Restricted From |
 | :--- | :--- | :--- |
-| **Architect** | Read/Write system files, Edit, Bash(git *) | Web search, Galaxy writes |
-| **Strategist** | Read-only + WebSearch | Vault writes, Bash execution |
-| **Researcher** | WebSearch + Galaxy Read | Execution, system file writes |
-| **Guardian** | Audit log read, hook inspection | All writes outside `logs/` |
+| **Architect** | Read/Write system files, Edit, Bash(git *), Glob, Grep | Web search, Galaxy writes |
+| **Strategist** | Read-only protocols, WebSearch, Glob, Grep | Vault writes, Bash execution |
+| **Researcher** | WebSearch, Galaxy Read, Glob, Grep | Execution, system file writes |
+| **Guardian** | Audit log read, hook inspection, Bash(ls), Glob, Grep | All writes outside `logs/` |
 
-> Implementation path: `.claude/agents/<role>.md` per role. See `03_SYSTEM/Protocols/Universals/` for role context files (Phase 3 scaffold).
+---
+
+# 🏛️ COUNCIL ORCHESTRATION (Lead/Validator)
+> **Canonical source:** `03_SYSTEM/Protocols/Council_Orchestration_Protocol.md`
+
+To ensure architectural integrity, complex tasks require a **Lead/Validator** pairing:
+
+| Task Type | Lead Role | Validator Role |
+| :--- | :--- | :--- |
+| **Architecture / Protocols** | Architect | Strategist |
+| **Feature Implementation** | Strategist | Architect |
+| **Research & Synthesis** | Researcher | Strategist |
+| **Security / Ops** | Lead Agent | Guardian |
 
 ---
 
