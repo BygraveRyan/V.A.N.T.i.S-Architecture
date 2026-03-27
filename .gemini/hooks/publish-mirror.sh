@@ -37,7 +37,12 @@ git fetch origin
 
 # Identify current private branch
 PRIVATE_BRANCH=$(git -C "$SOURCE_DIR" branch --show-current)
-DEPLOY_BRANCH="$PRIVATE_BRANCH"
+# Never deploy directly to public main — use a named sync branch
+if [ "$PRIVATE_BRANCH" = "main" ]; then
+  DEPLOY_BRANCH="sync/main-$(date +%Y-%m-%d)"
+else
+  DEPLOY_BRANCH="$PRIVATE_BRANCH"
+fi
 
 # Create/Checkout the deployment branch (Always re-base on public main for clean PRs)
 echo "🌿 Preparing $DEPLOY_BRANCH based on public main..."
@@ -61,6 +66,11 @@ for ITEM in "${WHITELIST[@]}"; do
   fi
 done
 
+# Remove junk files that should never reach the public mirror
+find . -name ".DS_Store" -delete
+find . -path "./.gemini/tmp" -prune -o -type f -print | grep -q "." || true
+rm -rf .gemini/tmp
+
 # Validation: Check for absolute path leak
 if find . -path "*/Users/*" | grep -q "."; then
     echo "❌ ERROR: Absolute path leak detected in staging area! Deployment aborted."
@@ -75,7 +85,7 @@ TITLE=$(echo "$PRIVATE_PR_JSON" | jq -r '.title // "feat(architecture): system-w
 BODY=$(echo "$PRIVATE_PR_JSON" | jq -r '.body // "Automated architectural synchronization from Private Core."')
 
 # Sanitize body
-PR_BODY_PUBLIC=$(echo "$BODY" | sed 's/vault\/01_HUMAN/Personal/vault\/REDACTED_PERSONAL/g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
+PR_BODY_PUBLIC=$(echo "$BODY" | sed 's|vault/01_HUMAN|REDACTED_PERSONAL|g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
 PR_TITLE_PUBLIC="Engine Sync: $TITLE"
 
 # Commit and Deployment
@@ -95,6 +105,7 @@ if gh pr view "$DEPLOY_BRANCH" --repo "$PUBLIC_REPO" >/dev/null 2>&1; then
     gh pr edit "$DEPLOY_BRANCH" --repo "$PUBLIC_REPO" \
       --title "$PR_TITLE_PUBLIC" \
       --body "$PR_BODY_PUBLIC"
+    gh pr view "$DEPLOY_BRANCH" --repo "$PUBLIC_REPO" --json url -q '.url'
 else
     echo "🆕 Creating new PR..."
     gh pr create --repo "$PUBLIC_REPO" \

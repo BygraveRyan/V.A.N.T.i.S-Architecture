@@ -71,6 +71,9 @@ Ensure the following sections are filled with high-signal content:
 2. Save the Session State to:
 `02_MACHINE/State/session-state_$(date +%Y-%m-%d).md`
 
+3. Update the LATEST symlink so Gemini orients in one read next session:
+`cd 02_MACHINE/State && ln -sf session-state_$(date +%Y-%m-%d).md session-state_LATEST.md`
+
 ---
 
 ## CONSTRAINTS

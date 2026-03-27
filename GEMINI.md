@@ -10,9 +10,23 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ---
 
+# 🗺️ V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
+- **ROOT**: Core Control Plane (`GEMINI.md`, `CLAUDE.md`, `AGENTS.md`, `README.md`).
+- **01_HUMAN/**: Human-curated content:
+    - **Knowledge/**: Knowledge Graph (The Galaxy).
+    - **Projects/**: Active workstreams and business development labs.
+    - **Personal/**: Journals and Daily Reflections.
+    - **Tasks/**: Action items and System Backlogs.
+    - **Inbox/**: Entry point for raw, unprocessed information.
+- **02_MACHINE/**: AI Staging Area for Synthesis, Logs, and Session State.
+- **03_SYSTEM/Protocols/**: Protocols, Signals, and Metadata Schema (READ ONLY).
+- **logs/**: Chronological audit trail of all agent turns.
+
+---
+
 # 🔄 RESUMPTION PROTOCOL (The "Save Game")
 Before taking any action, you MUST:
-1.  **Read `02_MACHINE/State/session-state_LATEST.md`**.
+1.  **Read `02_MACHINE/State/session-state_LATEST.md`** (symlink to the most recent dated file — format is `session-state_YYYY-MM-DD.md`). If the symlink is missing, sort the directory by filename descending and read the top result.
 2.  Identify the **Active Objective** and **Next Steps**.
 3.  Check for **SIGNAL** markers (e.g., `WAIT`, `SYNC`) in `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md`.
 
@@ -45,6 +59,22 @@ Agents MUST proactively invoke the `activate_skill` tool based on the following 
 - **Intent**: Identify cross-domain synergies or map conceptual precedents for a new project -> **Trigger**: `concept-mapper`
 - **Intent**: Execute Git Branching, Commits, or PRs -> **Trigger**: `github-ops`
 - **Intent**: Finalize a turn involving file modifications -> **Trigger**: `audit-logger`
+
+---
+
+# 🤖 MODEL SELECTION GUIDE
+> Route tasks to the minimum viable model to preserve quota and reduce latency. **Source:** V.A.N.T.i.S. Improvement Report, ENH 2.3.
+
+| Task Type | Recommended Model | Why |
+| :--- | :--- | :--- |
+| Search, lookups, quick questions | Claude Haiku | Fast, cheap, sufficient for retrieval |
+| Single-file edits, simple fixes | Claude Haiku | No deep reasoning required |
+| Multi-file implementation | Claude Sonnet | Best balance for coding tasks |
+| PR review, debugging | Claude Sonnet | Context + nuance without Opus cost |
+| Architecture or security review | Claude Opus | Deep reasoning required |
+| Complex cross-system debugging | Claude Opus | Needs full system model |
+| Broad vault research, long sessions | Gemini 2.5 Pro | 1M token window; generous free tier |
+| Phase 3 Council orchestration | Claude Opus | Highest-stakes, multi-role decisions |
 
 ---
 
