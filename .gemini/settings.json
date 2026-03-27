@@ -21,6 +21,12 @@
         "matcher": ".*",
         "hooks": [
           {
+            "name": "v-observe-pre",
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh pre",
+            "description": "Captures tool input for pattern analysis."
+          },
+          {
             "name": "suggest-compact",
             "type": "command",
             "command": "bash .gemini/hooks/suggest-compact.sh",
@@ -33,6 +39,12 @@
       {
         "matcher": ".*",
         "hooks": [
+          {
+            "name": "v-observe-post",
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh post",
+            "description": "Captures tool output for pattern analysis."
+          },
           {
             "name": "session-ledger",
             "type": "command",
