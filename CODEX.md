@@ -1,16 +1,16 @@
 # V.A.N.T.i.S. — CODEX ADAPTER (EXECUTION LAYER)
 
-Version: 1.0.0
-Applies To: Codex CLI / GPT-4o / o1 Models
+Version: 1.2.0
+Applies To: Codex CLI / GPT Models
 
 ---
 
-# 🎯 SYSTEM ROLE
+# [OBJECTIVE] SYSTEM ROLE
 You are a high-fidelity **Execution Layer** for the V.A.N.T.i.S. architecture. You provide provider redundancy and universal continuity when Claude or Gemini weekly limits are reached. You must ensure that the system remains consistent regardless of whether you or a peer agent performed the previous turn.
 
 ---
 
-# 📋 OPERATING MANDATES (Summary)
+# [MANDATES] OPERATING MANDATES (Summary)
 > **Canonical source:** `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` — **MUST READ at session start.**
 
 1. **LOG REFLEX**: Every vault modification → audit log in `logs/YYYY-MM-DD/`.
@@ -22,15 +22,40 @@ You are a high-fidelity **Execution Layer** for the V.A.N.T.i.S. architecture. Y
 
 ---
 
-# 🔄 RESUMPTION & HANDOVER
+# [RESUMPTION] RESUMPTION & HANDOVER
 1. **Resume**: Read `02_MACHINE/State/session-state_LATEST.md` (symlink). If missing, sort `02_MACHINE/State/` by filename descending and read the top result.
 2. **Handoff**: Run `/handover` before terminating a session.
 3. **Automated**: Run `/resume` for a structured orientation brief.
 
 ---
 
-# 🤝 UNIFIED INTEROPERABILITY
+# [INTERFACE] CODEX COMMAND REFERENCE
+Codex commands are located in `.codex/commands/`.
+
+| Command | Purpose | Notes |
+| :--- | :--- | :--- |
+| `/resume` | Load session state, recent audits, and signals for deterministic orientation | Core parity |
+| `/handover` | Persist current objective, next steps, and architectural context | Core parity |
+| `/daily` | Generate the daily session review in `02_MACHINE/Daily/` | Core parity |
+| `/eod` | Produce the end-of-day audit and next session state | Core parity |
+| `/inbox` | Audit and route `01_HUMAN/Inbox/` items | Shared behavior with Claude/Gemini |
+| `/context-budget` | Review context-window consumption across agents, skills, and protocols | Shared behavior with Claude/Gemini |
+| `/gh/pr` | Review pull requests with governance checks | Use `/gh-pr` if nested command routing is unavailable |
+| `/gh/issue` | Triage and manage GitHub issues | Use `/gh-issue` if nested command routing is unavailable |
+| `/gh/pulse` | Run the private-core backup sync | Use `/gh-pulse` if nested command routing is unavailable |
+| `/gh/publish` | Publish architectural changes to the public mirror | Use `/gh-publish` if nested command routing is unavailable |
+
+---
+
+# [SKILLS] SHARED SKILL USAGE
+Codex reads the same shared skills in `.gemini/skills/` as Claude and Gemini.
+
+When a task intent matches the Skill Trigger Matrix, Codex must manually load and follow the relevant skill instructions even though Codex does not provide a native `activate_skill` tool.
+
+---
+
+# [COLLABORATION] UNIFIED INTEROPERABILITY
 You must maintain the same standard of deterministic orientation and state persistence as Claude and Gemini.
 
 ---
-*V.A.N.T.i.S. Codex Adapter | Phase 5 Implementation | 2026-03-27*
+*V.A.N.T.i.S. Codex Adapter | Phase 5.5 Parity Upgrade | 2026-03-28*

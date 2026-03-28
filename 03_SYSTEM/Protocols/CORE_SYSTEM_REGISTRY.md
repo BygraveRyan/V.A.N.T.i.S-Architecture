@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.14
+Version: 1.0.16
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -12,6 +12,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | :--- | :--- | :--- |
 | `GEMINI.md` | Intelligence Layer Core | Major.Minor |
 | `CLAUDE.md` | Claude Layer Core | Major.Minor |
+| `CODEX.md` | Codex Layer Core | Major.Minor |
 | `RULES.md` | System Guardrails | Major.Minor |
 | `AGENTS.md` | Agent Definitions | Major.Minor |
 | `VAULT_MAP.md` | Directory Architecture | Major.Minor |
@@ -81,8 +82,8 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 
 ---
 
-## [INTERFACE] TIER 5: CLAUDE LAYER
-*Claude Code native configuration and commands. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
+## [INTERFACE] TIER 5: AGENT LAYERS
+*Agent-native configuration and commands. Increments Patch (e.g., 1.0.0 -> 1.0.1).*
 
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
@@ -99,6 +100,21 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `.claude/agents/strategist.md` | Claude Strategist Subagent | Patch |
 | `.claude/agents/researcher.md` | Claude Researcher Subagent | Patch |
 | `.claude/agents/guardian.md` | Claude Guardian Subagent | Patch |
+| `.codex/settings.json` | Codex CLI hooks and command configuration | Patch |
+| `.codex/commands/resume.md` | Codex deterministic session resumption command | Patch |
+| `.codex/commands/handover.md` | Codex handover command | Patch |
+| `.codex/commands/daily.md` | Codex daily session review command | Patch |
+| `.codex/commands/eod.md` | Codex end-of-day master audit command | Patch |
+| `.codex/commands/inbox.md` | Codex inbox audit and routing command | Patch |
+| `.codex/commands/context-budget.md` | Codex context budget audit command | Patch |
+| `.codex/commands/gh-pr.md` | Codex PR review alias command | Patch |
+| `.codex/commands/gh-issue.md` | Codex issue management alias command | Patch |
+| `.codex/commands/gh-pulse.md` | Codex pulse sync alias command | Patch |
+| `.codex/commands/gh-publish.md` | Codex portfolio mirror alias command | Patch |
+| `.codex/commands/gh/pr.md` | Codex PR review nested command | Patch |
+| `.codex/commands/gh/issue.md` | Codex issue management nested command | Patch |
+| `.codex/commands/gh/pulse.md` | Codex pulse sync nested command | Patch |
+| `.codex/commands/gh/publish.md` | Codex portfolio mirror nested command | Patch |
 | `.gemini/agents/architect.md` | Gemini Architect Subagent | Patch |
 | `.gemini/agents/strategist.md` | Gemini Strategist Subagent | Patch |
 | `.gemini/agents/researcher.md` | Gemini Researcher Subagent | Patch |
@@ -113,4 +129,4 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-27*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-28*

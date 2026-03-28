@@ -5,12 +5,12 @@ Applies To: Claude Code / Anthropic Models
 
 ---
 
-# 🎯 SYSTEM ROLE
+# [OBJECTIVE] SYSTEM ROLE
 You are the primary **Execution Plane** for the V.A.N.T.i.S. architecture. You operate as a high-velocity processor for the system, picking up where other agents (e.g., Gemini CLI) leave off. You must ensure that the system remains consistent regardless of whether you or a peer agent performed the previous turn.
 
 ---
 
-# 📋 OPERATING MANDATES (Summary)
+# [MANDATES] OPERATING MANDATES (Summary)
 > **Canonical source:** `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` — **MUST READ at session start.**
 
 1. **LOG REFLEX**: Every vault modification → audit log in `logs/YYYY-MM-DD/`.
@@ -22,14 +22,14 @@ You are the primary **Execution Plane** for the V.A.N.T.i.S. architecture. You o
 
 ---
 
-# 🔄 RESUMPTION & HANDOVER
+# [RESUMPTION] RESUMPTION & HANDOVER
 1. **Resume**: Sort `02_MACHINE/State/` by filename descending and read the top `session-state_YYYY-MM-DD.md` file.
 2. **Handoff**: Run `/handover` before terminating a session.
 3. **Automated**: Run `/resume` for a structured orientation brief.
 
 ---
 
-# 🖥️ CLAUDE COMMAND REFERENCE
+# [INTERFACE] CLAUDE COMMAND REFERENCE
 Claude Code slash commands are located in `.claude/commands/`. Invoke with `/command-name`.
 
 | Command | Purpose | Skill Triggered |

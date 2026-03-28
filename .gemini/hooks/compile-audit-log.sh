@@ -2,7 +2,7 @@
 # V.A.N.T.i.S. Audit Log Compiler
 # Stop command hook — compiles the session ledger into a structured audit log, zero model tokens.
 #
-# Triggered by: Claude Code Stop hook (end of every session)
+# Triggered by: agent Stop hook (end of every session)
 # Reads:  .gemini/tmp/session-ledger.jsonl
 # Writes: logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_AutoLog_Session-Audit.md
 # Clears: .gemini/tmp/session-ledger.jsonl on success
@@ -32,12 +32,18 @@ if command -v jq >/dev/null 2>&1; then
   LAST_TS=$(tail -1 "$LEDGER" | jq -r '.timestamp')
   ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
   FILE_COUNT=$(jq -r '.file' "$LEDGER" | sort -u | wc -l | tr -d ' ')
+  AGENT_NAME=$(jq -r '.agent // empty' "$LEDGER" | grep -v '^$' | head -1)
 else
   FILES_MODIFIED=$(grep -o '"file":"[^"]*"' "$LEDGER" | sed 's/"file":"//;s/"//' | sort -u)
   FIRST_TS=$(head -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
   LAST_TS=$(tail -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
   ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
   FILE_COUNT=$(echo "$FILES_MODIFIED" | grep -c .)
+  AGENT_NAME=$(grep -o '"agent":"[^"]*"' "$LEDGER" | head -1 | sed 's/"agent":"//;s/"//')
+fi
+
+if [ -z "$AGENT_NAME" ]; then
+  AGENT_NAME="Unknown Agent"
 fi
 
 FILES_LIST=$(echo "$FILES_MODIFIED" | sed 's/^/- /')
@@ -53,7 +59,7 @@ LAST_COMMIT=$(git log -1 --pretty=format:"%h — %s" 2>/dev/null || echo "No com
 # --- Write the log ---
 cat > "$LOG_FILE" <<EOF
 # Auto-Audit Log: Session $DATE
-Agent: Claude (Execution Plane) — Automated
+Agent: $AGENT_NAME (Execution Plane) — Automated
 Branch: $BRANCH
 Session Start: $FIRST_TS
 Session End: $LAST_TS
@@ -86,7 +92,7 @@ $(cat "$LEDGER")
 \`\`\`
 
 ---
-*Auto-generated | Zero model tokens consumed | V.A.N.T.i.S. Tokenless Audit Engine v1.0*
+*Auto-generated | Zero model tokens consumed | V.A.N.T.i.S. Tokenless Audit Engine v1.1*
 EOF
 
 # Clear the ledger after successful compilation

@@ -1,16 +1,6 @@
 # /daily
 
-Description: Generates the Daily Master Audit log.
-
----
-
-# 🎯 OBJECTIVE
-Summarize today's architectural evolution and milestones in `02_MACHINE/Daily/YYYY-MM-DD_VANTIS_DAILY_MASTER_AUDIT.md`.
-
----
-
-# 🛠️ EXECUTION
-1.  **Scan Logs**: Review all audit logs in `logs/YYYY-MM-DD/`.
-2.  **Synthesis**: Summarize key changes, milestones, and task status.
-3.  **Audit**: Write to `02_MACHINE/Daily/YYYY-MM-DD_VANTIS_DAILY_MASTER_AUDIT.md`.
-4.  **Confirm**: Echo "✅ Daily Master Audit generated."
+Generate the V.A.N.T.i.S. Daily Session Review for the current date.
+1. Scan all logs in `logs/YYYY-MM-DD/`.
+2. Synthesize the key achievements, decisions, and blockers.
+3. Save the output to `02_MACHINE/Daily/YYYY-MM-DD_VANTIS_Session_Review.md`.

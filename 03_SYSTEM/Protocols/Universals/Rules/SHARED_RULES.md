@@ -1,6 +1,6 @@
 # V.A.N.T.i.S. SHARED OPERATIONAL RULES
 
-Version: 1.2
+Version: 1.4
 Applies To: All V.A.N.T.i.S. Agents (Gemini, Claude, GPT, Local)
 
 ---
@@ -34,7 +34,7 @@ Before terminating a session for handoff:
 ---
 
 # [TRIGGERS] SKILL TRIGGER MATRIX
-Agents MUST proactively invoke the `activate_skill` tool based on the following task intents:
+Agents MUST proactively load and follow the relevant skill instructions based on the following task intents. If the active agent has a native skill activation tool, use it. Otherwise, manually read the skill file and execute according to its protocol.
 
 | Task Intent | Trigger Skill |
 | :--- | :--- |
