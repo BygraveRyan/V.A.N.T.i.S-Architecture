@@ -30,6 +30,8 @@ List the six architectural layers of VANTIS and briefly describe their roles.
 Explain the purpose of each of the following directories:
 
 03_SYSTEM/Protocols  
+03_SYSTEM/ADRs
+03_SYSTEM/Roadmap
 01_HUMAN/Inbox  
 01_HUMAN/Knowledge  
 01_HUMAN/Projects  

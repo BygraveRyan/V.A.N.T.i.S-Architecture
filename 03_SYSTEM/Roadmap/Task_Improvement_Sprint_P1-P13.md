@@ -103,8 +103,8 @@ Three ingested sources identified 4 critical gaps and 5 medium-term enhancements
 **Agent: Sonnet** | Priority: MEDIUM | Effort: Medium
 *Source: `02_MACHINE/Research/everything-claude-code/skills/architecture-decision-records/`*
 
-- [x] Create `02_MACHINE/ADRs/` with `README.md` index and `template.md`
-- [x] Author V.A.N.T.i.S.-adapted ADR skill at `.gemini/skills/architecture-decision-records.md` (path: `02_MACHINE/ADRs/`, not `docs/adr/`)
+- [x] Create `03_SYSTEM/ADRs/` with `README.md` index and `template.md`
+- [x] Author V.A.N.T.i.S.-adapted ADR skill at `.gemini/skills/architecture-decision-records.md` (path: `03_SYSTEM/ADRs/`, not `docs/adr/`)
 - [x] Write first ADR: `0001-phase4-p10-deferral.md` — document the decision to defer full instinct infrastructure in favour of P10 Lite
 - **Why**: Captures the "why" behind major architectural decisions for future agents
 

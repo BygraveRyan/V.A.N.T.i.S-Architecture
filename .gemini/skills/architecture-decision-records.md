@@ -7,7 +7,7 @@ version: 1.0.0
 
 # Architecture Decision Records (V.A.N.T.i.S.)
 
-Capture architectural decisions as they happen during sessions. Instead of decisions living only in session logs or an agent's memory, this skill produces structured ADR documents in `02_MACHINE/ADRs/` that persist across sessions and agents.
+Capture architectural decisions as they happen during sessions. Instead of decisions living only in session logs or an agent's memory, this skill produces structured ADR documents in `03_SYSTEM/ADRs/` that persist across sessions and agents.
 
 ## When to Activate
 
@@ -64,22 +64,22 @@ Use the lightweight ADR format adapted for V.A.N.T.i.S.:
 2. **Gather context** — what problem prompted this? What constraints exist?
 3. **Document alternatives** — what other options were considered? Why rejected?
 4. **State consequences** — trade-offs, what becomes easier/harder
-5. **Assign a number** — scan `02_MACHINE/ADRs/` and increment from the highest existing NNNN
-6. **Draft and confirm** — present draft to user. Only write to `02_MACHINE/ADRs/NNNN-decision-title.md` after explicit approval
-7. **Update the index** — append a row to `02_MACHINE/ADRs/README.md`
+5. **Assign a number** — scan `03_SYSTEM/ADRs/` and increment from the highest existing NNNN
+6. **Draft and confirm** — present draft to user. Only write to `03_SYSTEM/ADRs/NNNN-decision-title.md` after explicit approval
+7. **Update the index** — append a row to `03_SYSTEM/ADRs/README.md`
 
 ### Reading Existing ADRs
 
 When a user asks "why did we choose X?":
 
-1. Read `02_MACHINE/ADRs/README.md` index
+1. Read `03_SYSTEM/ADRs/README.md` index
 2. Read matching ADR file and present Context + Decision sections
 3. If no match: "No ADR found for that decision. Would you like to record one now?"
 
 ### ADR Directory Structure
 
 ```
-02_MACHINE/
+03_SYSTEM/
 └── ADRs/
     ├── README.md                         ← index of all ADRs
     ├── 0001-phase4-p10-deferral.md
@@ -141,5 +141,5 @@ proposed → accepted → [deprecated | superseded by ADR-NNNN]
 ## Mandate Compliance
 
 - Writing a new ADR counts as a vault modification — produce a log entry per the Strict Finality mandate
-- ADRs live in `02_MACHINE/` (AI staging area) — not in `01_HUMAN/Knowledge/Galaxy`
+- ADRs live in `03_SYSTEM/` (Architectural history area) — not in `01_HUMAN/Knowledge/Galaxy`
 - No ASV reflex required (ADRs are not `03_SYSTEM/Protocols/` files)

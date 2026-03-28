@@ -26,6 +26,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | File Path | Description | Versioning Logic |
 | :--- | :--- | :--- |
 | `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy Metadata Spec | Major.Minor |
+| `03_SYSTEM/Protocols/MACHINE_LAYER_PROTOCOL.md` | AI Execution Sandbox Rules | Major.Minor |
 | `03_SYSTEM/Protocols/AGENT_PERMISSIONS.md` | Domain Restrictions | Major.Minor |
 | `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` | Signal Interpretation | Major.Minor |
 | `03_SYSTEM/Protocols/CONCEPT_NAMING_PROTOCOL.md` | Naming Standards | Major.Minor |
@@ -56,6 +57,8 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `03_SYSTEM/Protocols/LINKEDIN_POST_TEMPLATE.md` | Content Structure | Patch |
 | `03_SYSTEM/Protocols/DYNAMIC_GALAXY_SCAFFOLDER.md` | Templater Logic | Patch |
 | `03_SYSTEM/Protocols/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
+| `03_SYSTEM/ADRs/README.md` | Decision Log | Patch |
+| `03_SYSTEM/Roadmap/VANTIS_Upgrade_Dashboard.md` | System Roadmap | Patch |
 | `03_SYSTEM/Protocols/CORE_SYSTEM_REGISTRY.md` | This File | Patch |
 | `.gemini/SKILLS_INDEX.md` | Skills Discovery Index | Patch |
 

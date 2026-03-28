@@ -15,7 +15,7 @@ Establish a "Deterministic Governance" framework by synchronizing all repository
 ## Implementation Steps
 
 ### Phase 0: Task Ingestion & Branching
-- [x] **Create Task Entry**: Save this plan as `01_HUMAN/Tasks/VANTIS/Active/Task_Deterministic_Governance_Upgrade.md`.
+- [x] **Create Task Entry**: Save this plan as `03_SYSTEM/Roadmap/Active/Task_Deterministic_Governance_Upgrade.md`.
 - [ ] **Branch Creation**: Initialize `feat/deterministic-governance-v1` from the latest `main`.
 
 ### Phase 1: Template Synchronization (SSOT)
@@ -36,7 +36,7 @@ Establish a "Deterministic Governance" framework by synchronizing all repository
 
 ### Phase 4: Verification & Archiving
 - [ ] **Test PR**: Create a mock PR and verify formatting.
-- [ ] **Archive Task**: Move the plan to `01_HUMAN/Tasks/VANTIS/Archive/` upon successful merge.
+- [ ] **Archive Task**: Move the plan to `03_SYSTEM/Roadmap/Archive/` upon successful merge.
 - [ ] **Log Finality**: Produce final audit log.
 
 ## Verification & Testing

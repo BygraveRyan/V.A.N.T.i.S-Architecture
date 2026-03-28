@@ -3,7 +3,7 @@ Execute Phase 3 of the Tripartite Architecture Upgrade: Rebranding the `02_MACHI
 
 # Scope & Impact
 - **Version Control:** Given the blast radius, this must be executed on a dedicated feature branch (`feat/tripartite-machine-layer`).
-- **Documentation:** A formal Task file will be stored in `01_HUMAN/Tasks/VANTIS_Upgrades/Active/`.
+- **Documentation:** A formal Task file will be stored in `03_SYSTEM/Roadmap_Upgrades/Active/`.
 - **Directory Rename:** The physical folder `02_MACHINE` will be renamed to `02_MACHINE`.
 - **System Paths:** Hardcoded references across the system (Commands, Skills, Rules, Vault Maps) must be updated.
 - **Log Integrity:** The `logs/` directory will be excluded from the find/replace operation to maintain the immutable history of past actions.
@@ -11,12 +11,12 @@ Execute Phase 3 of the Tripartite Architecture Upgrade: Rebranding the `02_MACHI
 
 # Proposed Solution
 1. **Branch Creation:** Check out a new branch `feat/tripartite-machine-layer`.
-2. **Task Creation:** Save this execution plan as `01_HUMAN/Tasks/VANTIS_Upgrades/Active/Phase_3_Machine_Layer.md`.
+2. **Task Creation:** Save this execution plan as `03_SYSTEM/Roadmap_Upgrades/Active/Phase_3_Machine_Layer.md`.
 3. **Rename Directory:** Move `02_MACHINE` to `02_MACHINE`.
 4. **Update Core Definitions:** Modify `GEMINI.md`, `RULES.md`, `VAULT_MAP.md`, and `AGENTS.md` to reference `02_MACHINE`.
 5. **Update Automation:** Update `.gemini/commands/daily.toml`, `.gemini/commands/resume.toml`, and `.gemini/skills/` to point to the new path.
 6. **Update Knowledge Nodes:** Update any references within `01_HUMAN/Knowledge/` and `03_SYSTEM/Protocols/` (excluding logs).
-7. **Establish Protocol:** Write the `02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md` document.
+7. **Establish Protocol:** Write the `03_SYSTEM/Protocols/MACHINE_LAYER_PROTOCOL.md` document.
 8. **Git Commit:** Commit all changes to the feature branch.
 
 # Implementation Steps

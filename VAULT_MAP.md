@@ -22,18 +22,15 @@ Version: 1.6
 
 ---
 
-# 03_SYSTEM/Protocols
+# 03_SYSTEM
 
-System documentation and protocols.
-(Note: Core system configuration files like BOOT_IMAGE, GEMINI, AGENTS, RULES, and VAULT_MAP are located at the repository root).
+System documentation, protocols, and architectural history.
+(Note: Core adapters like BOOT_IMAGE, GEMINI, AGENTS, RULES, and VAULT_MAP are at root).
 
-Examples:
-
-AGENT_PERMISSIONS  
-CONCEPT_NAMING_PROTOCOL  
-GALAXY_LINKING_RULES  
-SIGNAL_PROTOCOL  
-VANTIS_PROMPT_LIBRARY
+**Sub-directories:**
+• Protocols (Core operational rules)
+• ADRs (Architecture Decision Records)
+• Roadmap (Systemic evolution & upgrades)
 
 ---
 
