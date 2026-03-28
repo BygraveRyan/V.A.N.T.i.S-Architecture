@@ -17,15 +17,20 @@ PUBLIC_REPO="https://github.com/BygraveRyan/V.A.N.T.i.S-Architecture.git"
 WHITELIST=(
   ".gemini/"
   ".github/"
-  "03_SYSTEM/Protocols/"
-  "02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md"
+  ".claude/"
+  ".codex/"
+  "03_SYSTEM/"
   "CHANGELOG.md"
   "README.md"
   "BOOT_IMAGE.md"
   "GEMINI.md"
+  "CLAUDE.md"
+  "CODEX.md"
   "AGENTS.md"
   "RULES.md"
   "VAULT_MAP.md"
+  "LICENSE"
+  "CONTRIBUTING.md"
 )
 
 # 1. Git Initialization (In clean directory)

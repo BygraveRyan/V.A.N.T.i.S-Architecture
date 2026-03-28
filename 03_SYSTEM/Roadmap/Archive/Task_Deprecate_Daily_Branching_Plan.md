@@ -15,7 +15,7 @@ Transition the V.A.N.T.i.S. workflow from time-based branching (`daily/YYYY-MM-D
 ## Implementation Steps
 
 ### Phase 0: Plan Ingestion & Audit Trail
-- [x] **Create Task Entry**: Save this plan as a new task file: `01_HUMAN/Tasks/VANTIS/Active/Task_Deprecate_Daily_Branching_Plan.md`.
+- [x] **Create Task Entry**: Save this plan as a new task file: `03_SYSTEM/Roadmap/Active/Task_Deprecate_Daily_Branching_Plan.md`.
 - [x] **Link to Log**: Ensure the next audit log specifically references the creation of this persistent plan.
 
 ### Phase 1: Restore Governance Integrity
@@ -34,7 +34,7 @@ Transition the V.A.N.T.i.S. workflow from time-based branching (`daily/YYYY-MM-D
 - [x] **Branch Deletion**: Delete the local and remote `daily/2026-03-21` branches to clear technical debt.
 
 ### Phase 4: Archiving & Completion
-- [x] **Archive Task**: Upon successful verification, move the task file from `Active/` to `01_HUMAN/Tasks/VANTIS/Archive/Task_Deprecate_Daily_Branching_Plan.md`.
+- [x] **Archive Task**: Upon successful verification, move the task file from `Active/` to `03_SYSTEM/Roadmap/Archive/Task_Deprecate_Daily_Branching_Plan.md`.
 - [x] **Log Finality**: Produce a final audit log confirming the decommissioning of the daily branching system.
 
 ## Verification & Testing

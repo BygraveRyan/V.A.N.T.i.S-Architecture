@@ -19,7 +19,7 @@ Integrate the "Human, Machine, System" tripartite philosophy into the existing V
 
 ### Phase 3: The Machine Layer Protocol (`02_MACHINE`)
 *   **Action:** Logically rebrand `02_MACHINE` as the **Machine Layer**.
-*   **Action:** Create `02_MACHINE/00_MACHINE_LAYER_PROTOCOL.md` defining the boundaries between AI raw output and verified synthesis.
+*   **Action:** Create `03_SYSTEM/Protocols/MACHINE_LAYER_PROTOCOL.md` defining the boundaries between AI raw output and verified synthesis.
 
 ### Phase 4: V.A.N.T.i.S. SOP Index (The Bridge)
 *   **Action:** Create `03_SYSTEM/Protocols/VANTIS_SOP_INDEX.md` as a human-readable index of all active `.gemini/skills/`.

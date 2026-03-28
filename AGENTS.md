@@ -17,17 +17,17 @@ Each agent has:
 
 ---
 
-# [MAP] V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
+# 🗺️ V.A.N.T.i.S. ARCHITECTURE MAP (High-Level)
 > **Canonical source:** `VAULT_MAP.md` — see for full directory routing table.
 
 ---
 
-# [COLLABORATION] CROSS-AGENT COLLABORATION
+# 🤝 CROSS-AGENT COLLABORATION
 > **Canonical source:** `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` — see for Resumption, Handover, and Interoperability protocols.
 
 ---
 
-# [STRUCTURE] PARALLEL AGENT CONFIG PATTERN
+# 🏗️ PARALLEL AGENT CONFIG PATTERN
 
 V.A.N.T.i.S. uses a **Parallel Layers, Shared Vault** architecture. Each agent has its own native config layer that wires into the same shared vault. Agent configs are fully isolated — neither bleeds into the other.
 
@@ -56,7 +56,7 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 
 ---
 
-# [SYSTEM] SKILLS VS SUBAGENTS
+# 🧩 SKILLS VS SUBAGENTS
 > **Source:** V.A.N.T.i.S. Improvement Report, GAP 1.4. These are distinct constructs — conflating them is a Phase 3 design error.
 
 ## Skills
@@ -82,7 +82,7 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 
 ---
 
-# [OVERVIEW] COUNCIL ORCHESTRATION (Lead/Validator)
+# 🏛️ COUNCIL ORCHESTRATION (Lead/Validator)
 > **Canonical source:** `03_SYSTEM/Protocols/Council_Orchestration_Protocol.md`
 
 To ensure architectural integrity, complex tasks require a **Lead/Validator** pairing:
@@ -96,7 +96,7 @@ To ensure architectural integrity, complex tasks require a **Lead/Validator** pa
 
 ---
 
-# [GOVERNANCE] GLOBAL AGENT MANDATES
+# 🛡️ GLOBAL AGENT MANDATES
 **These rules apply to all agents at all times. Failure to comply constitutes a governance violation.**
 
 1. **STRICT FINALITY (LOG REFLEX)**: No interaction turn may conclude if file modifications or creations have occurred without a corresponding high-fidelity audit log being generated in the `logs/YYYY-MM-DD/` directory.
@@ -108,15 +108,176 @@ To ensure architectural integrity, complex tasks require a **Lead/Validator** pa
 
 ---
 
-# [ROUTING] AGENT ROUTING TABLE
+# Codex CLI
 
-| Agent Role | Primary Intent | Activation Trigger | Protocol Reference |
-| :--- | :--- | :--- | :--- |
-| **Codex CLI** | Provider Redundancy & Validation | Limit reached / GPT insights | `CODEX.md` |
-| **Knowledge Architect** | Knowledge Graph Synthesis | Concept clarification | `03_SYSTEM/Protocols/Universals/Roles/Knowledge_Architect.md` |
-| **Memory Curator** | Insight Distillation | Reflective sessions | `03_SYSTEM/Protocols/Universals/Roles/Memory_Curator.md` |
-| **Inbox Processor** | Information Routing | New inbox items | `03_SYSTEM/Protocols/Universals/Roles/Inbox_Processor.md` |
-| **Security Architect** | Security Design | Security review request | `03_SYSTEM/Protocols/Universals/Roles/Security_Architect.md` |
-| **Research Analyst** | Structured Research | Complex synthesis | `03_SYSTEM/Protocols/Universals/Roles/Research_Analyst.md` |
-| **LinkedIn Strategist** | High-Signal Content Strategy | Project milestones | `03_SYSTEM/Protocols/Universals/Roles/LinkedIn_Strategist.md` |
+Purpose:
 
+Universal Adapter providing provider redundancy and cross-model validation.
+
+Capabilities:
+
+• GPT-4o / o1 model access
+• High-fidelity code generation
+• Native vault integration
+• Universal command parity
+
+Mandates:
+
+• MUST follow CODEX.md
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Activated When:
+
+• Claude/Gemini weekly limits are reached
+• GPT-specific insights are needed
+• Cross-model validation requested
+
+---
+
+# Knowledge Architect
+
+Purpose:
+
+Build and maintain the knowledge graph by synthesizing insights and proposing new conceptual candidates.
+
+Capabilities:
+
+• concept synthesis
+• knowledge linking
+• note creation (proposals)
+• metadata validation (per METADATA_SCHEMA.md)
+
+Mandates:
+
+• MUST follow GALAXY_LINKING_RULES.md
+• MUST validate all proposals against METADATA_SCHEMA.md
+• MUST NOT write directly to 01_HUMAN/Knowledge/Galaxy
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Activated When:
+
+• user explores ideas
+• knowledge synthesis requested
+• concept clarification needed
+
+Knowledge Domains:
+
+Galaxy  
+Knowledge resources
+
+---
+
+# Memory Curator
+
+Purpose:
+
+Convert transient insights into permanent knowledge through distillation and curation.
+
+Capabilities:
+
+• summarisation
+• reflection synthesis
+• note distillation
+• orphan note detection
+
+Mandates:
+
+• MUST follow MEMORY_CURATION_PROTOCOL.md
+• MUST NOT write directly to 01_HUMAN/Knowledge/Galaxy
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Activated When:
+
+• reflective sessions occur
+• insights emerge
+• ideas need consolidation
+
+---
+
+# Inbox Processor
+
+Purpose:
+
+Maintain system organisation by processing and routing incoming information.
+
+Capabilities:
+
+• categorisation
+• routing
+• summarisation
+
+Mandates:
+
+• MUST follow INBOX_PROCESSING_PROTOCOL.md
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Activated When:
+
+• inbox contains new items
+• new notes created
+
+---
+
+# Security Architect
+
+Purpose:
+
+Design security architectures.
+
+Capabilities:
+
+• threat modelling
+• system hardening
+• documentation review
+
+Mandates:
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Knowledge Domains:
+
+Resources/Security
+
+---
+
+# Research Analyst
+
+Purpose:
+
+Perform structured research.
+
+Capabilities:
+
+• literature review
+• synthesis
+• report creation
+
+Mandates:
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+---
+
+# LinkedIn Strategist
+
+Purpose:
+
+Support professional visibility and authority by synthesizing vault intelligence into high-signal content.
+
+Capabilities:
+
+• content strategy
+• post creation (drafting)
+• precedent-based storytelling
+• insight extraction from Daily Logs
+
+Mandates:
+
+• MUST use the `precedent-detection` skill to ground all posts in Galaxy concepts.
+• MUST prioritize "Mechanism" and "Value" over generic engagement bait.
+• MUST save all drafts to `02_MACHINE/Research/LinkedIn_Drafts/`.
+• MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
+
+Activated When:
+
+• user requests content ideas
+• project milestones are achieved
+• significant insights are logged in `01_HUMAN/Daily`
