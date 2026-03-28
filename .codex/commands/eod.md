@@ -1,16 +1,9 @@
 # /eod
 
-Description: End-of-day audit and session state finalisation.
-
----
-
-# 🎯 OBJECTIVE
-Perform the daily audit, extract patterns, and finalize the session state.
-
----
-
-# 🛠️ EXECUTION
-1.  **Daily Audit**: Run `/daily` to generate the Master Audit.
-2.  **Pattern Extraction**: Review session logs for non-obvious behaviors and propose new skills or memory entries.
-3.  **Finalize State**: Run `/handover` to persist the state for tomorrow.
-4.  **Confirm**: Echo "✅ End-of-day protocol executed. V.A.N.T.i.S. is ready for next session."
+Execute the V.A.N.T.i.S. End-Of-Day Master Audit. This is a strict **once-a-day** command.
+1. Generate the Daily Session Review (if not already done).
+2. **P10 Lite: Pattern Extraction & Skill Seeds** — Review today's session logs for non-obvious behaviors not already in protocols or memory. Propose new skills or memory entries. Output candidates to `02_MACHINE/Synthesis/`.
+3. Generate the final Session State for the next day in `02_MACHINE/State/session-state_YYYY-MM-DD.md`.
+4. Update the `session-state_LATEST.md` symlink: run `cd 02_MACHINE/State && ln -sf session-state_YYYY-MM-DD.md session-state_LATEST.md`.
+5. Produce the final Gold Standard audit log for the day in `02_MACHINE/Daily/YYYY-MM-DD_VANTIS_DAILY_MASTER_AUDIT.md`.
+6. Check `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` for any required SYNC or WAIT markers.

@@ -3,8 +3,8 @@
  * V.A.N.T.i.S. Cost Tracker Hook
  * Adapted from ECC cost-tracker.js
  *
- * Appends lightweight session usage metrics to ~/.claude/metrics/costs.jsonl.
- * Compatible with Claude and Gemini CLI.
+ * Appends lightweight session usage metrics to ~/.vantis/metrics/costs.jsonl.
+ * Compatible with Claude, Gemini, and Codex CLI.
  */
 
 'use strict';
@@ -41,6 +41,9 @@ function estimateCost(model, inputTokens, outputTokens) {
     'gemini-2.0-flash': { in: 0.1, out: 0.4 }, // Gemini 2.0 Flash
     'gemini-1.5-pro': { in: 1.25, out: 5.0 },  // Gemini 1.5 Pro
     'gemini-1.5-flash': { in: 0.075, out: 0.3 }, // Gemini 1.5 Flash
+    'gpt-5': { in: 1.25, out: 10.0 },
+    'gpt-4o': { in: 2.5, out: 10.0 },
+    'o1': { in: 15.0, out: 60.0 },
   };
 
   const normalized = String(model || '').toLowerCase();
@@ -51,9 +54,23 @@ function estimateCost(model, inputTokens, outputTokens) {
   else if (normalized.includes('flash-2.0') || normalized.includes('gemini-2.0-flash')) rates = table['gemini-2.0-flash'];
   else if (normalized.includes('pro-1.5') || normalized.includes('gemini-1.5-pro')) rates = table['gemini-1.5-pro'];
   else if (normalized.includes('flash-1.5') || normalized.includes('gemini-1.5-flash')) rates = table['gemini-1.5-flash'];
+  else if (normalized.includes('gpt-5')) rates = table['gpt-5'];
+  else if (normalized.includes('gpt-4o')) rates = table['gpt-4o'];
+  else if (normalized.startsWith('o1')) rates = table['o1'];
 
   const cost = (inputTokens / 1_000_000) * rates.in + (outputTokens / 1_000_000) * rates.out;
   return Math.round(cost * 1e6) / 1e6;
+}
+
+function detectAgent(model) {
+  const normalized = String(model || '').toLowerCase();
+  if (normalized.includes('claude')) return 'Claude';
+  if (normalized.includes('gemini')) return 'Gemini';
+  if (normalized.includes('gpt') || normalized.includes('codex') || normalized.startsWith('o1') || normalized.startsWith('o3')) return 'Codex';
+  if (process.env.CODEX_SESSION_ID) return 'Codex';
+  if (process.env.CLAUDE_SESSION_ID) return 'Claude';
+  if (process.env.GEMINI_SESSION_ID) return 'Gemini';
+  return 'Unknown';
 }
 
 process.stdin.setEncoding('utf8');
@@ -73,14 +90,28 @@ process.stdin.on('end', () => {
     const inputTokens = toNumber(usage.input_tokens || usage.prompt_tokens || usage.inputTokens || 0);
     const outputTokens = toNumber(usage.output_tokens || usage.completion_tokens || usage.outputTokens || 0);
 
-    const model = String(input.model || input._cursor?.model || process.env.CLAUDE_MODEL || process.env.GEMINI_MODEL || 'unknown');
-    const sessionId = String(process.env.GEMINI_SESSION_ID || process.env.CLAUDE_SESSION_ID || 'default');
+    const model = String(
+      input.model ||
+      input._cursor?.model ||
+      process.env.CODEX_MODEL ||
+      process.env.CLAUDE_MODEL ||
+      process.env.GEMINI_MODEL ||
+      'unknown'
+    );
+    const sessionId = String(
+      process.env.CODEX_SESSION_ID ||
+      process.env.GEMINI_SESSION_ID ||
+      process.env.CLAUDE_SESSION_ID ||
+      'default'
+    );
+    const agent = detectAgent(model);
 
-    const metricsDir = path.join(os.homedir(), '.claude', 'metrics');
+    const metricsDir = path.join(os.homedir(), '.vantis', 'metrics');
     ensureDir(metricsDir);
 
     const row = {
       timestamp: new Date().toISOString(),
+      agent,
       session_id: sessionId,
       model,
       input_tokens: inputTokens,

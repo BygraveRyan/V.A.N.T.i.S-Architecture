@@ -1,16 +1,8 @@
 # /handover
 
-Description: Persists the current session state for the next agent.
-
----
-
-# 🎯 OBJECTIVE
-Update `02_MACHINE/State/session-state_YYYY-MM-DD.md` with current status and next steps.
-
----
-
-# 🛠️ EXECUTION
-1.  **Extract Context**: Review current session activity, blockers, and research.
-2.  **Update State**: Write to `02_MACHINE/State/session-state_YYYY-MM-DD.md`.
-3.  **Update Symlink**: Ensure `02_MACHINE/State/session-state_LATEST.md` points to the new file.
-4.  **Confirm**: Echo "✅ Session state persisted for handover."
+Perform a mid-session V.A.N.T.i.S. Handover to another agent or for a later resumption.
+1. Update the **Active Objective** and **Next Steps** based on current session progress.
+2. Summarize recent technical decisions or architectural changes.
+3. Save the updated state to `02_MACHINE/State/session-state_YYYY-MM-DD.md`.
+4. Ensure the `session-state_LATEST.md` symlink points to this file: `ln -sf session-state_YYYY-MM-DD.md /Users/ryanderice/Documents/V.A.N.T.i.S/02_MACHINE/State/session-state_LATEST.md`.
+5. State "HANDOVER COMPLETE" once the state is persisted.
