@@ -31,7 +31,7 @@ Move or transform the content to its appropriate destination:
 - **Personal** (`01_HUMAN/Personal/`): Reflections and life management.
 - **Tasks** (`01_HUMAN/Tasks/`): Actionable items.
 - **Output** (`02_MACHINE/`): AI-generated synthesis (mandatory staging).
-    - Concept Candidates -> `02_MACHINE/Synthesis/`
+    - Concept Candidates -> `02_MACHINE/ai-candidates/`
     - Reddit Syntheses -> `02_MACHINE/Research/Reddit_Syntheses/`
     - LinkedIn Drafts -> `02_MACHINE/Research/LinkedIn_Drafts/`
     - Session Reviews -> `02_MACHINE/Daily/`

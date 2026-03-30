@@ -12,7 +12,7 @@ V.A.N.T.i.S. is currently a knowledge management and personal productivity syste
 
 ## Decision
 
-We defer the full P10 v2 instinct infrastructure to Phase 5 and adopt P10 Lite instead. P10 Lite adds a "Pattern Extraction" phase to the existing `/eod` command: it reviews today's session logs for non-obvious agent behaviors not already captured in `CLAUDE.md`, `AGENTS.md`, or the memory system, proposes candidates to `02_MACHINE/Synthesis/`, and requires explicit user approval before writing anything permanent.
+We defer the full P10 v2 instinct infrastructure to Phase 5 and adopt P10 Lite instead. P10 Lite adds a "Pattern Extraction" phase to the existing `/eod` command: it reviews today's session logs for non-obvious agent behaviors not already captured in `CLAUDE.md`, `AGENTS.md`, or the memory system, proposes candidates to `02_MACHINE/ai-candidates/`, and requires explicit user approval before writing anything permanent.
 
 ## Alternatives Considered
 
@@ -39,5 +39,5 @@ We defer the full P10 v2 instinct infrastructure to Phase 5 and adopt P10 Lite i
 - No automated cross-session instinct injection
 
 ### Risks
-- **Pattern loss on skipped EODs**: Mitigated by the fact that `02_MACHINE/Synthesis/` candidates persist and can be reviewed retroactively
+- **Pattern loss on skipped EODs**: Mitigated by the fact that `02_MACHINE/ai-candidates/` candidates persist and can be reviewed retroactively
 - **Phase 5 never arrives**: If V.A.N.T.i.S. stays primarily a knowledge system, P10 v2 may never be relevant — acceptable outcome

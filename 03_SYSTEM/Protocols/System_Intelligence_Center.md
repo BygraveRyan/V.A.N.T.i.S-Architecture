@@ -35,7 +35,7 @@ LIMIT 10
 
 ### [POSTURE] AI Candidates (Awaiting Promotion)
 ```dataview
-LIST FROM "02_MACHINE/Synthesis"
+LIST FROM "02_MACHINE/ai-candidates"
 LIMIT 10
 ```
 
