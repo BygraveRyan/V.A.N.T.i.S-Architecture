@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.16
+Version: 1.0.17
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -60,6 +60,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `03_SYSTEM/Protocols/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
 | `03_SYSTEM/ADRs/README.md` | Decision Log | Patch |
 | `03_SYSTEM/Roadmap/VANTIS_Upgrade_Dashboard.md` | System Roadmap | Patch |
+| `03_SYSTEM/Roadmap/Task_Candidate_Schema_Alignment.md` | Schema Alignment Task | Patch |
 | `03_SYSTEM/Protocols/CORE_SYSTEM_REGISTRY.md` | This File | Patch |
 | `.gemini/SKILLS_INDEX.md` | Skills Discovery Index | Patch |
 
@@ -129,4 +130,4 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-28*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-31*

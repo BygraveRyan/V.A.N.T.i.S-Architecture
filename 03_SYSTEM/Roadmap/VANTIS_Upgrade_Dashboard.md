@@ -1,29 +1,35 @@
 # V.A.N.T.i.S. Upgrade Center Dashboard
+Version: 1.0.1
 Systemic Evolution & Technical Roadmap (Ranked by Importance/Impact)
 
 ---
 
 ## 🚀 ACTIVE PRIORITIES (RANKED)
 
-1. **[[Task_Expand_Diagnose_Command]]** (HIGH)
+1. **[[Task_Candidate_Schema_Alignment]]** (NEW/MEDIUM)
+   - *Impact:* MEDIUM (Knowledge Integrity & System Alignment)
+   - *Status:* Task created to audit and align `ai-candidates/` with v1.6 schema.
+   - *Next:* Batch update non-compliant frontmatter.
+
+2. **[[Task_Expand_Diagnose_Command]]** (HIGH)
    - *Impact:* HIGH (System Health & Integrity)
    - *Status:* Planning integration with Phase 5.3 Automated Self-Remediation.
    - *Next:* Define "Healthy State" criteria & Propose remediation logic.
 
-2. **[[VANTIS_Multi_Universal_Upgrade]]** (HIGH) — Phase 1 & 2 Complete
+3. **[[VANTIS_Multi_Universal_Upgrade]]** (HIGH) — Phase 1 & 2 Complete
    - *Impact:* EXTREME (Security & Context Precision)
    - *Status:* Council roles authored (Phase 3 Foundation); Subagent definitions deployed (Phase 4).
    - *Next:* Phase 3 — Active Council Sessions (Pilot: Architect review of P5 hooks).
 
-3. **[[Task_LinkedIn_Post_02]]** (MEDIUM)
+4. **[[Task_LinkedIn_Post_02]]** (MEDIUM)
    - *Impact:* MEDIUM (Public Portfolio Signal)
    - *Next:* Draft post highlighting "Reflexes" and "Intelligence Layer."
 
-4. **[[VANTIS_Notification_System]]** (MEDIUM)
+5. **[[VANTIS_Notification_System]]** (MEDIUM)
    - *Impact:* LOW (Workflow Utility)
    - *Next:* Choose delivery method (Email vs. Webhook).
 
-5. **[[Obisidan_Brain_Plus]]** (SEED)
+6. **[[Obisidan_Brain_Plus]]** (SEED)
    - *Impact:* HIGH (Knowledge Graph Visualization)
    - *Next:* Research Obsidian graph API for programmatic traversal.
 
