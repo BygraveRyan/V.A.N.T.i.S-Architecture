@@ -1,6 +1,8 @@
 # V.A.N.T.i.S. MACHINE LAYER PROTOCOL
 
-**Location:** `02_MACHINE/`
+Version: 1.6
+Applies To: All V.A.N.T.i.S. Agents
+Location: `02_MACHINE/`
 **Layer Number:** 06
 **Status:** Active Execution Sandbox
 
@@ -42,7 +44,17 @@ By confining raw output to `02_MACHINE`, V.A.N.T.i.S. maintains the pristine int
 
 ---
 
-## 💾 LOG REFLEX PROTOCOL (v1.4)
+## 💾 LOG REFLEX PROTOCOL (v1.5)
+
+The **Satellite Library Pattern** is now the standard for external research.
+
+### 1. External Satellite Libraries
+Massive external research repositories (1,000+ files or >50MB) MUST NOT be stored directly in `02_MACHINE/`. Instead:
+- Move the data to the external `~/Documents/VANTIS_LIBRARIES/` directory.
+- Create a symbolic link in `02_MACHINE/Research/` pointing to the external path.
+- Ensure the symlink is `.gitignore`'d.
+
+### 2. Log Reflex Protocol
 The **Log Reflex** is the automated system mechanism that ensures 100% audit trail compliance with minimal token overhead.
 
 ### 1. The Trigger
