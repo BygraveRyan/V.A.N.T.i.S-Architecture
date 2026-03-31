@@ -50,7 +50,7 @@ Provide a high-signal summary of the **Upgrade Center**:
 Review today's session logs for non-obvious behaviors not already in `CLAUDE.md`, `AGENTS.md`, or the memory system.
 - Identify repetitive task patterns or unique problem-solving approaches.
 - Propose a new skill or memory entry.
-- Output candidates to `02_MACHINE/Synthesis/`. Require user approval before writing permanent skills.
+- Output candidates to `02_MACHINE/ai-candidates/`. Require user approval before writing permanent skills.
 
 ---
 

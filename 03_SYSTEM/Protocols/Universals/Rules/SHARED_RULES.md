@@ -1,6 +1,6 @@
 # V.A.N.T.i.S. SHARED OPERATIONAL RULES
 
-Version: 1.4
+Version: 1.5
 Applies To: All V.A.N.T.i.S. Agents (Gemini, Claude, GPT, Local)
 
 ---
@@ -25,6 +25,7 @@ Before terminating a session for handoff:
 *Note: Update compact summaries in adapters (CLAUDE.md/GEMINI.md) when changing mandates.*
 
 1.  **STRICT FINALITY (LOG REFLEX)**: No interaction turn may conclude if file modifications or creations have occurred without a corresponding high-fidelity audit log being generated in the `logs/YYYY-MM-DD/` directory.
+    - *Tip: If mutating files via shell (sed, rm, etc.), include `# [FILE] path` in your command to ensure the session-ledger hook captures the change correctly.*
 2.  **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `01_HUMAN/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
 3.  **METADATA v1.5**: All proposed knowledge nodes MUST follow the schema in `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4.  **ASV REFLEX**: Before finalizing any interaction turn that involves system-level modifications (Tier 1, 2, or 3), the agent MUST execute the Automated System Versioning hook: `node .gemini/hooks/version-incrementer.js <file_path>`.

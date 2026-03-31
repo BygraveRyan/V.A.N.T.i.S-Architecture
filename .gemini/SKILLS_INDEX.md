@@ -28,7 +28,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/concept-extraction/`
 **Purpose:** Extract reusable conceptual knowledge from research material.
 **Capabilities:** Principle extraction and Concept Candidate drafting.
-**Output Location:** `02_MACHINE/Synthesis/`
+**Output Location:** `02_MACHINE/ai-candidates/`
 
 ---
 
@@ -36,7 +36,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/concept-mapper/`
 **Purpose:** Perform agentic "Similarity Scans" to identify cross-domain synergies.
 **Capabilities:** Mechanism extraction and conceptual relationship mapping.
-**Output Location:** `02_MACHINE/Synthesis/`
+**Output Location:** `02_MACHINE/ai-candidates/`
 
 ---
 
@@ -73,7 +73,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/memory-curator/`
 **Purpose:** Convert raw information into permanent, high-quality knowledge.
 **Capabilities:** Orphan note detection and Galaxy promotion staging.
-**Output Location:** `02_MACHINE/Synthesis/`
+**Output Location:** `02_MACHINE/ai-candidates/`
 
 ---
 

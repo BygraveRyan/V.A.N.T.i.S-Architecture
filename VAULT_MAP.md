@@ -1,6 +1,6 @@
 # VANTIS VAULT MAP
 
-Version: 1.6
+Version: 1.7
 
 ---
 
@@ -130,11 +130,11 @@ Examples:
 
 # 02_MACHINE
 
-AI generated material.
+AI-generated synthesis, drafts, and patterns.
 
-Examples:
-
-drafts  
-analysis  
-research reports  
-temporary synthesis
+**Sub-directories:**
+• **ai-candidates** (The "Candidate Layer" — P10 Lite extracted patterns and concepts awaiting human promotion to Galaxy)
+• **Daily** (Session reviews and Daily Master Audits)
+• **State** (Session state handovers and observations)
+• **Drafts** (Generated content, articles, or code templates)
+• **Synthesis** (Complex research reports and cross-domain analysis)

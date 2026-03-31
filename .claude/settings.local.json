@@ -55,7 +55,9 @@
       "WebFetch(domain:github.com)",
       "Read(//private/tmp/**)",
       "Bash(npx uipro-cli:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "WebSearch",
+      "Read(//Users/ryanderice/**)"
     ]
   },
   "hooks": {
@@ -110,7 +112,7 @@
         ]
       },
       {
-        "matcher": "Write|Edit|NotebookEdit",
+        "matcher": "Write|Edit|NotebookEdit|Bash|run_shell_command",
         "hooks": [
           {
             "type": "command",

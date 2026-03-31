@@ -35,18 +35,28 @@ Systemic Evolution & Technical Roadmap (Ranked by Importance/Impact)
 
 ---
 
-## ✅ ARCHIVED (COMPLETED 2026-03-27)
-- **[[Task_Codex_CLI_Integration]]**: **Phase 5.4 (The Universal Adapter) Complete.**
-    - *Outcome:* Codex CLI fully integrated with V.A.N.T.i.S. command parity and adapter layer.
-- **[[Task_Phase_5_Strategy_Planning]]**: **Phase 5 (The Self-Improving System) Complete.**
-    - *Key Deliverables:* v_observe.sh + instinct-cli.sh (5.1), Council_Orchestration_Protocol.md (5.2), verify skill + diagnose --fix (5.3).
-- **[[Task_Improvement_Sprint_P1-P13]]**: **Phase 4 (The Self-Improving System) Complete.**
-    - *Key Deliverables:* P12 Modular Rules, P17 Context Audit, P14 Compaction, P15 Cost Tracker, P16 ADR System, P18 Handover Protocol, and all Subagent definitions.
-    - *Outcome:* Unified multi-agent experience (Gemini/Claude) with deterministic governance.
-- **[[Task_Final_Vault_Migration_Plan]]**: Surgical migration of legacy assets and repository-wide `vault/` path remediation. Legacy root directory purged.
+## ✅ COMPLETED IN THIS SESSION (2026-03-30)
+- **[[v_diagnose_upgrade]]**: **Hybrid Diagnostic Upgrade Complete.**
+    - *Impact:* HIGH (Operational Health & Integrity)
+    - *Outcome:* Upgraded `v_diagnose.sh` (Performance, Integrity) + Hybrid `diagnose.toml` Agent logic.
+- **[[archive_consolidation]]**: **Centralized Archiving Protocol Deployed.**
+    - *Impact:* MEDIUM (Vault Hygiene & Search Performance)
+    - *Outcome:* Consolidated all disparate archives into `04_ARCHIVES/`.
 
-## ✅ ARCHIVED (COMPLETED 2026-03-26)
-- **[[Task_Claude_Architecture_Overhaul]]**: Full Claude Code execution layer built — 8 commands, hooks, permissions. PR #17 merged.
+---
+
+## 🏛️ ARCHIVE (OFFLOADED TO 04_ARCHIVES/03_SYSTEM/Roadmap/)
+
+### ✅ COMPLETED 2026-03-27
+- **[[Task_Codex_CLI_Integration]]**: **Phase 5.4 (The Universal Adapter) Complete.**
+- **[[Task_Phase_5_Strategy_Planning]]**: **Phase 5 (The Self-Improving System) Complete.**
+- **[[Task_Improvement_Sprint_P1-P13]]**: **Phase 4 (The Self-Improving System) Complete.**
+- **[[Task_Final_Vault_Migration_Plan]]**: Surgical migration of legacy assets complete.
+- **[[Task_Legacy_Vault_Cleanup]]**: Legacy root directory purged.
+- **[[Task_System_Doc_Emoji_Cleanup]]**: Standardized emoji-based governance markers.
+
+### ✅ COMPLETED 2026-03-26
+- **[[Task_Claude_Architecture_Overhaul]]**: Full Claude Code execution layer built.
 - **[[Tokenless_Audit_Engine]]**: Zero-token session logging via `session-ledger.sh` + `compile-audit-log.sh`. PR #18 merged.
 - **[[Stack_Publisher]]**: `publish-stack.sh` — ordered multi-PR public mirror deployment. Pending PR bundle.
 
