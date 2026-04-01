@@ -55,7 +55,7 @@ mkdir -p 03_SYSTEM/Protocols/Archive
 cp "$SOURCE_DIR/03_SYSTEM/Protocols/AGENT_PERMISSIONS.md" 03_SYSTEM/Protocols/ || true
 cp "$SOURCE_DIR/03_SYSTEM/Protocols/Archive/LOGGING_PROTOCOL.md" 03_SYSTEM/Protocols/Archive/ || true
 git add .
-create_pr "feat/security-boundaries" "feat(security): enforce ai boundaries and logging layer" "## 📖 The Story\n\n### WHY - What problem are we solving?\nIdentified a critical system risk: AI was writing directly to the knowledge graph and actions were untraceable, leading to 'Model Collapse.'\n\n### HOW - What did we actually change?\nImplemented strict agent permissions revoking AI write-access to the [REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy. Mandated a 4-step execution loop (Plan -> Act -> Validate -> Log).\n\n### IMPACT - What is the result?\nZero knowledge contamination. 100% auditability achieved."
+create_pr "feat/security-boundaries" "feat(security): enforce ai boundaries and logging layer" "## 📖 The Story\n\n### WHY - What problem are we solving?\nIdentified a critical system risk: AI was writing directly to the knowledge graph and actions were untraceable, leading to 'Model Collapse.'\n\n### HOW - What did we actually change?\nImplemented strict agent permissions revoking AI write-access to the 01_HUMAN/Knowledge/Galaxy. Mandated a 4-step execution loop (Plan -> Act -> Validate -> Log).\n\n### IMPACT - What is the result?\nZero knowledge contamination. 100% auditability achieved."
 
 # PR 3: Governance
 git checkout main

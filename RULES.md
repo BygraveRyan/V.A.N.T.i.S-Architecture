@@ -66,7 +66,7 @@ The inbox should never accumulate unmanaged information.
 
 Human knowledge:
 
-[REDACTED_PERSONAL_VAULT]/Knowledge
+01_HUMAN/Knowledge
 
 AI outputs:
 
@@ -121,6 +121,6 @@ To ensure high-signal portfolio quality, agents must verify all commit messages 
 
 # AGENT GUARDRAILS (Strict Enforcement)
 
-1. **NO GALAXY WRITES:** Agents are strictly prohibited from writing or moving files into `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
+1. **NO GALAXY WRITES:** Agents are strictly prohibited from writing or moving files into `01_HUMAN/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
 2. **LOG IMMUTABILITY:** Agents must never delete or modify past logs in the `logs/` directory. All corrections or reverts must be documented in a *new* log file.
-3. **INBOX PRESERVATION:** When processing `[REDACTED_PERSONAL_VAULT]/Inbox`, the original raw note must be archived (e.g., moved to `[REDACTED_PERSONAL_VAULT]/Inbox/Archive`) rather than deleted or overwritten, until the user confirms the new structure is satisfactory.
+3. **INBOX PRESERVATION:** When processing `01_HUMAN/Inbox`, the original raw note must be archived (e.g., moved to `01_HUMAN/Inbox/Archive`) rather than deleted or overwritten, until the user confirms the new structure is satisfactory.

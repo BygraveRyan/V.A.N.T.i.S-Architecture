@@ -15,7 +15,7 @@ Analyse the diff and perform a structured review:
 1. **Scope Check**: Does the PR do what the title/body claims?
 2. **Governance Check**: Does it comply with V.A.N.T.i.S. mandates? (No Galaxy writes, audit log present, ASV run on system files?)
 3. **Logic & Risk**: Any logic gaps, security risks, or style inconsistencies?
-4. **Linked Artifacts**: Is there a corresponding audit log in `logs/`? Is the task in `[REDACTED_PERSONAL_VAULT]/Tasks/` updated?
+4. **Linked Artifacts**: Is there a corresponding audit log in `logs/`? Is the task in `01_HUMAN/Tasks/` updated?
 
 ## Step 4 — Draft Review
 Produce one of:

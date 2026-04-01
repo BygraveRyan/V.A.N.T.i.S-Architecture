@@ -10,7 +10,7 @@
 
 
 ### HOW - What did we actually change?
-<!-- Detail the technical implementation. e.g., "Created [REDACTED_USER_CONTEXT] and updated the system prompt." -->
+<!-- Detail the technical implementation. e.g., "Created USER_CONTEXT.md and updated the system prompt." -->
 
 
 ### IMPACT - What is the result?

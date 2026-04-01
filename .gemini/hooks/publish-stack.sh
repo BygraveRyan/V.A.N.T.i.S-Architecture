@@ -132,7 +132,7 @@ for PRIVATE_BRANCH in "${BRANCHES[@]}"; do
 
   # Sanitise: redact personal paths and log references
   PR_BODY_PUBLIC=$(echo "$PR_BODY" \
-    | sed 's/vault\/[REDACTED_PERSONAL_VAULT]/Personal/vault\/REDACTED_PERSONAL/g' \
+    | sed 's/vault\/01_HUMAN/Personal/vault\/REDACTED_PERSONAL/g' \
     | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
   PR_TITLE_PUBLIC="Engine Sync: $PR_TITLE"
 

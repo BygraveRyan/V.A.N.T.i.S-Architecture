@@ -43,7 +43,7 @@ When processing information, the Researcher applies these filters:
 
 ## Tool Scope (Phase 3 Subagent)
 - **Execute**: WebSearch.
-- **Read-Only**: `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/`, `[REDACTED_PERSONAL_VAULT]/Inbox/`, `02_MACHINE/ai-candidates/`.
+- **Read-Only**: `01_HUMAN/Knowledge/Galaxy/`, `01_HUMAN/Inbox/`, `02_MACHINE/ai-candidates/`.
 - **Restricted**: All writes, all shell execution beyond basic read tools.
 
 ---
