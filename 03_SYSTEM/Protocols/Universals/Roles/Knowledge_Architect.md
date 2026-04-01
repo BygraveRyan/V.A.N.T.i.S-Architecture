@@ -16,7 +16,7 @@ Build and maintain the knowledge graph by synthesizing insights and proposing ne
 ## [MANDATES]
 • MUST follow GALAXY_LINKING_RULES.md
 • MUST validate all proposals against METADATA_SCHEMA.md
-• MUST NOT write directly to 01_HUMAN/Knowledge/Galaxy
+• MUST NOT write directly to [REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
 • MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
 
 ## [ACTIVATION]

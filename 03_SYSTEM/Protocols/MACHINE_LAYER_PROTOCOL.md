@@ -21,10 +21,10 @@ This layer serves as the critical buffer between **Transient AI Output** and **P
 All AI agents must direct their output files, drafts, and initial concepts to this directory (or its subfolders). 
 
 ### 2. The Verification Boundary
-Agents are **STRICTLY PROHIBITED** from moving files from `02_MACHINE` directly into `01_HUMAN/Knowledge/Galaxy`. The promotion of intelligence from Machine to Galaxy requires explicit Human Verification.
+Agents are **STRICTLY PROHIBITED** from moving files from `02_MACHINE` directly into `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`. The promotion of intelligence from Machine to Galaxy requires explicit Human Verification.
 
 ### 3. File Hygiene
-Information in this directory should be considered transient and malleable. Files here are subject to AI overwrites, refactoring, and deletion. If a file is finalized and valuable, it must be moved to an appropriate Human layer (e.g., `01_HUMAN/Projects` or `01_HUMAN/Knowledge`).
+Information in this directory should be considered transient and malleable. Files here are subject to AI overwrites, refactoring, and deletion. If a file is finalized and valuable, it must be moved to an appropriate Human layer (e.g., `[REDACTED_PERSONAL_VAULT]/Projects` or `[REDACTED_PERSONAL_VAULT]/Knowledge`).
 
 ---
 

@@ -1,4 +1,10 @@
+---
+name: inbox-processor
+description: Routes and transforms raw items in [REDACTED_PERSONAL_VAULT]/Inbox into knowledge, tasks, or project assets. Handles daily/weekly sweeps and explicit inbox-clear requests.
+---
+
 # SKILL: Inbox Processor
+Version: 1.0.1
 
 Purpose
 Transform raw, unstructured information in the Inbox into organized knowledge, tasks, or project assets.
@@ -7,7 +13,7 @@ Transform raw, unstructured information in the Inbox into organized knowledge, t
 
 # When To Use
 Activate this skill when:
-• `01_HUMAN/Inbox` contains new or unprocessed files.
+• `[REDACTED_PERSONAL_VAULT]/Inbox` contains new or unprocessed files.
 • Performing a daily or weekly system sweep.
 • The user explicitly asks to "clear the inbox" or "process notes."
 
@@ -16,7 +22,7 @@ Activate this skill when:
 # Processing Pipeline
 
 Step 1 — Capture & Scan
-Monitor `01_HUMAN/Inbox` for new content (ideas, research, meeting notes, etc.).
+Monitor `[REDACTED_PERSONAL_VAULT]/Inbox` for new content (ideas, research, meeting notes, etc.).
 
 Step 2 — Clarify & Extract
 Analyze each item to determine its value.
@@ -26,10 +32,10 @@ Analyze each item to determine its value.
 
 Step 3 — Route
 Move or transform the content to its appropriate destination:
-- **Galaxy** (`01_HUMAN/Knowledge/Galaxy/`): Reusable concepts (via `concept-extraction` first).
-- **Projects** (`01_HUMAN/Projects/`): Specific ongoing work.
-- **Personal** (`01_HUMAN/Personal/`): Reflections and life management.
-- **Tasks** (`01_HUMAN/Tasks/`): Actionable items.
+- **Galaxy** (`[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/`): Reusable concepts (via `concept-extraction` first).
+- **Projects** (`[REDACTED_PERSONAL_VAULT]/Projects/`): Specific ongoing work.
+- **Personal** (`[REDACTED_PERSONAL_VAULT]/Personal/`): Reflections and life management.
+- **Tasks** (`[REDACTED_PERSONAL_VAULT]/Tasks/`): Actionable items.
 - **Output** (`02_MACHINE/`): AI-generated synthesis (mandatory staging).
     - Concept Candidates -> `02_MACHINE/ai-candidates/`
     - Reddit Syntheses -> `02_MACHINE/Research/Reddit_Syntheses/`
@@ -37,7 +43,7 @@ Move or transform the content to its appropriate destination:
     - Session Reviews -> `02_MACHINE/Daily/`
 
 Step 4 — Archive
-Move the original raw note to `01_HUMAN/Inbox/Archive/` after processing.
+Move the original raw note to `[REDACTED_PERSONAL_VAULT]/Inbox/Archive/` after processing.
 
 ---
 
