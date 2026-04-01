@@ -1,6 +1,6 @@
 
 Version: 1.1
-Applies To: [REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 System: VANTIS
 
 ---
@@ -57,13 +57,13 @@ Large topics must be decomposed into multiple linked concept nodes.
 The Galaxy must remain completely flat.
 
 Location:
-[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
+01_HUMAN/Knowledge/Galaxy
 
 Subfolders are not allowed.
 
 Example:
 
-[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/
+01_HUMAN/Knowledge/Galaxy/
     concept-rag-architectures.md
     concept-vector-databases.md
     concept-knowledge-graphs.md

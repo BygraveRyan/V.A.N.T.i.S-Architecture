@@ -19,8 +19,8 @@ Analyze the current project or concept. Identify 3-5 "Core Mechanisms" (e.g., "D
 
 ## Step 2 — Semantic Sweep
 Search the following locations for matching keywords or mechanisms:
-- `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/`
-- `[REDACTED_PERSONAL_VAULT]/Projects/`
+- `01_HUMAN/Knowledge/Galaxy/`
+- `01_HUMAN/Projects/`
 - `02_MACHINE/`
 
 ## Step 3 — Connection Synthesis

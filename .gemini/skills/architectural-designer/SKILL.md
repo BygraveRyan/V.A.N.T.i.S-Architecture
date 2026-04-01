@@ -36,7 +36,7 @@ The agent MUST create a formal plan (using Plan Mode or a task file) with the fo
 ---
 
 # 🛡️ POST-PLAN SYNC HOOK (Mandatory)
-Any plan generated using this skill (including those in `plan_mode` or temporary research) MUST be mirrored/persisted into `[REDACTED_PERSONAL_VAULT]/Tasks/` upon approval. This ensures:
+Any plan generated using this skill (including those in `plan_mode` or temporary research) MUST be mirrored/persisted into `01_HUMAN/Tasks/` upon approval. This ensures:
 1. Permanent auditability of structural decisions.
 2. A human-readable record of the design-to-execution lineage.
 

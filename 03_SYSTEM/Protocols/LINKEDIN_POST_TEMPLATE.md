@@ -1,7 +1,7 @@
 # LINKEDIN POST TEMPLATE
 
 Version: 1.0.2  
-Applies To: `02_MACHINE/Research/LinkedIn_Drafts/` and `[REDACTED_PERSONAL_VAULT]/Projects/LinkedIn_Operations/History/`
+Applies To: `02_MACHINE/Research/LinkedIn_Drafts/` and `01_HUMAN/Projects/LinkedIn_Operations/History/`
 
 ---
 
@@ -40,7 +40,7 @@ updated: YYYY-MM-DD
 ## Post Review Checklist
 - [ ] Hook: Is the problem/observation clear?
 - [ ] Mechanism: Does it link to a Galaxy concept?
-- [ ] Formatting & Flow Logic: Did you analyze historical layouts from `[REDACTED_PERSONAL_VAULT]/Projects/LinkedIn_Operations/History/`?
+- [ ] Formatting & Flow Logic: Did you analyze historical layouts from `01_HUMAN/Projects/LinkedIn_Operations/History/`?
 - [ ] Flow Logic: Does it follow the "VANTIS Reveal" structure (Hook -> Action -> Goal -> Contrast -> Breakdown -> CTA)?
 - [ ] CTA: Is there a question for the audience?
 - [ ] Image/Media: Placeholder or visual strategy?

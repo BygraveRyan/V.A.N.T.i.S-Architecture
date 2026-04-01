@@ -7,12 +7,12 @@ The current "Strategist" role is focused on high-level leverage and LinkedIn con
 - **Tier 1**: `AGENTS.md`, `VAULT_MAP.md` (Routing).
 - **Tier 2**: `03_SYSTEM/Protocols/Universals/strategist.md`, new `03_SYSTEM/Protocols/Universals/Roles/Business_Architect.md`.
 - **Tier 5**: `.gemini/agents/strategist.md` (Tool scope expansion).
-- **Knowledge**: `[REDACTED_PERSONAL_VAULT]/Business/Frameworks/` (Reference sources).
+- **Knowledge**: `01_HUMAN/Business/Frameworks/` (Reference sources).
 
 ## 3. Proposed Solution
-- **The Galaxy as the "Market"**: The Business Architect is now mandated to perform recursive `grep_search` and `glob` scans across `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/` to find connections between disparate concepts.
+- **The Galaxy as the "Market"**: The Business Architect is now mandated to perform recursive `grep_search` and `glob` scans across `01_HUMAN/Knowledge/Galaxy/` to find connections between disparate concepts.
 - **New Output Zone**: Create `02_MACHINE/Business_Synthesis/` as the primary staging area for "Clogs-to-Cash" reports.
-- **Proactive Hook (The "Clog Scanner")**: Update the Strategist persona to run a "Business Framework Filter" every time a new note is processed in `[REDACTED_PERSONAL_VAULT]/Inbox/`.
+- **Proactive Hook (The "Clog Scanner")**: Update the Strategist persona to run a "Business Framework Filter" every time a new note is processed in `01_HUMAN/Inbox/`.
 - **Candidate Feedback Loop**: When the Business Architect finds a business opportunity, it will check if the underlying *concepts* are already in the Galaxy. If not, it will stage **Concept Candidates** in `02_MACHINE/ai-candidates/`.
 
 ## 4. Implementation Steps

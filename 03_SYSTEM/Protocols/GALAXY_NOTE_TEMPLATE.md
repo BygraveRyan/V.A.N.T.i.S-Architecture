@@ -1,7 +1,7 @@
 # GALAXY_NOTE_TEMPLATE
 
 Version: 1.0.2  
-Applies To: [REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
+Applies To: 01_HUMAN/Knowledge/Galaxy
 
 ---
 

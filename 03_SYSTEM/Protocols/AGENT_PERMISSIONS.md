@@ -45,9 +45,9 @@ Build and maintain the Galaxy knowledge graph.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
-[REDACTED_PERSONAL_VAULT]/Knowledge/Resources
-[REDACTED_PERSONAL_VAULT]/Projects
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Knowledge/Resources
+01_HUMAN/Projects
 ```
 
 Write Access
@@ -76,9 +76,9 @@ Transform insights into structured knowledge.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Inbox
-[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
-[REDACTED_PERSONAL_VAULT]/Projects
+01_HUMAN/Inbox
+01_HUMAN/Knowledge/Galaxy
+01_HUMAN/Projects
 02_MACHINE
 ```
 
@@ -86,7 +86,7 @@ Write Access
 
 ```
 02_MACHINE
-[REDACTED_PERSONAL_VAULT]/Daily
+01_HUMAN/Daily
 ```
 
 Restricted
@@ -109,15 +109,15 @@ Organize and categorize incoming information.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Inbox
+01_HUMAN/Inbox
 ```
 
 Write Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Knowledge
-[REDACTED_PERSONAL_VAULT]/Projects
-[REDACTED_PERSONAL_VAULT]/Tasks
+01_HUMAN/Knowledge
+01_HUMAN/Projects
+01_HUMAN/Tasks
 02_MACHINE
 ```
 
@@ -141,8 +141,8 @@ Perform research synthesis.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Knowledge
-[REDACTED_PERSONAL_VAULT]/Projects
+01_HUMAN/Knowledge
+01_HUMAN/Projects
 ```
 
 Write Access
@@ -171,22 +171,22 @@ Develop security architectures and review security documentation.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Knowledge/Resources/Security
-[REDACTED_PERSONAL_VAULT]/Projects/Security
+01_HUMAN/Knowledge/Resources/Security
+01_HUMAN/Projects/Security
 ```
 
 Write Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Projects/Security
+01_HUMAN/Projects/Security
 02_MACHINE
 ```
 
 Restricted
 
 ```
-[REDACTED_PERSONAL_VAULT]/Personal
-[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
+01_HUMAN/Personal
+01_HUMAN/Knowledge/Galaxy
 logs
 ```
 
@@ -203,8 +203,8 @@ Develop professional visibility and marketing content.
 Read Access
 
 ```
-[REDACTED_PERSONAL_VAULT]/Projects
-[REDACTED_PERSONAL_VAULT]/Knowledge
+01_HUMAN/Projects
+01_HUMAN/Knowledge
 ```
 
 Write Access
@@ -216,7 +216,7 @@ Write Access
 Restricted
 
 ```
-[REDACTED_PERSONAL_VAULT]/Personal
+01_HUMAN/Personal
 logs
 03_SYSTEM/Protocols
 ```

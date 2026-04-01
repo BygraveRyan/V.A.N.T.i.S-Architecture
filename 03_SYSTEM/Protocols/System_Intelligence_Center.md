@@ -15,7 +15,7 @@
 
 ```dataview
 TABLE vision AS "Vision", status AS "Status"
-FROM "[REDACTED_PERSONAL_VAULT]/Projects"
+FROM "01_HUMAN/Projects"
 WHERE vision != null OR status != null
 SORT file.mday DESC
 LIMIT 10
@@ -28,7 +28,7 @@ LIMIT 10
 
 ```dataview
 TABLE source AS "Source", status AS "Status", domain AS "Domain"
-FROM "[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy"
+FROM "01_HUMAN/Knowledge/Galaxy"
 SORT file.mday DESC
 LIMIT 10
 ```
@@ -66,13 +66,13 @@ LIMIT 10
 
 ### [POSTURE] Orphaned Concepts (Low Connectivity)
 ```dataview
-LIST FROM "[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy"
+LIST FROM "01_HUMAN/Knowledge/Galaxy"
 WHERE length(related_concepts) < 2 AND length(file.outlinks) < 2
 ```
 
 ### [CONTEXT] Inbox Items (Process Required)
 ```dataview
-LIST FROM "[REDACTED_PERSONAL_VAULT]/Inbox"
+LIST FROM "01_HUMAN/Inbox"
 WHERE !contains(file.path, "Archive")
 ```
 

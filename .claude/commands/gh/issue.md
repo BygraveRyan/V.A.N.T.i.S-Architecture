@@ -12,7 +12,7 @@ If no argument provided, list issues and ask which to work on.
 ## Step 3 — Analyse
 1. Understand the scope and requirements of the issue.
 2. Identify missing labels, milestones, or project board links.
-3. Cross-reference with `[REDACTED_PERSONAL_VAULT]/Tasks/VANTIS/` — is there a corresponding task file?
+3. Cross-reference with `01_HUMAN/Tasks/VANTIS/` — is there a corresponding task file?
 
 ## Step 4 — Triage Plan
 Suggest specific updates:

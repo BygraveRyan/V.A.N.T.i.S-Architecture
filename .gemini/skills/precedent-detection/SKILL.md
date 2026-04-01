@@ -24,7 +24,7 @@ When triggered, append Precedent Detection output at the end of the response.
 # Process
 
 1. **Extract** three layers from the input: explicit terms, mechanism (what it does), purpose (why it exists)
-2. **Search** `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy` using keyword → mechanism → conceptual matching (prioritise mechanism over keywords)
+2. **Search** `01_HUMAN/Knowledge/Galaxy` using keyword → mechanism → conceptual matching (prioritise mechanism over keywords)
 3. **Select** top 1–3 matches; discard low-confidence results
 4. **Output** using the structure below
 

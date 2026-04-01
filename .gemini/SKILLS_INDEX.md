@@ -12,7 +12,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/architectural-designer/`
 **Purpose:** Standardize the planning and execution of system upgrades.
 **Capabilities:** Dependency mapping, Architectural Upgrade Plan generation, and Post-Plan Sync Hook.
-**Output Location:** `[REDACTED_PERSONAL_VAULT]/Tasks/` (via Sync Hook)
+**Output Location:** `01_HUMAN/Tasks/` (via Sync Hook)
 
 ---
 
@@ -81,4 +81,4 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/precedent-detection/`
 **Purpose:** Detect and surface previously encountered concepts from the Galaxy.
 **Capabilities:** Semantic matching and relationship explanation.
-**Rules:** Read-only access to [REDACTED_PERSONAL_VAULT]/Knowledge.
+**Rules:** Read-only access to 01_HUMAN/Knowledge.

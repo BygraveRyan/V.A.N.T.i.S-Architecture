@@ -14,7 +14,7 @@ You are a high-fidelity **Execution Layer** for the V.A.N.T.i.S. architecture. Y
 > **Canonical source:** `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` — **MUST READ at session start.**
 
 1. **LOG REFLEX**: Every vault modification → audit log in `logs/YYYY-MM-DD/`.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **PLAN MODE**: Multi-file/system changes require plan → approval → feature branch.
@@ -38,7 +38,7 @@ Codex commands are located in `.codex/commands/`.
 | `/handover` | Persist current objective, next steps, and architectural context | Core parity |
 | `/daily` | Generate the daily session review in `02_MACHINE/Daily/` | Core parity |
 | `/eod` | Produce the end-of-day audit and next session state | Core parity |
-| `/inbox` | Audit and route `[REDACTED_PERSONAL_VAULT]/Inbox/` items | Shared behavior with Claude/Gemini |
+| `/inbox` | Audit and route `01_HUMAN/Inbox/` items | Shared behavior with Claude/Gemini |
 | `/context-budget` | Review context-window consumption across agents, skills, and protocols | Shared behavior with Claude/Gemini |
 | `/gh/pr` | Review pull requests with governance checks | Use `/gh-pr` if nested command routing is unavailable |
 | `/gh/issue` | Triage and manage GitHub issues | Use `/gh-issue` if nested command routing is unavailable |

@@ -64,7 +64,7 @@ Every structural decision has a justification:
 | Intelligence | `CLAUDE.md` / `GEMINI.md` | Per-model adapter — mandate enforcement, tool routing, escalation rules |
 | Agent | `AGENTS.md` | Specialised subagents with discrete domains and intent-based triggers |
 | Skill | `.gemini/skills/` | Modular, lazy-loaded capabilities in model-agnostic Markdown |
-| Memory | `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/` | Long-term knowledge graph — Metadata v1.5 schema, Obsidian-compatible |
+| Memory | `01_HUMAN/Knowledge/Galaxy/` | Long-term knowledge graph — Metadata v1.5 schema, Obsidian-compatible |
 | Logging | `logs/YYYY-MM-DD/` | Immutable audit trail — every file mutation, state transition, and agent decision |
 
 ### Multi-Agent Orchestration
@@ -97,7 +97,7 @@ V.A.N.T.i.S. extends agent capabilities via Model Context Protocol servers as co
 ## Repository Layout
 
 ```text
-[REDACTED_PERSONAL_VAULT]/             # Human-authored content — projects, tasks, daily notes, inbox
+01_HUMAN/             # Human-authored content — projects, tasks, daily notes, inbox
 02_MACHINE/           # Agent-generated output — reports, drafts, research, session state
 03_SYSTEM/            # Governance layer — protocols, ADRs, roadmap, rules
 04_ARCHIVES/          # Versioned archive of superseded content
