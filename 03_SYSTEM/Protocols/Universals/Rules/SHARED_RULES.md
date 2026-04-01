@@ -26,7 +26,7 @@ Before terminating a session for handoff:
 
 1.  **STRICT FINALITY (LOG REFLEX)**: No interaction turn may conclude if file modifications or creations have occurred without a corresponding high-fidelity audit log being generated in the `logs/YYYY-MM-DD/` directory.
     - *Tip: If mutating files via shell (sed, rm, etc.), include `# [FILE] path` in your command to ensure the session-ledger hook captures the change correctly.*
-2.  **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `01_HUMAN/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
+2.  **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
 3.  **METADATA v1.5**: All proposed knowledge nodes MUST follow the schema in `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4.  **ASV REFLEX**: Before finalizing any interaction turn that involves system-level modifications (Tier 1, 2, or 3), the agent MUST execute the Automated System Versioning hook: `node .gemini/hooks/version-incrementer.js <file_path>`.
 5.  **PLAN BEFORE EXECUTION**: For operations affecting multiple files or system architecture, agents MUST create a plan, request approval, and execute on a dedicated Git branch (Rule 11).
@@ -41,7 +41,7 @@ Agents MUST proactively load and follow the relevant skill instructions based on
 | :--- | :--- |
 | Modify System Architecture, Protocols, or Rules | `architectural-designer` |
 | Draft or optimize LinkedIn content | `linkedin-content-generation`, `precedent-detection` |
-| Process items from `01_HUMAN/Inbox` or analyze research | `inbox-processor`, `concept-extraction` |
+| Process items from `[REDACTED_PERSONAL_VAULT]/Inbox` or analyze research | `inbox-processor`, `concept-extraction` |
 | Convert raw insights into permanent concepts or detect orphan notes | `memory-curator` |
 | Identify cross-domain synergies or map conceptual precedents | `concept-mapper` |
 | Execute Git Branching, Commits, or PRs | `github-ops` |

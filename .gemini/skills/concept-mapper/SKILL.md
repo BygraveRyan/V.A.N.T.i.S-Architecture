@@ -1,5 +1,5 @@
 # SKILL: Concept Mapper
-Version: 1.1.1
+Version: 1.1.2
 
 Purpose
 Perform agentic "Similarity Scans" to identify conceptual relationships between project work and the knowledge graph.
@@ -8,7 +8,7 @@ Perform agentic "Similarity Scans" to identify conceptual relationships between 
 
 # When To Use
 - **Trigger**: Intent to identify cross-domain synergies or map conceptual precedents for a new project.
-- **Requirement**: Consult the **Skill Trigger Matrix** in `GEMINI.md`.
+- **Requirement**: Trigger when identifying cross-domain synergies or mapping conceptual precedents for a new project.
 
 ---
 
@@ -19,8 +19,8 @@ Analyze the current project or concept. Identify 3-5 "Core Mechanisms" (e.g., "D
 
 ## Step 2 — Semantic Sweep
 Search the following locations for matching keywords or mechanisms:
-- `01_HUMAN/Knowledge/Galaxy/`
-- `01_HUMAN/Projects/`
+- `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/`
+- `[REDACTED_PERSONAL_VAULT]/Projects/`
 - `02_MACHINE/`
 
 ## Step 3 — Connection Synthesis

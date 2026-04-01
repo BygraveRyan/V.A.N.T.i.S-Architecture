@@ -11,11 +11,12 @@ Version: 1.7
 | :--- | :--- | :--- |
 | **Orientation / Resume** | `session-state_YYYY-MM-DD.md`, `AGENTS.md` | Everything else |
 | **[INTENT] Note Creation** | `GALAXY_NOTE_TEMPLATE.md`, `SESSION_STATE_TEMPLATE.md` | Everything else |
-| **Inbox Processing** | `01_HUMAN/Inbox/*` (new files only), `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
+| **Inbox Processing** | `[REDACTED_PERSONAL_VAULT]/Inbox/*` (new files only), `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
 | **Knowledge / Galaxy Work** | `03_SYSTEM/Protocols/METADATA_SCHEMA.md`, `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Inbox, Projects |
-| **Project Work** | `01_HUMAN/Projects/<project>/` (targeted subfolder only) | Galaxy, Inbox |
+| **Project Work** | `[REDACTED_PERSONAL_VAULT]/Projects/<project>/` (targeted subfolder only) | Galaxy, Inbox |
 | **Protocol Modification** | `03_SYSTEM/Protocols/<file>.md`, `AGENTS.md`, `SHARED_RULES.md` | Everything else |
-| **LinkedIn / Content** | `02_MACHINE/Drafts/`, `01_HUMAN/Projects/` (relevant project) | Galaxy, Inbox |
+| **Business Discovery** | `[REDACTED_PERSONAL_VAULT]/Business/`, `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/`, `[REDACTED_PERSONAL_VAULT]/Inbox/` | Protocols |
+| **LinkedIn / Content** | `02_MACHINE/Drafts/`, `[REDACTED_PERSONAL_VAULT]/Projects/` (relevant project) | Galaxy, Inbox |
 | **Git / Publish / PR** | `AGENTS.md` (§ GitHub Ops) | Protocols, Galaxy |
 | **EOD / Daily Audit** | `02_MACHINE/State/session-state_YYYY-MM-DD.md`, `logs/YYYY-MM-DD/*.md` | Galaxy, Projects |
 | **Architecture Change** | `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `VAULT_MAP.md`, `SHARED_RULES.md` | Galaxy, Inbox |
@@ -34,7 +35,7 @@ System documentation, protocols, and architectural history.
 
 ---
 
-# 01_HUMAN/Inbox
+# [REDACTED_PERSONAL_VAULT]/Inbox
 
 Temporary capture location.
 
@@ -51,7 +52,7 @@ Items must be processed by Inbox Processor.
 
 ---
 
-# 01_HUMAN/Knowledge
+# [REDACTED_PERSONAL_VAULT]/Knowledge
 
 Permanent knowledge storage.
 
@@ -91,7 +92,7 @@ Examples:
 
 ---
 
-# 01_HUMAN/Projects
+# [REDACTED_PERSONAL_VAULT]/Projects
 
 Active project work.
 
@@ -104,7 +105,7 @@ deliverables
 
 ---
 
-# 01_HUMAN/Personal
+# [REDACTED_PERSONAL_VAULT]/Personal
 
 Human memory.
 
@@ -116,7 +117,7 @@ life insights
 
 ---
 
-# 01_HUMAN/Tasks
+# [REDACTED_PERSONAL_VAULT]/Tasks
 
 Task management.
 
