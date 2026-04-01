@@ -19,3 +19,15 @@ Example: `bash .gemini/hooks/publish-stack.sh feat/claude-architecture feat/toke
 
 ## Post-execution
 Report PR URLs created/updated on the public mirror and any warnings.
+
+---
+
+> ⚠️ WORKFLOW ORDER: Run this command from the **feature branch BEFORE merging** the private PR.
+> The script fetches PR title/body using the current branch name — if run from `main` after merging,
+> the private PR cannot be found and the public mirror PR will receive a generic fallback description.
+>
+> Correct order:
+> 1. Feature branch work complete
+> 2. Run `/gh:publish` (from feature branch) → creates public mirror PR
+> 3. Merge private PR into main
+> 4. Merge public mirror PR into main

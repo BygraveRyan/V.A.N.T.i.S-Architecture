@@ -1,5 +1,10 @@
+---
+name: architectural-designer
+description: Plans and governs multi-file system upgrades, refactors, and feature expansions. Activates before any feat/ or fix/ branch affecting Tier 1-2 system files.
+---
+
 # SKILL: Architectural Designer
-Version: 1.0.1
+Version: 1.0.2
 
 Purpose
 Standardize the planning, dependency mapping, and execution of complex, multi-file system upgrades, refactors, and feature expansions.

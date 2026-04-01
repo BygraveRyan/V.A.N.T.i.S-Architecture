@@ -76,7 +76,7 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 | Council Role | Primary Tool Scope | Restricted From |
 | :--- | :--- | :--- |
 | **Architect** | Read/Write system files, Edit, Bash(git *), Glob, Grep | Web search, Galaxy writes |
-| **Strategist** | Read-only protocols, WebSearch, Glob, Grep | Vault writes, Bash execution |
+| **Strategist (Business Architect)** | Read-only protocols, WebSearch, Glob, Grep, Write(Business_Synthesis, ai-candidates) | Vault writes (except designated staging zones), Bash execution |
 | **Researcher** | WebSearch, Galaxy Read, Glob, Grep | Execution, system file writes |
 | **Guardian** | Audit log read, hook inspection, Bash(ls), Glob, Grep | All writes outside `logs/` |
 

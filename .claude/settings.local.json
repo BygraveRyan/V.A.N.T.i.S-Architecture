@@ -71,7 +71,9 @@
       "mcp__excalidraw__delete_element",
       "Bash(for d:*)",
       "Bash(do echo:*)",
-      "Read(//Users/ryanderice/Documents/V.A.N.T.i.S/**)"
+      "Read(//Users/ryanderice/Documents/V.A.N.T.i.S/**)",
+      "Skill(update-config)",
+      "Bash(afplay /System/Library/Sounds/Glass.aiff)"
     ]
   },
   "hooks": {

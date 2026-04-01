@@ -30,6 +30,7 @@ Information in this directory should be considered transient and malleable. File
 
 ## 📂 SUB-DIRECTORIES (Standard Schema)
 - `AI-Daily-Review/`: Automated end-of-session system state and audit logs.
+- `Business_Synthesis/`: The primary staging area for "Clogs-to-Cash" reports and strategic business discovery.
 - `Concept_Candidates/`: High-signal intelligence extracted from external sources, awaiting promotion.
 - `LinkedIn_Drafts/`: Content generated for the user's professional portfolio.
 - `Reddit_Syntheses/`: Raw research extraction from social signals.

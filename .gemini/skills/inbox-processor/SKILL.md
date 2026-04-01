@@ -1,4 +1,10 @@
+---
+name: inbox-processor
+description: Routes and transforms raw items in 01_HUMAN/Inbox into knowledge, tasks, or project assets. Handles daily/weekly sweeps and explicit inbox-clear requests.
+---
+
 # SKILL: Inbox Processor
+Version: 1.0.1
 
 Purpose
 Transform raw, unstructured information in the Inbox into organized knowledge, tasks, or project assets.

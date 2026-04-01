@@ -1,4 +1,10 @@
+---
+name: audit-logger
+description: Ensures high-fidelity audit trails via automated tokenless logging (Tier 1) and model-authored reasoning logs for significant architectural changes (Tier 2).
+---
+
 # SKILL: Audit Logger (v1.5)
+Version: 1.0.1
 
 Purpose
 Ensure high-fidelity audit trails. Operates in two tiers: **Automated (tokenless)** for all sessions, and **Reasoning (model-authored)** for significant architectural decisions only.

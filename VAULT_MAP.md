@@ -15,6 +15,7 @@ Version: 1.7
 | **Knowledge / Galaxy Work** | `03_SYSTEM/Protocols/METADATA_SCHEMA.md`, `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Inbox, Projects |
 | **Project Work** | `01_HUMAN/Projects/<project>/` (targeted subfolder only) | Galaxy, Inbox |
 | **Protocol Modification** | `03_SYSTEM/Protocols/<file>.md`, `AGENTS.md`, `SHARED_RULES.md` | Everything else |
+| **Business Discovery** | `01_HUMAN/Business/`, `01_HUMAN/Knowledge/Galaxy/`, `01_HUMAN/Inbox/` | Protocols |
 | **LinkedIn / Content** | `02_MACHINE/Drafts/`, `01_HUMAN/Projects/` (relevant project) | Galaxy, Inbox |
 | **Git / Publish / PR** | `AGENTS.md` (§ GitHub Ops) | Protocols, Galaxy |
 | **EOD / Daily Audit** | `02_MACHINE/State/session-state_YYYY-MM-DD.md`, `logs/YYYY-MM-DD/*.md` | Galaxy, Projects |

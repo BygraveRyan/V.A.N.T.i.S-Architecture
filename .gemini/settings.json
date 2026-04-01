@@ -67,6 +67,34 @@
         ]
       }
     ],
+    "AfterAgent": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "task-finished-sound",
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Hero.aiff 2>/dev/null || true",
+            "description": "Plays a sound when the agent finishes its response turn.",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "input-needed-sound",
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Submarine.aiff 2>/dev/null || true",
+            "description": "Plays a sound when the agent requires user input.",
+            "async": true
+          }
+        ]
+      }
+    ],
     "SessionEnd": [
       {
         "matcher": ".*",

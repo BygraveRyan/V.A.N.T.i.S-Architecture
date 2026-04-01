@@ -1,4 +1,10 @@
+---
+name: linkedin-content-generation
+description: Synthesizes project progress and Galaxy concepts into high-authority LinkedIn content using the VANTIS narrative framework. Triggers on draft requests or "what should I post?" prompts.
+---
+
 # SKILL: LinkedIn Content Generation
+Version: 1.0.2
 
 Purpose
 
@@ -29,8 +35,8 @@ Scan the following for recent activity:
 
 Step 2 — Historical Precedent Analysis
 
-Before drafting, read the latest 3 posts from `01_HUMAN/Projects/LinkedIn_Operations/History/`.
-Analyse the tone, flow, and layout of high-performing posts (specifically [[2026-03-18_LinkedIn_Post_VANTIS_Reveal]]).
+Before drafting, read the latest 3 posts from `01_HUMAN/Projects/LinkedIn_Operations/History/` (sort by filename descending, take top 3).
+Analyse tone, flow, and layout across those posts to calibrate the current voice — do not rely on a hardcoded specific post.
 
 Step 3 — Narrative Construction (The "VANTIS" Framework)
 
