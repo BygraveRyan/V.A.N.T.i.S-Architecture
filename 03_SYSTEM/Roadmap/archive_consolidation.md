@@ -12,8 +12,8 @@ Consolidate all disparate "Archive" folders across the vault into a single, cent
 
 ## Key Files & Context
 - `04_ARCHIVES/`: The target central archive.
-- `01_HUMAN/Inbox/Archive/`: One known disparate archive location.
-- Other potential locations: `01_HUMAN/Knowledge/Resources/Archive/`, `02_MACHINE/Drafts/Archive/`, etc.
+- `[REDACTED_PERSONAL_VAULT]/Inbox/Archive/`: One known disparate archive location.
+- Other potential locations: `[REDACTED_PERSONAL_VAULT]/Knowledge/Resources/Archive/`, `02_MACHINE/Drafts/Archive/`, etc.
 
 ## Implementation Steps
 

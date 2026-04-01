@@ -14,7 +14,7 @@ Upgrade the `diagnose` command into a comprehensive "System Health Check" that i
 
 ## Core Features
 - **Protocol Audit**: Check core files for the presence of `Version: X.Y.Z` and other mandatory metadata.
-- **Vault Cleanup**: Identify and propose removal of transient files in `01_HUMAN/Inbox/` or `02_MACHINE/`.
+- **Vault Cleanup**: Identify and propose removal of transient files in `[REDACTED_PERSONAL_VAULT]/Inbox/` or `02_MACHINE/`.
 - **Link Integrity**: Scan the `Galaxy` for broken internal wikilinks or orphaned nodes.
 - **Audit Chain Check**: Verify that the latest GitHub commits have corresponding audit logs in `logs/`.
 

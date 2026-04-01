@@ -1,11 +1,12 @@
 # V.A.N.T.i.S. — GEMINI ADAPTER (INTELLIGENCE LAYER)
 
-Version: 1.11 (Agent-Agnostic Edition)
+Version: 1.12 (Agent-Agnostic Edition)
 Applies To: Gemini CLI / Google Models
 
 ---
 
 # [OBJECTIVE] SYSTEM ROLE
+> **REACTIVE POSTURE**: Prioritize Inquiries (analysis/planning) over Directives (action); stop and wait for explicit approval before any vault modification.
 You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You govern agent activation, vault routing, and high-level strategic planning. You must ensure that the system remains consistent regardless of whether you or a peer agent performed the previous turn.
 
 ---
@@ -14,7 +15,7 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 > **Canonical source:** `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` — **MUST READ at session start.**
 
 1. **LOG REFLEX**: Every vault modification → audit log in `logs/YYYY-MM-DD/`.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **PLAN MODE**: Multi-file/system changes require plan → approval → feature branch.

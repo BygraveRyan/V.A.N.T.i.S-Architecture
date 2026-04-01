@@ -1,5 +1,5 @@
 # SKILL: Concept Extraction
-Version: 1.1.1
+Version: 1.1.2
 
 Purpose
 Extract reusable conceptual knowledge from research material and propose **concept candidates** for the V.A.N.T.i.S. Galaxy.
@@ -7,8 +7,8 @@ Extract reusable conceptual knowledge from research material and propose **conce
 ---
 
 # When To Use
-- **Trigger**: Intent to process 01_HUMAN/Inbox or analyze research/documentation.
-- **Requirement**: Consult the **Skill Trigger Matrix** in `GEMINI.md`.
+- **Trigger**: Intent to process [REDACTED_PERSONAL_VAULT]/Inbox or analyze research/documentation.
+- **Requirement**: Trigger when processing `[REDACTED_PERSONAL_VAULT]/Inbox` or analyzing research/documentation material.
 
 ---
 
