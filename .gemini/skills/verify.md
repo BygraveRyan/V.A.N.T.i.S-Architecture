@@ -1,3 +1,8 @@
+---
+name: verify
+description: Multi-phase quality gate (Lint, Protocol Compliance, Security Scan, PR Report) for all V.A.N.T.i.S. changes. Triggered manually via /verify or automated via PR hooks.
+---
+
 # Verification Skill
 
 Version: 1.0.0

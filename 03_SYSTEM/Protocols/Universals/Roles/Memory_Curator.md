@@ -15,7 +15,7 @@ Convert transient insights into permanent knowledge through distillation and cur
 
 ## [MANDATES]
 • MUST follow MEMORY_CURATION_PROTOCOL.md
-• MUST NOT write directly to 01_HUMAN/Knowledge/Galaxy
+• MUST NOT write directly to [REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy
 • MUST execute the Global Agent Mandates (Logging, ASV, Plan Mode).
 
 ## [ACTIVATION]
