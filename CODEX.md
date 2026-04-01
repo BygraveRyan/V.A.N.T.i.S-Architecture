@@ -1,6 +1,6 @@
 # V.A.N.T.i.S. — CODEX ADAPTER (EXECUTION LAYER)
 
-Version: 1.2.0
+Version: 1.3.0
 Applies To: Codex CLI / GPT Models
 
 ---
@@ -38,10 +38,12 @@ Codex commands are located in `.codex/commands/`.
 | `/handover` | Persist current objective, next steps, and architectural context | Core parity |
 | `/daily` | Generate the daily session review in `02_MACHINE/Daily/` | Core parity |
 | `/eod` | Produce the end-of-day audit and next session state | Core parity |
+| `/diagnose` | Run the V.A.N.T.i.S. system diagnostic | Core parity |
 | `/inbox` | Audit and route `01_HUMAN/Inbox/` items | Shared behavior with Claude/Gemini |
 | `/context-budget` | Review context-window consumption across agents, skills, and protocols | Shared behavior with Claude/Gemini |
 | `/gh/pr` | Review pull requests with governance checks | Use `/gh-pr` if nested command routing is unavailable |
 | `/gh/issue` | Triage and manage GitHub issues | Use `/gh-issue` if nested command routing is unavailable |
+| `/gh/run` | Review failed GitHub Actions runs | Use `/gh-run` if nested command routing is unavailable |
 | `/gh/pulse` | Run the private-core backup sync | Use `/gh-pulse` if nested command routing is unavailable |
 | `/gh/publish` | Publish architectural changes to the public mirror | Use `/gh-publish` if nested command routing is unavailable |
 
@@ -51,6 +53,10 @@ Codex commands are located in `.codex/commands/`.
 Codex reads the same shared skills in `.gemini/skills/` as Claude and Gemini.
 
 When a task intent matches the Skill Trigger Matrix, Codex must manually load and follow the relevant skill instructions even though Codex does not provide a native `activate_skill` tool.
+
+For V.A.N.T.i.S. routing, treat the current canonical architecture as:
+- System, architecture, protocol, agent-layer, parity, and upgrade work -> `03_SYSTEM/Roadmap/`
+- Personal or human-centered work -> `01_HUMAN/...`
 
 ---
 

@@ -23,7 +23,8 @@ Ensure high-fidelity audit trails. Operates in two tiers: **Automated (tokenless
 ## Tier 2 — Reasoning Log (Model-Authored) — SIGNIFICANT CHANGES ONLY
 Invoke this skill manually when:
 - Executing a multi-file architectural change (feat/ branch)
-- Completing a task from `01_HUMAN/Tasks/VANTIS/`
+- Completing a V.A.N.T.i.S. system task from `03_SYSTEM/Roadmap/`
+- Completing a personal or human-centered task from `01_HUMAN/...`
 - Any turn where the **WHY** behind a change is non-obvious from the git diff alone
 
 ---
