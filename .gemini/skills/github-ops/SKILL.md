@@ -1,4 +1,10 @@
+---
+name: github-ops
+description: Provides GitHub CLI integration for managing PRs, issues, Actions runs, and repository governance within V.A.N.T.i.S.
+---
+
 # SKILL: GitHub Operations
+Version: 1.0.1
 
 Purpose
 Provide native GitHub integration using the GitHub CLI (`gh`) to manage issues, pull requests, actions, and repository security with deep workspace visibility.

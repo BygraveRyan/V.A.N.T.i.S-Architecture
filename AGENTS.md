@@ -76,7 +76,7 @@ When integrating a new AI agent (e.g., GPT, local model), follow this pattern:
 | Council Role | Primary Tool Scope | Restricted From |
 | :--- | :--- | :--- |
 | **Architect** | Read/Write system files, Edit, Bash(git *), Glob, Grep | Web search, Galaxy writes |
-| **Strategist** | Read-only protocols, WebSearch, Glob, Grep | Vault writes, Bash execution |
+| **Strategist (Business Architect)** | Read-only protocols, WebSearch, Glob, Grep, Write(Business_Synthesis, ai-candidates) | Vault writes (except designated staging zones), Bash execution |
 | **Researcher** | WebSearch, Galaxy Read, Glob, Grep | Execution, system file writes |
 | **Guardian** | Audit log read, hook inspection, Bash(ls), Glob, Grep | All writes outside `logs/` |
 
@@ -104,7 +104,7 @@ To ensure architectural integrity, complex tasks require a **Lead/Validator** pa
 3. **SKILL TRIGGER MATRIX**: Agents MUST proactively consult the **Skill Trigger Matrix** in `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` and activate required skills based on task intent before execution.
 4. **AUDIT-LOGGER SKILL**: Agents MUST utilize or manually follow the `audit-logger` skill for all logging operations to ensure compliance with the **Gold Standard** (v1.4).
 5. **PLAN BEFORE EXECUTION**: For operations affecting multiple files or system architecture, agents MUST create a plan, request approval, and execute on a dedicated Git branch (Rule 11).
-6. **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `01_HUMAN/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
+6. **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
 7. **SCHEMA FIDELITY (GALAXY CANDIDATES)**: All AI-generated knowledge nodes or synthesis placed in `02_MACHINE/ai-candidates/` MUST strictly adhere to the `03_SYSTEM/Protocols/METADATA_SCHEMA.md` (v1.6). Partial compliance or usage of legacy formats is a governance violation.
 
 ---

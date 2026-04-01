@@ -39,7 +39,7 @@ Certain actions trigger a mandatory role switch or review:
 - **Enforcement**: The **Guardian** role MUST be activated to validate the command's safety.
 
 ### C. Synthesis Gate
-- **Trigger**: Moving data from `01_HUMAN/Inbox/` to `01_HUMAN/Knowledge/Galaxy`.
+- **Trigger**: Moving data from `[REDACTED_PERSONAL_VAULT]/Inbox/` to `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy`.
 - **Enforcement**: The **Researcher** role MUST validate the metadata compliance (v1.5) before the move.
 
 ---
