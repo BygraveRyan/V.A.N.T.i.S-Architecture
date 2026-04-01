@@ -30,7 +30,7 @@ The following is the output from the low-level system diagnostic hook:
 - **Validation**: Does the latest audit file follow the Metadata v1.5 schema? (Check for tags, parent-links, status, version).
 
 ### 3. Knowledge Drift
-- **Inbox Hygiene**: !{ls 01_HUMAN/Inbox/ | wc -l} items pending.
+- **Inbox Hygiene**: !{ls [REDACTED_PERSONAL_VAULT]/Inbox/ | wc -l} items pending.
 - **Candidate Layer**: !{ls 02_MACHINE/ai-candidates/ | wc -l} candidates awaiting review.
 
 ---

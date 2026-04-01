@@ -32,11 +32,11 @@ Explain the purpose of each of the following directories:
 03_SYSTEM/Protocols  
 03_SYSTEM/ADRs
 03_SYSTEM/Roadmap
-01_HUMAN/Inbox  
-01_HUMAN/Knowledge  
-01_HUMAN/Projects  
-01_HUMAN/Personal  
-01_HUMAN/Tasks  
+[REDACTED_PERSONAL_VAULT]/Inbox  
+[REDACTED_PERSONAL_VAULT]/Knowledge  
+[REDACTED_PERSONAL_VAULT]/Projects  
+[REDACTED_PERSONAL_VAULT]/Personal  
+[REDACTED_PERSONAL_VAULT]/Tasks  
 02_MACHINE
 
 ---

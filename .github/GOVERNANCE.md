@@ -135,16 +135,16 @@ To maintain a scanable and professional repository history, PR titles MUST follo
 • `.gemini/` — skills and system logic  
 • `logs/` — full audit history  
 • `03_SYSTEM/Protocols/` — system rules and configs  
-• `01_HUMAN/Projects/` — project state  
-• `01_HUMAN/Tasks/` — tasks  
+• `[REDACTED_PERSONAL_VAULT]/Projects/` — project state  
+• `[REDACTED_PERSONAL_VAULT]/Tasks/` — tasks  
 • `02_MACHINE/` — AI synthesis  
 
 ---
 
 ### 4.2 What NOT to Commit
 
-• `01_HUMAN/Personal/` — private data  
-• `01_HUMAN/Knowledge/Galaxy/` — human knowledge (local-first)  
+• `[REDACTED_PERSONAL_VAULT]/Personal/` — private data  
+• `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/` — human knowledge (local-first)  
 • `.env` — secrets  
 • `.obsidian/workspace.json` — local state  
 

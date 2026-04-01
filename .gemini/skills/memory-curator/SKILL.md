@@ -1,5 +1,5 @@
 # SKILL: Memory Curator
-Version: 1.1.1
+Version: 1.1.2
 
 Purpose
 Convert raw information into permanent, high-quality, interconnected knowledge within the V.A.N.T.i.S. Galaxy.
@@ -8,7 +8,7 @@ Convert raw information into permanent, high-quality, interconnected knowledge w
 
 # When To Use
 - **Trigger**: Intent to convert raw insights into permanent concepts or detect orphan notes.
-- **Requirement**: Consult the **Skill Trigger Matrix** in `GEMINI.md`.
+- **Requirement**: Trigger when converting raw insights into permanent concepts or detecting orphan notes.
 
 ---
 

@@ -1,4 +1,10 @@
+---
+name: linkedin-content-generation
+description: Synthesizes project progress and Galaxy concepts into high-authority LinkedIn content using the VANTIS narrative framework. Triggers on draft requests or "what should I post?" prompts.
+---
+
 # SKILL: LinkedIn Content Generation
+Version: 1.0.1
 
 Purpose
 
@@ -23,13 +29,13 @@ Step 1 — Intelligence Gathering
 
 Scan the following for recent activity:
 - `logs/` (recent tasks completed)
-- `01_HUMAN/Projects/` (milestones achieved)
-- `01_HUMAN/Daily/` (human insights)
-- `01_HUMAN/Knowledge/Galaxy/` (newly promoted concepts)
+- `[REDACTED_PERSONAL_VAULT]/Projects/` (milestones achieved)
+- `[REDACTED_PERSONAL_VAULT]/Daily/` (human insights)
+- `[REDACTED_PERSONAL_VAULT]/Knowledge/Galaxy/` (newly promoted concepts)
 
 Step 2 — Historical Precedent Analysis
 
-Before drafting, read the latest 3 posts from `01_HUMAN/Projects/LinkedIn_Operations/History/`.
+Before drafting, read the latest 3 posts from `[REDACTED_PERSONAL_VAULT]/Projects/LinkedIn_Operations/History/`.
 Analyse the tone, flow, and layout of high-performing posts (specifically [[2026-03-18_LinkedIn_Post_VANTIS_Reveal]]).
 
 Step 3 — Narrative Construction (The "VANTIS" Framework)
@@ -51,7 +57,7 @@ Drafts must be saved to:
 
 Lifecycle Management:
 - **Drafts**: Live in `02_MACHINE/Research/LinkedIn_Drafts/`.
-- **Published**: Move to `01_HUMAN/Projects/LinkedIn_Operations/History/` to preserve knowledge integrity.
+- **Published**: Move to `[REDACTED_PERSONAL_VAULT]/Projects/LinkedIn_Operations/History/` to preserve knowledge integrity.
 
 Each draft should include:
 - A "Source Insight" reference
