@@ -1,0 +1,1 @@
+/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/c-level-advisor/competitive-intel/SKILL.md

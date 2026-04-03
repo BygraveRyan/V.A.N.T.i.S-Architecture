@@ -1,0 +1,1 @@
+/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/product-team/landing-page-generator/SKILL.md
