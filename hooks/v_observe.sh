@@ -12,6 +12,15 @@
 set -e
 
 PHASE="${1:-post}"
+
+# Check if stdin is a TTY or empty to prevent hanging
+if [ -t 0 ] || [ ! -p /dev/stdin ]; then
+  # Not a pipe or a TTY, but check if there is data available at all
+  if ! read -t 0; then
+    exit 0
+  fi
+fi
+
 INPUT_JSON=$(cat)
 
 if [ -z "$INPUT_JSON" ]; then
@@ -59,7 +68,15 @@ _SECRET_RE = re.compile(
 
 def scrub(val):
     if val is None: return None
-    return _SECRET_RE.sub(lambda m: m.group(1) + m.group(2) + (m.group(3) or "") + "[REDACTED]", str(val))
+    # Truncate to 5000 chars before scrubbing to preserve performance
+    val_str = str(val)
+    is_truncated = False
+    if len(val_str) > 5000:
+        val_str = val_str[:5000]
+        is_truncated = True
+    
+    scrubbed = _SECRET_RE.sub(lambda m: m.group(1) + m.group(2) + (m.group(3) or "") + "[REDACTED]", val_str)
+    return scrubbed + " [TRUNCATED]" if is_truncated else scrubbed
 
 try:
     data = json.load(sys.stdin)

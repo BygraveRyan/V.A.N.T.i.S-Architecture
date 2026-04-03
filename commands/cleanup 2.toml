@@ -1,0 +1,42 @@
+# V.A.N.T.i.S. Cleanup Command
+# Version: 1.0.0
+# Purpose: Execute a comprehensive vault hygiene routine.
+
+description = "Archives legacy logs, compacts observation data, and purges temporary system noise."
+
+prompt = """
+You are the V.A.N.T.i.S. Vault Janitor.
+
+Your objective is to perform a **System Cleanup** to ensure the vault remains lean, high-performing, and free of context-bloating artifacts.
+
+---
+
+## 🧹 CLEANUP EXECUTION
+The following is the output from the low-level vault cleanup hook:
+
+!{bash .gemini/hooks/v_cleanup.sh}
+
+---
+
+## 📊 POST-CLEANUP STATUS
+
+### 1. Log Archival
+- **Status**: (Confirm old logs were moved to 04_ARCHIVES/Daily/)
+- **Result**: How many folders were moved?
+
+### 2. Observation Compaction
+- **Status**: (Check the final size of 02_MACHINE/State/observations.jsonl)
+- **Result**: !{du -h 02_MACHINE/State/observations.jsonl | cut -f1}
+
+### 3. Temp/Noise Purge
+- **Status**: (Confirm .gemini/tmp/ is empty and .DS_Store files were removed)
+
+---
+
+## 🚀 READINESS STATEMENT
+Confirm that the vault is now optimized for the next high-velocity build session.
+
+---
+
+{{args}}
+"""

@@ -98,14 +98,20 @@ for PRIVATE_BRANCH in "${BRANCHES[@]}"; do
   for ITEM in "${WHITELIST[@]}"; do
     if [ -e "$WORKTREE_DIR/$ITEM" ]; then
       mkdir -p "$(dirname "$ITEM")"
-      cp -R "$WORKTREE_DIR/$ITEM" "$ITEM"
+      # Use rsync to exclude noise like .DS_Store and hidden system files
+      rsync -a --exclude=".DS_Store" --exclude="*.log" --exclude="tmp/" "$WORKTREE_DIR/$ITEM" "$(dirname "$ITEM")/"
     fi
   done
 
   # --- 4. Path leak safety check ---
-  if find . -path "*/Users/*" | grep -q .; then
-    echo "   ❌ Absolute path leak detected. Aborting $PRIVATE_BRANCH."
-    find . -path "*/Users/*"
+  # Find any files containing absolute user paths and fail-fast
+  # Use a concatenated string to prevent this script from being flagged by its own grep
+  LEAK_TARGET="/Users/""ryanderice"
+  LEAK_FOUND=$(grep -rl "$LEAK_TARGET" . --exclude-dir=".git" --exclude="publish-stack.sh" || true)
+  if [ -n "$LEAK_FOUND" ]; then
+    echo "   ❌ Absolute path leak detected in these files:"
+    echo "$LEAK_FOUND"
+    echo "   Aborting $PRIVATE_BRANCH."
     git checkout _stack_base
     git branch -D "$PRIVATE_BRANCH" 2>/dev/null || true
     if [ "$WORKTREE_OWNED" = true ]; then
@@ -132,7 +138,9 @@ for PRIVATE_BRANCH in "${BRANCHES[@]}"; do
 
   # Sanitise: redact personal paths and log references
   PR_BODY_PUBLIC=$(echo "$PR_BODY" \
-    | sed 's/vault\/01_HUMAN/Personal/vault\/REDACTED_PERSONAL/g' \
+    | sed 's|/Users/REDACTED|/Users/REDACTED|g' \
+    | sed 's|01_HUMAN/|Personal/|g' \
+    | sed 's|04_ARCHIVES/|Archives/|g' \
     | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
   PR_TITLE_PUBLIC="Engine Sync: $PR_TITLE"
 
