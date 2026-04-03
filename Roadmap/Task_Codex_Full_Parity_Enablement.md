@@ -27,7 +27,7 @@ Enable Codex as a first-class V.A.N.T.i.S. agent with near-identical operational
 
 ## Notes
 - This work is isolated in `/tmp/vantis-codex-full-parity`.
-- The active repo at `/Users/ryanderice/Documents/V.A.N.T.i.S` is not being edited by Codex during this task.
+- The active repo at `$VANTIS_ROOT` is not being edited by Codex during this task.
 - `mirror_sync/` is intentionally excluded from this task because it is a duplicate folder slated for removal.
 - Progress will be reflected here by converting completed checklist items to struck-through text.
 
