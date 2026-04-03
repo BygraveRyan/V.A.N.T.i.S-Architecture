@@ -19,6 +19,7 @@ Version: 1.7
 | **LinkedIn / Content** | `02_MACHINE/Drafts/`, `01_HUMAN/Projects/` (relevant project) | Galaxy, Inbox |
 | **Git / Publish / PR** | `AGENTS.md` (§ GitHub Ops) | Protocols, Galaxy |
 | **EOD / Daily Audit** | `02_MACHINE/State/session-state_YYYY-MM-DD.md`, `logs/YYYY-MM-DD/*.md` | Galaxy, Projects |
+| **Vault Cleanup** | `.gemini/commands/cleanup.toml`, `04_ARCHIVES/` | Everything else |
 | **Architecture Change** | `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `VAULT_MAP.md`, `SHARED_RULES.md` | Galaxy, Inbox |
 
 ---
