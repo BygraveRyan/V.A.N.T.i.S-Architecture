@@ -15,7 +15,7 @@ You are the primary **Execution Plane** for the V.A.N.T.i.S. architecture. You o
 
 ## Core Mandates
 1. **LOG REFLEX**: Meaningful vault, system, or protocol changes → reasoning log in `logs/YYYY-MM-DD/` when rationale or handoff context is needed. Routine edits may rely on Git plus lightweight telemetry.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `private workspace/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **PLAN MODE**: Multi-file/system changes require plan → approval → feature branch.
@@ -72,7 +72,7 @@ Claude Code slash commands are located in `.claude/commands/`. Invoke with `/com
 | `/handover` | Persist current objective and next steps for the next agent | — |
 | `/daily` | Synthesize today's session into a review → `02_MACHINE/Daily/` | `audit-logger` |
 | `/eod` | Full end-of-day master audit + generate tomorrow's session state | `audit-logger` |
-| `/inbox` | Audit and route all items in `01_HUMAN/Inbox` (presents plan for approval) | `inbox-processor` |
+| `/inbox` | Audit and route all items in `private workspace/Inbox` (presents plan for approval) | `inbox-processor` |
 | `/gh/pr` | Deep PR review using `gh pr diff` | `github-ops` |
 | `/gh/issue` | Issue triage, labelling, milestone management | `github-ops` |
 | `/gh/pulse` | Silent backup sync to private `main` branch | `github-ops` |
@@ -94,8 +94,8 @@ V.A.N.T.i.S. uses ICM (Interpretable Context Methodology) — position-addressed
 | Daily Review | `02_MACHINE/Daily/` | 2 | One doc/day, no addendums |
 | Research | `02_MACHINE/Research/` | 2 | Never promote direct to Galaxy |
 | Synthesis | `02_MACHINE/Synthesis/` | 2 | SYNTHESIS_ prefix = Galaxy-ready |
-| Inbox | `01_HUMAN/Inbox/` | 2 | Router pre-flight before agent triage |
-| Galaxy Knowledge | `01_HUMAN/Knowledge/Galaxy/` | 2 — Bucket 2 | HARD BLOCK — no subagent writes |
+| Inbox | `private workspace/Inbox/` | 2 | Router pre-flight before agent triage |
+| Galaxy Knowledge | `private workspace/Knowledge/Galaxy/` | 2 — Bucket 2 | HARD BLOCK — no subagent writes |
 | Protocols | `03_SYSTEM/Protocols/` | 2 | ASV REFLEX on every edit |
 | ADRs | `03_SYSTEM/ADRs/` | 2 | Number sequentially, update README |
 

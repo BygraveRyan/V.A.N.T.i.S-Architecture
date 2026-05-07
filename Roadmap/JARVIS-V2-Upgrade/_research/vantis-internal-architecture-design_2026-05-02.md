@@ -660,7 +660,7 @@ The same system that wants to act is not the right system to decide whether acti
 
 ### Governance responsibilities
 
-- protect `01_HUMAN/Knowledge/Galaxy`
+- protect `private workspace/Knowledge/Galaxy`
 - control external system writes
 - require approvals for sensitive actions
 - log decisions and actions

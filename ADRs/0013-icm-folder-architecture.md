@@ -20,4 +20,4 @@ Adopt ICM (Interpretable Context Methodology) — each major folder gets a `cont
 ## Related
 - ADR-0008 (Token Efficiency)
 - ADR-0012 (Pattern-Based Inbox Routing)
-- ICM source: `01_HUMAN/Inbox/ICM-Transitioning to the Interpretable Context Methodology.md`
+- ICM source: `private workspace/Inbox/ICM-Transitioning to the Interpretable Context Methodology.md`

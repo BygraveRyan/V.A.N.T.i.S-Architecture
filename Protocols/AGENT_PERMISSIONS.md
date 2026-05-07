@@ -45,9 +45,9 @@ Build and maintain the Galaxy knowledge graph.
 Read Access
 
 ```
-01_HUMAN/Knowledge/Galaxy
-01_HUMAN/Knowledge/Resources
-01_HUMAN/Projects
+private workspace/Knowledge/Galaxy
+private workspace/Knowledge/Resources
+private workspace/Projects
 ```
 
 Write Access
@@ -76,9 +76,9 @@ Transform insights into structured knowledge.
 Read Access
 
 ```
-01_HUMAN/Inbox
-01_HUMAN/Knowledge/Galaxy
-01_HUMAN/Projects
+private workspace/Inbox
+private workspace/Knowledge/Galaxy
+private workspace/Projects
 02_MACHINE
 ```
 
@@ -86,7 +86,7 @@ Write Access
 
 ```
 02_MACHINE
-01_HUMAN/Daily
+private workspace/Daily
 ```
 
 Restricted
@@ -109,15 +109,15 @@ Organize and categorize incoming information.
 Read Access
 
 ```
-01_HUMAN/Inbox
+private workspace/Inbox
 ```
 
 Write Access
 
 ```
-01_HUMAN/Knowledge
-01_HUMAN/Projects
-01_HUMAN/Tasks
+private workspace/Knowledge
+private workspace/Projects
+private workspace/Tasks
 02_MACHINE
 ```
 
@@ -141,8 +141,8 @@ Perform research synthesis.
 Read Access
 
 ```
-01_HUMAN/Knowledge
-01_HUMAN/Projects
+private workspace/Knowledge
+private workspace/Projects
 ```
 
 Write Access
@@ -171,22 +171,22 @@ Develop security architectures and review security documentation.
 Read Access
 
 ```
-01_HUMAN/Knowledge/Resources/Security
-01_HUMAN/Projects/Security
+private workspace/Knowledge/Resources/Security
+private workspace/Projects/Security
 ```
 
 Write Access
 
 ```
-01_HUMAN/Projects/Security
+private workspace/Projects/Security
 02_MACHINE
 ```
 
 Restricted
 
 ```
-01_HUMAN/Personal
-01_HUMAN/Knowledge/Galaxy
+private workspace/Personal
+private workspace/Knowledge/Galaxy
 logs
 ```
 
@@ -203,8 +203,8 @@ Develop professional visibility and marketing content.
 Read Access
 
 ```
-01_HUMAN/Projects
-01_HUMAN/Knowledge
+private workspace/Projects
+private workspace/Knowledge
 ```
 
 Write Access
@@ -216,7 +216,7 @@ Write Access
 Restricted
 
 ```
-01_HUMAN/Personal
+private workspace/Personal
 logs
 03_SYSTEM/Protocols
 ```

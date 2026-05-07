@@ -85,7 +85,7 @@ done
 # --- 5. GALAXY INTEGRITY (LINK CHECK) ---
 echo ""
 echo -e "${YELLOW}[5/6] VERIFYING GALAXY LINK INTEGRITY...${NC}"
-GALAXY_DIR="01_HUMAN/Knowledge/Galaxy"
+GALAXY_DIR="private workspace/Knowledge/Galaxy"
 BROKEN_LINKS=0
 
 # This is a basic check for links like [[concept-name]] that don't have a matching file

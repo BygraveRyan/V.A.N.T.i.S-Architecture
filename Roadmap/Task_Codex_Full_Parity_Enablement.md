@@ -14,7 +14,7 @@ worktree: /tmp/vantis-codex-full-parity
 Enable Codex as a first-class V.A.N.T.i.S. agent with near-identical operational capability to Claude and Gemini, while keeping all implementation isolated from the active Gemini worktree.
 
 ## Tracking
-- [x] ~~Create task tracker in `01_HUMAN/Tasks/VANTIS/` and keep it updated during execution.~~
+- [x] ~~Create task tracker in `private workspace/Tasks/VANTIS/` and keep it updated during execution.~~
 - [x] ~~Expand `.codex/commands/` to full operational parity.~~
 - [x] ~~Upgrade `.codex/settings.json` for Codex-compatible hook parity.~~
 - [x] ~~Fix shared hook scripts for correct Codex mutation capture and audit attribution.~~

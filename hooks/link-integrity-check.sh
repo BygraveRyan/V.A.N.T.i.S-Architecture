@@ -4,7 +4,7 @@
 # Version: 1.0.0
 # Cost: Zero agent tokens (pure shell execution)
 
-GALAXY_DIR="01_HUMAN/Knowledge/Galaxy"
+GALAXY_DIR="private workspace/Knowledge/Galaxy"
 TEMP_FILE=$(mktemp)
 
 echo "🔗 GALAXY LINK INTEGRITY CHECK"

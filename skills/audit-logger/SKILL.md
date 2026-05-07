@@ -24,7 +24,7 @@ Ensure durable audit trails without redundant Git-derived session logs. Operates
 Invoke this skill manually when:
 - Executing a multi-file architectural change (feat/ branch)
 - Completing a V.A.N.T.i.S. system task from `03_SYSTEM/Roadmap/`
-- Completing a personal or human-centered task from `01_HUMAN/...`
+- Completing a personal or human-centered task from `private workspace/...`
 - Any turn where the **WHY** behind a change is non-obvious from the git diff alone
 - Any turn that needs durable handoff context, explicit risks, or decision rationale
 

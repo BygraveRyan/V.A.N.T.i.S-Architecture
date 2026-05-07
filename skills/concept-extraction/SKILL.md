@@ -7,8 +7,8 @@ Extract reusable conceptual knowledge from research material and propose **conce
 ---
 
 # When To Use
-- **Trigger**: Intent to process 01_HUMAN/Inbox or analyze research/documentation.
-- **Requirement**: Trigger when processing `01_HUMAN/Inbox` or analyzing research/documentation material.
+- **Trigger**: Intent to process private workspace/Inbox or analyze research/documentation.
+- **Requirement**: Trigger when processing `private workspace/Inbox` or analyzing research/documentation material.
 
 ---
 

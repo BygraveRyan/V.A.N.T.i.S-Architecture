@@ -4,7 +4,7 @@
 # Version: 1.0.0
 # Cost: Zero agent tokens (pure shell execution)
 
-INBOX_DIR="01_HUMAN/Inbox"
+INBOX_DIR="private workspace/Inbox"
 LEDGER_FILE=".gemini/state/inbox-ledger.csv"
 
 echo "📮 INBOX HEALTH STATUS"

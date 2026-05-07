@@ -10,11 +10,11 @@ Version: 2.3 (Galaxy-First Edition)
 | Task Intent | Read These Files | Skip |
 | :--- | :--- | :--- |
 | **Orientation / Resume** | `session-state_YYYY-MM-DD.md`, `AGENTS.md` | Everything else |
-| **System Rules / AI Behavior** | `01_HUMAN/Knowledge/Galaxy/concept-ai-*`, `SHARED_RULES.md` | Inbox, Projects |
-| **Workflow / Engine Ops** | `01_HUMAN/Knowledge/Galaxy/concept-architecture-*`, `VANTIS_ENGINES/AGENTS.md` or the active engine adapter (`CLAUDE.md` / `GEMINI.md` / `CODEX.md`) | Inbox |
-| **Business Strategy / Sales** | `01_HUMAN/Knowledge/Galaxy/concept-business-*`, `01_HUMAN/Business/*` | Protocols |
-| **Inbox Processing** | `01_HUMAN/Inbox/*`, `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
-| **Project Work** | `01_HUMAN/Projects/<project>/` | Galaxy, Inbox |
+| **System Rules / AI Behavior** | `private workspace/Knowledge/Galaxy/concept-ai-*`, `SHARED_RULES.md` | Inbox, Projects |
+| **Workflow / Engine Ops** | `private workspace/Knowledge/Galaxy/concept-architecture-*`, `VANTIS_ENGINES/AGENTS.md` or the active engine adapter (`CLAUDE.md` / `GEMINI.md` / `CODEX.md`) | Inbox |
+| **Business Strategy / Sales** | `private workspace/Knowledge/Galaxy/concept-business-*`, `private workspace/Business/*` | Protocols |
+| **Inbox Processing** | `private workspace/Inbox/*`, `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy, Projects |
+| **Project Work** | `private workspace/Projects/<project>/` | Galaxy, Inbox |
 | **EOD / Daily Audit** | `02_MACHINE/State/session-state_YYYY-MM-DD.md`, `02_MACHINE/Daily/*_MASTER_AUDIT.md` | Galaxy, Projects |
 | **Vault Cleanup** | `.gemini/commands/cleanup.toml`, `04_ARCHIVES/` | Everything else |
 
@@ -34,7 +34,7 @@ Core operational rules and architectural history.
 
 ---
 
-# 01_HUMAN/Knowledge
+# private workspace/Knowledge
 
 Permanent knowledge storage. Built on the **LLM Wiki Pattern**.
 

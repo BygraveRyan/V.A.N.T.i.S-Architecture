@@ -12,6 +12,8 @@ As V.A.N.T.i.S. evolves toward a proactive "Jarvis" system, the current linear t
 
 We are implementing the **Agency Chaining Protocol (ACP)**, a mandatory R-E-V-R (Route, Execute, Evaluate, Reroute) cycle for all high-stakes and multi-agent tasks. This protocol leverages 7 core master skills (Router, Fan-Out, Consensus, Debate, Pipeline, Orchestrator, Judge) to enable autonomous error correction, adversarial validation, and confidence-gated delivery.
 
+**Update 2026-05-08 (v1.2.0)**: Added the **Sequential Pipeline Defect Resolution (SPDR)** pattern to allow for surgical re-execution of specific pipeline stages, reducing token waste by up to 80% during refinement loops.
+
 ## Alternatives Considered
 
 ### Alternative 1: Manual Verification

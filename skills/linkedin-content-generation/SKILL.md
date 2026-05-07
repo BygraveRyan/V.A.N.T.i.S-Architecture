@@ -29,13 +29,13 @@ Step 1 — Intelligence Gathering
 
 Scan the following for recent activity:
 - `logs/` (recent tasks completed)
-- `01_HUMAN/Projects/` (milestones achieved)
-- `01_HUMAN/Daily/` (human insights)
-- `01_HUMAN/Knowledge/Galaxy/` (newly promoted concepts)
+- `private workspace/Projects/` (milestones achieved)
+- `private workspace/Daily/` (human insights)
+- `private workspace/Knowledge/Galaxy/` (newly promoted concepts)
 
 Step 2 — Historical Precedent Analysis
 
-Before drafting, read the latest 3 posts from `01_HUMAN/Projects/LinkedIn_Operations/History/` (sort by filename descending, take top 3).
+Before drafting, read the latest 3 posts from `private workspace/Projects/LinkedIn_Operations/History/` (sort by filename descending, take top 3).
 Analyse tone, flow, and layout across those posts to calibrate the current voice — do not rely on a hardcoded specific post.
 
 Step 3 — Narrative Construction (The "VANTIS" Framework)
@@ -57,7 +57,7 @@ Drafts must be saved to:
 
 Lifecycle Management:
 - **Drafts**: Live in `02_MACHINE/Research/LinkedIn_Drafts/`.
-- **Published**: Move to `01_HUMAN/Projects/LinkedIn_Operations/History/` to preserve knowledge integrity.
+- **Published**: Move to `private workspace/Projects/LinkedIn_Operations/History/` to preserve knowledge integrity.
 
 Each draft should include:
 - A "Source Insight" reference

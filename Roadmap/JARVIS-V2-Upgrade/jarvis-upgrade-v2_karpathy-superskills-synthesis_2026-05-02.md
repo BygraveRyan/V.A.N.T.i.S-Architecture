@@ -39,7 +39,7 @@ The Three Buckets map cleanly as follows:
 | Bucket | Description | V.A.N.T.i.S. Implementation | Location |
 |---|---|---|---|
 | Bucket 1 — Session Memory | `/wrap-up` command indexes session outcomes | `/handover` skill + audit-logger → Honcho dialect | `02_MACHINE/State/` + Honcho |
-| Bucket 2 — Foundational Knowledge | Immutable technical docs, project history, standards | Existing Galaxy + `01_HUMAN/Knowledge/` (read-only) | Pinecone namespace: `vantis-foundation` |
+| Bucket 2 — Foundational Knowledge | Immutable technical docs, project history, standards | Existing Galaxy + `private workspace/Knowledge/` (read-only) | Pinecone namespace: `vantis-foundation` |
 | Bucket 3 — Mutable Strategy Profile | Dynamic Markdown read at every session start | `02_MACHINE/State/session-state_LATEST.md` | Already exists — this IS Bucket 3 |
 
 **Conclusion:** Bucket 3 already exists. Bucket 1 is already partially implemented via `/handover`. Bucket 2 is the new addition — indexing the Galaxy into Pinecone. No new architectural layer is required. Add a Pinecone indexer as a component inside the existing Hermes Layer.
@@ -138,8 +138,8 @@ These items are pure documentation and cognitive protocol adoption. They honor t
 |---|---|---|
 | Add Karpathy four principles to `SHARED_RULES.md` as a "Cognitive Protocol" section | `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` | 15 min |
 | Name and define the Three Buckets in session-state (Bucket 3 already exists as LATEST.md) | `02_MACHINE/State/session-state_LATEST.md` — add a `[MEMORY]` section | 10 min |
-| Add "Tier 0 — The Audit" to NS pitch framework | `01_HUMAN/Business/NorthernStrata/NS_COMMAND_CENTER.md` | 15 min |
-| Document Zapier MCP as Tier 1 delivery mechanism | `01_HUMAN/Business/NorthernStrata/NS_COMMAND_CENTER.md` (same edit) | 5 min |
+| Add "Tier 0 — The Audit" to NS pitch framework | `private workspace/Business/private-client/NS_COMMAND_CENTER.md` | 15 min |
+| Document Zapier MCP as Tier 1 delivery mechanism | `private workspace/Business/private-client/NS_COMMAND_CENTER.md` (same edit) | 5 min |
 | Update `/wrap-up` command spec to explicitly label Bucket 1 behavior | `.claude/commands/handover.md` or relevant skill file | 10 min |
 | Add Super Skills "Refinement Loop" criteria to skill-creator skill | `.gemini/skills/skill-creator.md` | 20 min |
 | **Total** | | **~75 min; split across days at 15 min/day** |
@@ -161,7 +161,7 @@ These are sequenced by dependency order:
 
 3. **Pinecone Serverless Namespace Setup** (2–3 hours)
    - Namespaces: `vantis-session`, `vantis-foundation`, `vantis-strategy`
-   - Indexer job: nightly cron over `01_HUMAN/Knowledge/Galaxy` and `02_MACHINE/`
+   - Indexer job: nightly cron over `private workspace/Knowledge/Galaxy` and `02_MACHINE/`
    - Client namespace isolation for Tier 2 Chief of Staff delivery
 
 4. **Zapier MCP Integration** (2–3 hours, client-driven)

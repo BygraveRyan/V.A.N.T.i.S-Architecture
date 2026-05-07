@@ -42,7 +42,7 @@ Any plan generated using this skill (including those in `plan_mode` or temporary
 
 Routing rule:
 - V.A.N.T.i.S. system, architecture, protocol, agent-layer, parity, and upgrade work -> `03_SYSTEM/Roadmap/`
-- Personal or human-centered work -> `01_HUMAN/...`
+- Personal or human-centered work -> `private workspace/...`
 
 ---
 

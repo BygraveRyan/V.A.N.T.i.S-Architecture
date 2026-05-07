@@ -1,5 +1,5 @@
 # AGENCY CHAINING PROTOCOL (ACP)
-Version: 1.1.0
+Version: 1.2.0
 Status: ACTIVE
 Scope: All multi-agent operations and high-stakes V.A.N.T.i.S. tasks.
 
@@ -35,7 +35,18 @@ To move V.A.N.T.i.S. from linear task execution to a **Recursive, Self-Governing
 
 ---
 
-## 3. GOVERNANCE RULES
+## 3. ADVANCED PATTERNS (v1.2.0)
+
+### Sequential Pipeline Defect Resolution (SPDR)
+When `evaluator-judge` identifies minor but specific defects in a complex multi-stage task:
+1. **Isolate**: Identify the specific stage of the `sequential-pipeline` where the defect originated.
+2. **Re-Inject**: Reroute *only* that stage's output back to the worker with the judge's feedback.
+3. **Re-Flow**: Resume the pipeline from the corrected stage.
+*Benefit*: Saves 60-80% token overhead compared to re-running the entire chain.
+
+---
+
+## 4. GOVERNANCE RULES
 
 1. **Self-Correction First**: An agent MUST attempt to resolve a low-confidence output using `structured-debate` or `stochastic-consensus` at least once before escalating to the user.
 2. **Adversarial Separation**: The Evaluator (`evaluator-judge`) MUST be a different sub-agent invocation than the Creator to prevent bias.
@@ -44,7 +55,7 @@ To move V.A.N.T.i.S. from linear task execution to a **Recursive, Self-Governing
 
 ---
 
-## 4. SKILL MAPPING
+## 5. SKILL MAPPING
 
 | State | Primary Skill | Alternative/Recursive Skill |
 | :--- | :--- | :--- |
@@ -55,4 +66,4 @@ To move V.A.N.T.i.S. from linear task execution to a **Recursive, Self-Governing
 
 ---
 
-*V.A.N.T.i.S. Agency Protocol | Version 1.0.0*
+*V.A.N.T.i.S. Agency Protocol | Version 1.2.0*

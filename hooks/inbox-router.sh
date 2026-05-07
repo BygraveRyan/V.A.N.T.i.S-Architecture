@@ -3,7 +3,7 @@
 # Classifies inbox items into auto-route (≥80% confidence) and manual review (<80%) buckets
 # Output format: classification decisions with confidence scores
 
-INBOX_DIR="01_HUMAN/Inbox"
+INBOX_DIR="private workspace/Inbox"
 
 # Initialize counters
 auto_route_items=()
@@ -13,15 +13,15 @@ classify_item() {
     local filename="$1"
     local lower=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
 
-    # Northern Strata (highest priority, highest confidence)
+    # private client (highest priority, highest confidence)
     if [[ $lower =~ northern.strata|northernstrata|jr-yt ]] || [[ $lower =~ "trades web" ]]; then
-        echo "01_HUMAN/Business/NorthernStrata|90|NS business match"
+        echo "private workspace/Business/private-client|90|NS business match"
         return
     fi
 
     # Career/Personal items
     if [[ $lower =~ career|cv|interview ]]; then
-        echo "01_HUMAN/Personal|85|Career/personal signal"
+        echo "private workspace/Personal|85|Career/personal signal"
         return
     fi
 

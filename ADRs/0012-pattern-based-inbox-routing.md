@@ -10,8 +10,8 @@ Building on ADR-0011 (Inbox System Optimization), the inbox processing system no
 
 - `gpt-export-*.md` files → always `02_MACHINE/AI_Chat_Imports/`
 - `Research Dossier-*.md` files → always `02_MACHINE/ai-candidates/`
-- Files containing "northern strata" → always `01_HUMAN/Business/NorthernStrata/`
-- Files containing "career" / "CV" / "interview" → always `01_HUMAN/Personal/`
+- Files containing "northern strata" → always `private workspace/Business/private-client/`
+- Files containing "career" / "CV" / "interview" → always `private workspace/Personal/`
 
 This agent involvement is token-wasteful for deterministic filename matching and delays batch processing. The opportunity: add a zero-token, script-based **pre-flight classification layer** that:
 
@@ -30,8 +30,8 @@ We are implementing **Pattern-Based Inbox Routing (v1)** with one new component:
    - Cost: 0 agent tokens (pure shell execution)
    - Confidence scoring: Each pattern is assigned a confidence threshold (82%–90%)
    - Pattern matching rules (in priority order):
-     - Northern Strata / NS / JR-YT → `01_HUMAN/Business/NorthernStrata/` (90% confidence)
-     - Career / CV / Interview → `01_HUMAN/Personal/` (85% confidence)
+     - private client / NS / JR-YT → `private workspace/Business/private-client/` (90% confidence)
+     - Career / CV / Interview → `private workspace/Personal/` (85% confidence)
      - Research Dossier → `02_MACHINE/ai-candidates/` (88% confidence)
      - Technical Standard / Architecture → `02_MACHINE/ai-candidates/` (85% confidence)
      - AI Chat Exports (gpt-export, gemini-export, perplexity-export) → `02_MACHINE/AI_Chat_Imports/` (82% confidence)
