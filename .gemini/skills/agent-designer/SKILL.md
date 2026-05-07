@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/engineering/agent-designer/SKILL.md

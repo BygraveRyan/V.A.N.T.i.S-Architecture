@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/engineering/prompt-governance/SKILL.md

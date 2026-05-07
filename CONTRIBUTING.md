@@ -60,7 +60,7 @@ Every PR must:
 
 ## 🔐 4. SECURITY & PRIVACY
 V.A.N.T.i.S. is built on a "Private Core / Public Mirror" model.
-- **Never** commit data from `01_HUMAN/Personal/`, `01_HUMAN/Inbox/`, or private `01_HUMAN/Projects/`.
+- **Never** commit data from `private workspace/Personal/`, `private workspace/Inbox/`, or private `private workspace/Projects/`.
 - **Always** verify your `publish-mirror.sh` whitelist before pushing updates to the public repo.
 
 ---

@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/business-growth/customer-success-manager/SKILL.md
