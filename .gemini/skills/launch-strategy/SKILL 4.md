@@ -1,0 +1,1 @@
+/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/marketing-skill/launch-strategy/SKILL.md

@@ -28,9 +28,9 @@ alias claude-strategist="claude --system-prompt \"$SHARED_COUNCIL_CONTEXT $STRAT
 alias claude-researcher="claude --system-prompt \"$SHARED_COUNCIL_CONTEXT $RESEARCHER_POSTURE\""
 alias claude-guardian="claude --system-prompt \"$SHARED_COUNCIL_CONTEXT $GUARDIAN_POSTURE\""
 
-# --- Gemini CLI Note ---
-# Gemini CLI uses native subagent discovery from .gemini/agents/*.md.
-# These files already contain the full posture definitions.
+# --- Gemini / Codex Notes ---
+# Gemini uses native subagent discovery from .gemini/agents/*.md.
+# Codex uses provider wrappers in .codex/agents/*.md or native agent spawning with the same canonical posture files.
 
 echo "[STATUS] V.A.N.T.i.S. Phase 5 Council aliases loaded (Optimized)."
 echo "   Available: claude-architect, claude-strategist, claude-researcher, claude-guardian"

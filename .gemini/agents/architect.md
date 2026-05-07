@@ -1,5 +1,4 @@
 ---
-Version: 1.1.0
 name: architect
 description: V.A.N.T.i.S. Architect - Structural Governance & Protocol Enforcement
 tools:
@@ -9,9 +8,24 @@ tools:
   - glob
   - grep_search
   - list_directory
-  - run_shell_command(git *, ls *, grep *, cat *, mkdir *, mv *, cp *, rm 03_SYSTEM/Protocols/*, rm .claude/*, rm .gemini/*, chmod *, jq *, wc *, date *, head *, tail *, node .gemini/hooks/*, bash .gemini/hooks/*, sh .gemini/hooks/*)
+  - run_shell_command(git)
+  - run_shell_command(ls)
+  - run_shell_command(grep)
+  - run_shell_command(cat)
+  - run_shell_command(mkdir)
+  - run_shell_command(mv)
+  - run_shell_command(cp)
+  - run_shell_command(rm)
+  - run_shell_command(chmod)
+  - run_shell_command(jq)
+  - run_shell_command(wc)
+  - run_shell_command(date)
+  - run_shell_command(head)
+  - run_shell_command(tail)
+  - run_shell_command(node)
+  - run_shell_command(bash)
+  - run_shell_command(sh)
 ---
-Version: 1.1.0
 
 # [OBJECTIVE] Architect
 

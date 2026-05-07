@@ -22,7 +22,7 @@ Analyze token overhead across every loaded component in a V.A.N.T.i.S. session a
 
 Scan V.A.N.T.i.S. component directories and estimate token consumption:
 
-**Subagents** (`.claude/agents/*.md`, `.gemini/agents/*.md`)
+**Provider role wrappers** (`.claude/agents/*.md`, `.gemini/agents/*.md`, `.codex/agents/*.md`)
 - Count lines and tokens per file (words × 1.3).
 - Extract `description` frontmatter length.
 - Flag: files >200 lines (heavy), description >30 words (bloated frontmatter).
@@ -36,7 +36,7 @@ Scan V.A.N.T.i.S. component directories and estimate token consumption:
 - Flag: files >150 lines.
 - Detect content overlap between protocols.
 
-**Adapters** (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`)
+**Adapters** (`CLAUDE.md`, `GEMINI.md`, `CODEX.md`, `AGENTS.md`)
 - Count tokens per file.
 - Flag: combined total >400 lines.
 
@@ -46,7 +46,7 @@ Sort every component into a bucket:
 
 | Bucket | Criteria | Action |
 |--------|----------|--------|
-| **Core** | Referenced in `CLAUDE.md`/`GEMINI.md`, or part of `AGENTS.md` mandates. | Keep |
+| **Core** | Referenced in an adapter (`CLAUDE.md`, `GEMINI.md`, `CODEX.md`) or part of `AGENTS.md` mandates. | Keep |
 | **Domain-Specific** | Project-specific protocols or niche skills. | Consider lazy-loading |
 | **Redundant** | Overlapping content between protocols and agents. | Consolidate or remove |
 
@@ -57,7 +57,7 @@ Identify the following problem patterns:
 - **Bloated agent descriptions**: description >30 words in frontmatter loads into every Task tool invocation.
 - **Heavy agents**: files >200 lines inflate subagent tool context on every spawn.
 - **Redundant protocols**: protocols that duplicate `AGENTS.md` or adapter rules.
-- **Adapter bloat**: verbose explanations in `CLAUDE.md` or `GEMINI.md` that should be moved to protocols.
+- **Adapter bloat**: verbose explanations in provider adapters that should be moved to protocols.
 
 ### Phase 4: Report
 

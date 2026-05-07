@@ -13,6 +13,10 @@ set -e
 
 PHASE="${1:-post}"
 
+git_safe() {
+  git -c core.fsmonitor=false "$@" 2>/dev/null
+}
+
 # Check if stdin is a TTY or empty to prevent hanging
 if [ -t 0 ] || [ ! -p /dev/stdin ]; then
   # Not a pipe or a TTY, but check if there is data available at all
@@ -28,9 +32,9 @@ if [ -z "$INPUT_JSON" ]; then
 fi
 
 # 1. Project Detection Logic
-PROJECT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+PROJECT_ROOT=$(git_safe rev-parse --show-toplevel || pwd)
 PROJECT_NAME=$(basename "$PROJECT_ROOT")
-REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "$PROJECT_ROOT")
+REMOTE_URL=$(git_safe remote get-url origin || echo "$PROJECT_ROOT")
 
 export PHASE="$PHASE"
 export PROJECT_ROOT="$PROJECT_ROOT"

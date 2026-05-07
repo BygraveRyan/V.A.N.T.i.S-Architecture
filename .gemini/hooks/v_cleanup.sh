@@ -57,8 +57,25 @@ else
     echo "   ℹ️ No observation log found."
 fi
 
-# 3. PURGING TEMP & NOISE
-echo "[3/3] Purging temporary files and system noise..."
+# 3. ARCHIVING COMPLETED ROADMAP TASKS
+echo "[3/4] Archiving completed roadmap tasks..."
+ROADMAP_DIR="03_SYSTEM/Roadmap"
+ROADMAP_ARCHIVE="04_ARCHIVES/03_SYSTEM/Roadmap"
+mkdir -p "$ROADMAP_ARCHIVE"
+
+# Move files with 'status: completed' or 'status: complete' (case-insensitive)
+# We use grep to find the files
+for file in "$ROADMAP_DIR"/*.md; do
+    if [ -f "$file" ]; then
+        if grep -qi "status: complete" "$file"; then
+            echo "   📦 Archiving completed task: $(basename "$file")"
+            mv "$file" "$ROADMAP_ARCHIVE/"
+        fi
+    fi
+done
+
+# 4. PURGING TEMP & NOISE
+echo "[4/4] Purging temporary files and system noise..."
 # Clean .gemini/tmp
 if [ -d ".gemini/tmp" ]; then
     echo "   🗑️ Clearing .gemini/tmp/..."
