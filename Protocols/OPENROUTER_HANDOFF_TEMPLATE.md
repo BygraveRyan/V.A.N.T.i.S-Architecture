@@ -41,7 +41,7 @@ Author: V.A.N.T.i.S. Intelligence Layer
 
 ## 5. GOVERNANCE & CONSTRAINTS
 - **LOG REFLEX**: All changes must be written to `logs/YYYY-MM-DD/openrouter-build.md`.
-- **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+- **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `private workspace/Knowledge/Galaxy`.
 - **ASV REFLEX**: Increment versions for protocol or system-file changes.
 
 ---

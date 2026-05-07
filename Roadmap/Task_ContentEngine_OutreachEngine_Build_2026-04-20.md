@@ -7,8 +7,8 @@ Two engines fully architecturally designed and approved (2026-04-17) but not yet
 Claude is the runtime operator once engines are live. Codex handles the build.
 
 Blueprints:
-- `01_HUMAN/Business/NorthernStrata/Strategy/ContentEngine_Restructure_Blueprint_2026-04-17.md`
-- `01_HUMAN/Business/NorthernStrata/Strategy/Outreach_Engine_Architecture_Blueprint_2026-04-17.md`
+- `private workspace/Business/private-client/Strategy/ContentEngine_Restructure_Blueprint_2026-04-17.md`
+- `private workspace/Business/private-client/Strategy/Outreach_Engine_Architecture_Blueprint_2026-04-17.md`
 
 ---
 

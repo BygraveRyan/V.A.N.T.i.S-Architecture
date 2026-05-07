@@ -90,7 +90,7 @@ TITLE=$(echo "$PRIVATE_PR_JSON" | jq -r '.title // "feat(architecture): system-w
 BODY=$(echo "$PRIVATE_PR_JSON" | jq -r '.body // "Automated architectural synchronization from Private Core."')
 
 # Sanitize body
-PR_BODY_PUBLIC=$(echo "$BODY" | sed 's|vault/01_HUMAN|REDACTED_PERSONAL|g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
+PR_BODY_PUBLIC=$(echo "$BODY" | sed 's|vault/private workspace|REDACTED_PERSONAL|g' | sed 's|logs/[0-9-]*/|logs/REDACTED/|g')
 PR_TITLE_PUBLIC="Engine Sync: $TITLE"
 
 # Commit and Deployment

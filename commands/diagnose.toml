@@ -30,11 +30,11 @@ The following is the output from the low-level system diagnostic hook:
 - **Validation**: Does the latest audit file follow the Metadata v1.5 schema? (Check for tags, parent-links, status, version).
 
 ### 3. Knowledge Drift
-- **Inbox Hygiene**: !{ls 01_HUMAN/Inbox/ | wc -l} items pending.
+- **Inbox Hygiene**: !{ls private workspace/Inbox/ | wc -l} items pending.
 - **Candidate Layer**: !{ls 02_MACHINE/ai-candidates/ | wc -l} candidates awaiting review.
 
 ### 4. Vault Cleanup (Auto-Remediation)
-- **Inbox Archival**: !{find 01_HUMAN/Inbox -type f -mtime +30 -exec echo "Archiving: {}" \; | wc -l} files older than 30 days.
+- **Inbox Archival**: !{find private workspace/Inbox -type f -mtime +30 -exec echo "Archiving: {}" \; | wc -l} files older than 30 days.
 - **State Cleanup**: !{find 02_MACHINE/State -type f -name "session-state_*.md" -mtime +7 -exec echo "Archiving: {}" \; | wc -l} session-state files older than 7 days.
 - **Auto-fix status**: Creating archive directory and moving old files (non-destructive).
 

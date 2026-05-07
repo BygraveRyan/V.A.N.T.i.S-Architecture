@@ -8,7 +8,7 @@
 
 Phase 4 of the V.A.N.T.i.S. Improvement Sprint included P10 v2 — a full "instinct infrastructure" sourced from the `everything-claude-code` continuous learning system. This comprised a background observer hook, a Python CLI, per-session pattern extraction, and automatic instinct injection. The instinct system was designed to accumulate project-scoped coding patterns (e.g., "always use Prisma for this repo") that get surfaced in future sessions automatically.
 
-V.A.N.T.i.S. is currently a knowledge management and personal productivity system, not an active software development repo. The Car Shopping App, GCP Pipeline, and other project workstreams exist in `01_HUMAN/Projects/` but are in early or planning stages — none produce the volume of coding sessions needed to make project-scoped instincts valuable.
+V.A.N.T.i.S. is currently a knowledge management and personal productivity system, not an active software development repo. The Car Shopping App, GCP Pipeline, and other project workstreams exist in `private workspace/Projects/` but are in early or planning stages — none produce the volume of coding sessions needed to make project-scoped instincts valuable.
 
 ## Decision
 

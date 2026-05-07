@@ -1,4 +1,4 @@
-Run a Northern Strata outreach batch from the external outreach engine.
+Run a private client outreach batch from the external outreach engine.
 
 Operational repo:
 

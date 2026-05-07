@@ -16,7 +16,7 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ## Core Mandates
 1. **LOG REFLEX**: Meaningful vault, system, or protocol changes → reasoning log in `logs/YYYY-MM-DD/` when rationale or handoff context is needed. Routine edits may rely on Git plus lightweight telemetry.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `private workspace/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **AGENCY CHAINING**: All multi-agent/high-stakes tasks MUST follow the R-E-V-R cycle defined in `03_SYSTEM/Protocols/AGENCY_CHAINING_PROTOCOL.md`.
@@ -63,6 +63,17 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 1. **Resume**: Read `02_MACHINE/State/session-state_LATEST.md` (symlink). If missing, sort `02_MACHINE/State/` by filename descending and read the top result.
 2. **Handoff**: Run `/handover` before terminating a session.
 3. **Automated**: Run `/resume` for a structured orientation brief.
+
+---
+
+# [INTERFACE] INTERFACE & COMMANDS
+Slash commands are located in `.gemini/commands/`. Invoke with `/command-name`.
+
+| Command | Purpose | Skill Triggered |
+| :--- | :--- | :--- |
+| `/resume` | Load session state, inject repo-map, orient for execution | — |
+| `/handover` | Persist current objective and next steps for the next agent | — |
+| `/linkedin` | Proactively suggest and draft builder-log posts | `linkedin-os` |
 
 ---
 

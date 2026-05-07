@@ -1,7 +1,7 @@
 # V.A.N.T.i.S. 33-Skill Integration Plan
 
 ## 🎯 1. Target Scope: The 33 V.A.N.T.i.S. Skills
-The following 33 skills have been curated to directly support the Sheffield Trades AI (n8n "Black Box" integration), B2B "Trojan Horse" marketing, and Vault Hygiene/AI Governance.
+The following 33 skills have been curated to directly support the client project AI (n8n "Black Box" integration), B2B "Trojan Horse" marketing, and Vault Hygiene/AI Governance.
 
 ### Business Growth & Product (15)
 `competitive-teardown`, `competitive-intel`, `pricing-strategy`, `launch-strategy`, `financial-analyst`, `customer-success-manager`, `revenue-operations`, `sales-engineer`, `product-discovery`, `product-manager`, `ux-researcher-designer`, `analytics-tracking`, `product-analytics`, `landing-page-generator`, `saas-scaffolder`
@@ -48,6 +48,6 @@ To prove the integration is successful, we will run a live validation test align
 
 **Execution:**
 - [x] ~~Trigger the `financial-analyst` skill locally within V.A.N.T.i.S.~~
-- [x] ~~Provide it with dummy financial data simulating the "Sheffield Fencer".~~
+- [x] ~~Provide it with dummy financial data simulating the "client demo".~~
 - [x] ~~Execute `ratio_calculator.py` and output to `02_MACHINE/Synthesis/`.~~
-- [x] ~~Confirm no writes occurred to `01_HUMAN/Knowledge/Galaxy`.~~
+- [x] ~~Confirm no writes occurred to `private workspace/Knowledge/Galaxy`.~~

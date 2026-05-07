@@ -33,7 +33,7 @@ cp "$TEMPLATE" "$OUTPUT_PR_BODY"
 # Inject content into the PR body template using a safer delimiter (| instead of /)
 sed -i '' "s|<!-- Explain the friction or limitation in the current architecture. e.g., \"V.A.N.T.i.S. lacks a personal context layer...\" -->|$WHY_CONTENT|g" "$OUTPUT_PR_BODY"
 sed -i '' "s|<!-- Detail the technical implementation. e.g., \"Created USER_CONTEXT.md and updated the system prompt.\" -->|See HOW section in $LOG_FILE|g" "$OUTPUT_PR_BODY"
-sed -i '' "s|<!-- Explain how the system is better now. e.g., \"V.A.N.T.i.S. can now generate Ryan-specific insights.\" -->|$OUTCOME_CONTENT|g" "$OUTPUT_PR_BODY"
+sed -i '' "s|<!-- Explain how the system is better now. e.g., \"V.A.N.T.i.S. can now generate operator-specific insights.\" -->|$OUTCOME_CONTENT|g" "$OUTPUT_PR_BODY"
 
 # Add the log reference to Traceability (escaping brackets and brackets for sed)
 sed -i '' "s|- \[ \] Related Audit Log / Task ID:|- [x] Related Audit Log / Task ID: $LOG_FILE|g" "$OUTPUT_PR_BODY"

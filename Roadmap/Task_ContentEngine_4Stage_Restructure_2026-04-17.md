@@ -4,7 +4,7 @@
 **Status:** Approved — Pending Execution
 **Scope:** Pipeline collapse (8 → 4 stages), intake skill redesign, idea file normalisation
 **Supersedes:** `Task_ContentEngine_IdeaTemplate_v2_Migration.md`
-**Blueprint:** `01_HUMAN/Business/NorthernStrata/Strategy/ContentEngine_Restructure_Blueprint_2026-04-17.md`
+**Blueprint:** `private workspace/Business/private-client/Strategy/ContentEngine_Restructure_Blueprint_2026-04-17.md`
 
 ---
 

@@ -71,7 +71,7 @@ Hermes runs in **read/synthesize mode only** for the Freelance Growth OS client 
 | **First File** | `03_SYSTEM/Protocols/governance-gate.md` (written, ASV v1.1.0) |
 | **First Command** | `git checkout -b feat/governance-gate-hermes-safe-mode` |
 | **Interim Safe Mode** | Hermes read-only until `SANDBOX_VALIDATED: true` in session-state; all writes land in `02_MACHINE/Synthesis/` only |
-| **Governance-Gate Trigger** | Any subagent write to `01_HUMAN/`, call to external system, or Hermes file write attempt |
+| **Governance-Gate Trigger** | Any subagent write to `private workspace/`, call to external system, or Hermes file write attempt |
 | **Estimated Time** | 22 minutes (within 30-min daily cap) |
 
 ---

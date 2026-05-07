@@ -19,7 +19,7 @@ Analyze the current project or insight. Identify 3-5 "Core Mechanisms" (e.g., "D
 
 ## Step 2 — Semantic Sweep
 Search the following locations for matching keywords, mechanisms, or contradictory theories:
-- `01_HUMAN/Knowledge/Galaxy/`
+- `private workspace/Knowledge/Galaxy/`
 - `02_MACHINE/ai-candidates/`
 - `02_MACHINE/Synthesis/Nodes/`
 

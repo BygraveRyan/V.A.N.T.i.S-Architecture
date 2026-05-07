@@ -20,7 +20,7 @@ The prompt templates dictating the LLM's output must be rewritten to align with 
 
 **Required Changes:**
 *   **Remove Link Mandate:** Delete references to `Demo URL: [link]`. Add a strict negative constraint: `CRITICAL: Do NOT include any links or URLs in this first message. Links are reserved for Message 2.`
-*   **Enforce Singular Pronouns:** Add a rule: `Use "I" instead of "We". (e.g., "I run Northern Strata", "I build trade websites").`
+*   **Enforce Singular Pronouns:** Add a rule: `Use "I" instead of "We". (e.g., "I run private client", "I build trade websites").`
 *   **Fix Call To Action (CTA):** Change the "Low-friction call ask" instruction to: `End with a single question proposing a 5-minute call with two specific times (e.g., "Can ring you Tuesday 10am or Thursday 2pm — whichever works."). NEVER use vague questions like "Worth a look?" or "Worth 5 minutes?".`
 *   **Remove Bot Language:** Delete the PECR rule requiring `Reply STOP to unsubscribe` for sole traders. This violates the human-to-human tone required by the framework.
 *   **Fix Openers (Specifically `no-website.md`):** Forbid robotic openers like "I searched for...". Mandate observation-based framing: *"Searched for a local plumber and noticed you don't have a proper site set up..."*

@@ -5,7 +5,7 @@ Generate the V.A.N.T.i.S. Daily Session Review for the current date.
 ## Step 1 — Gather Evidence
 - Read all logs in `logs/YYYY-MM-DD/` (today's date)
 - Read `02_MACHINE/State/session-state_LATEST.md` for active objective context
-- Scan `01_HUMAN/Tasks/PERSONAL/YYYY-MM-DD_Daily.md` if it exists
+- Scan `private workspace/Tasks/PERSONAL/YYYY-MM-DD_Daily.md` if it exists
 
 ## Step 2 — Synthesize
 Produce a structured review covering:

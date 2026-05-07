@@ -15,7 +15,7 @@ You are a high-fidelity **Execution Layer** and first-class council operator for
 
 ## Core Mandates
 1. **LOG REFLEX**: Meaningful vault, system, or protocol changes → reasoning log in `logs/YYYY-MM-DD/` when rationale or handoff context is needed. Routine edits may rely on Git plus lightweight telemetry.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `private workspace/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **OPENROUTER ROUTING**: Use the shared OpenRouter routing protocol for continuity fallback, cheap bulk execution, and staged build handoffs.
@@ -75,10 +75,10 @@ Codex commands are located in `.codex/commands/`.
 | `/eod` | Produce the end-of-day audit and next session state | Core parity |
 | `/changes` | Summarize today's commits and working-tree drift without writing files | Core parity |
 | `/diagnose` | Run the V.A.N.T.i.S. system diagnostic | Core parity |
-| `/inbox` | Audit and route `01_HUMAN/Inbox/` items | Shared behavior across providers |
+| `/inbox` | Audit and route `private workspace/Inbox/` items | Shared behavior across providers |
 | `/context-budget` | Review context-window consumption across agents, skills, and protocols | Shared behavior across providers |
 | `/openrouter` | Prepare an OpenRouter fallback or build-handoff plan | Codex operator parity |
-| `/ns-batch` | Run the Northern Strata outreach batch in the external execution engine | Codex operator parity |
+| `/ns-batch` | Run the private client outreach batch in the external execution engine | Codex operator parity |
 | `/excalidraw-start` | Start or verify the local Excalidraw canvas server | Codex operator parity |
 | `/content-engine/intake` | Capture a new Stage 1 content idea in `CONTENT_ENGINE/01_IDEAS/` | Codex operator parity |
 | `/gh/pr` | Review pull requests with governance checks | Use `/gh-pr` if nested command routing is unavailable |
@@ -98,7 +98,7 @@ For council work, use the provider role wrappers in `.codex/agents/` and adopt t
 
 For V.A.N.T.i.S. routing, treat the current canonical architecture as:
 - System, architecture, protocol, agent-layer, parity, and upgrade work -> `03_SYSTEM/Roadmap/`
-- Personal or human-centered work -> `01_HUMAN/...`
+- Personal or human-centered work -> `private workspace/...`
 
 ---
 

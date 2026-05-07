@@ -1,7 +1,7 @@
 # 📖 STAI Infrastructure Cookbook (v1.1)
 **Status**: Active / Verified
 **Date**: April 16, 2026
-**Objective**: Rapid, frictionless deployment of Northern Strata / STAI demo sites.
+**Objective**: Rapid, frictionless deployment of private client / STAI demo sites.
 
 ---
 
@@ -84,7 +84,7 @@ Always lower the friction for the lead by pre-filling the conversation.
 ### The URL Pattern:
 `https://wa.me/[NUMBER]?text=[URL_ENCODED_MESSAGE]`
 
-- **Example Message**: "Hi Northern Strata! I'm interested in your Lead-Capture system. Can you show me a demo for my business?"
+- **Example Message**: "Hi private client! I'm interested in your Lead-Capture system. Can you show me a demo for my business?"
 
 ---
 

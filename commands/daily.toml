@@ -7,7 +7,7 @@ Your objective is to synthesize today's activity into a high-signal summary that
 
 ### 📂 MASTER RESEARCH INPUTS (TODAY: $(date +%Y-%m-%d))
 - **Logs Found**: !{ls logs/$(date +%Y-%m-%d)/}
-- **Recent Tasks**: !{ls 01_HUMAN/Tasks/VANTIS/Active/*.md}
+- **Recent Tasks**: !{ls private workspace/Tasks/VANTIS/Active/*.md}
 
 ---
 

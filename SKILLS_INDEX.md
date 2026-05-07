@@ -12,7 +12,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/architectural-designer/`
 **Purpose:** Standardize the planning and execution of system upgrades.
 **Capabilities:** Dependency mapping, Architectural Upgrade Plan generation, and Post-Plan Sync Hook.
-**Output Location:** `01_HUMAN/Tasks/` (via Sync Hook)
+**Output Location:** `private workspace/Tasks/` (via Sync Hook)
 
 ---
 
@@ -81,7 +81,7 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/precedent-detection/`
 **Purpose:** Detect and surface previously encountered concepts from the Galaxy.
 **Capabilities:** Semantic matching and relationship explanation.
-**Rules:** Read-only access to 01_HUMAN/Knowledge.
+**Rules:** Read-only access to private workspace/Knowledge.
 
 ---
 
@@ -89,4 +89,4 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Location:** `.gemini/skills/structured-inbox-project-router/`
 **Purpose:** Process structured AI chat exports one file at a time and route them into Projects, Business, or staged AI chat imports.
 **Capabilities:** Atomic extraction, duplicate detection, controlled routing, and final batch synthesis.
-**Output Location:** `01_HUMAN/Projects/`, `01_HUMAN/Business/`, `02_MACHINE/AI_Chat_Imports/`
+**Output Location:** `private workspace/Projects/`, `private workspace/Business/`, `02_MACHINE/AI_Chat_Imports/`
