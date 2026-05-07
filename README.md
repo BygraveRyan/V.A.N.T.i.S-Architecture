@@ -101,6 +101,7 @@ V.A.N.T.i.S. extends agent capabilities via Model Context Protocol servers as co
 02_MACHINE/           # Agent-generated output — reports, drafts, research, session state
 03_SYSTEM/            # Governance layer — protocols, ADRs, roadmap, rules
 04_ARCHIVES/          # Versioned archive of superseded content
+REVENUE_ENGINE/       # Closed-loop revenue intelligence — insights, opportunities, offers, decisions
 logs/                 # Immutable audit trail — auto-generated, never hand-edited
 .gemini/              # Agent harness — hooks, skills, MCP config (Gemini CLI)
 .claude/              # Agent harness — commands, settings (Claude Code)

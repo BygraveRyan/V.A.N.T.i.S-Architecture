@@ -1,0 +1,61 @@
+{
+  "commands": [
+    {
+      "directory": ".codex/commands"
+    }
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/repo-map.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh pre"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/v_observe.sh post"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|NotebookEdit|MultiEdit|apply_patch|Bash|run_shell_command|exec_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .gemini/hooks/session-ledger.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .gemini/hooks/cost-tracker.js"
+          }
+        ]
+      }
+    ]
+  }
+}
