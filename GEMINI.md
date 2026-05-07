@@ -66,6 +66,17 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ---
 
+# [INTERFACE] INTERFACE & COMMANDS
+Slash commands are located in `.gemini/commands/`. Invoke with `/command-name`.
+
+| Command | Purpose | Skill Triggered |
+| :--- | :--- | :--- |
+| `/resume` | Load session state, inject repo-map, orient for execution | — |
+| `/handover` | Persist current objective and next steps for the next agent | — |
+| `/linkedin` | Proactively suggest and draft builder-log posts | `linkedin-os` |
+
+---
+
 # [INTELLIGENCE] MODEL SELECTION GUIDE
 > Route tasks to the minimum viable model to preserve quota and reduce latency. **Source:** V.A.N.T.i.S. Improvement Report, ENH 2.3.
 

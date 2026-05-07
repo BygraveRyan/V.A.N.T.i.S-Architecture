@@ -15,6 +15,7 @@ Adopt ICM (Interpretable Context Methodology) — each major folder gets a `cont
 - Agents read `context.md` before operating in a folder — no guesswork
 - Human-legible, zero-infrastructure cost
 - Naming conventions become enforceable (not just documented)
+- **Update 2026-05-08**: Tier 1 Room Coverage (Human, Machine, System, Engines) is 100% complete and verified.
 - Future: CONTENT_ENGINE and REVENUE_ENGINE get Room treatment in Phase 2
 
 ## Related
