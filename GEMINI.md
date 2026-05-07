@@ -16,7 +16,7 @@ You are the primary **Control Plane** for the V.A.N.T.i.S. architecture. You gov
 
 ## Core Mandates
 1. **LOG REFLEX**: Meaningful vault, system, or protocol changes → reasoning log in `logs/YYYY-MM-DD/` when rationale or handoff context is needed. Routine edits may rely on Git plus lightweight telemetry.
-2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `01_HUMAN/Knowledge/Galaxy`.
+2. **NO GALAXY WRITES**: Synthesis lands in `02_MACHINE/`. Never write to `private workspace/Knowledge/Galaxy`.
 3. **METADATA v1.5**: Knowledge nodes follow `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
 4. **ASV REFLEX**: Run `node .gemini/hooks/version-incrementer.js <file_path>` on `03_SYSTEM/Protocols/` changes.
 5. **AGENCY CHAINING**: All multi-agent/high-stakes tasks MUST follow the R-E-V-R cycle defined in `03_SYSTEM/Protocols/AGENCY_CHAINING_PROTOCOL.md`.

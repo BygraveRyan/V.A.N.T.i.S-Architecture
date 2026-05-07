@@ -73,7 +73,7 @@ V.A.N.T.i.S. uses three named memory buckets. All agents must understand which b
 | Bucket | Name | Contents | V1 Implementation | Write Path |
 |---|---|---|---|---|
 | 1 | Session Memory | Per-session recall — context, decisions, steps taken | SQLite+FTS5 (local); Honcho deferred post-sandbox | `/handover` + selective reasoning logs → `02_MACHINE/State/` and `logs/` |
-| 2 | Foundational Knowledge | Durable knowledge — Galaxy, research, domain expertise | `01_HUMAN/Knowledge/Galaxy/` (file-based); pgvector post-sandbox | Orchestrator only (subagents BLOCKED) |
+| 2 | Foundational Knowledge | Durable knowledge — Galaxy, research, domain expertise | `private workspace/Knowledge/Galaxy/` (file-based); pgvector post-sandbox | Orchestrator only (subagents BLOCKED) |
 | 3 | Strategy Profile | Active strategic state — current objectives, priorities, constraints | `02_MACHINE/State/session-state_LATEST.md` | `/handover` → dated session-state + LATEST symlink |
 
 **Rules:**
@@ -134,7 +134,7 @@ To optimize for cost and speed during long buildouts, use the existing **OpenRou
     - an explicit handoff/state artifact when continuity is the only missing context.
     Routine low-context edits may rely on Git history plus lightweight hook telemetry and do not require an automatic Git-derived session audit.
     - *Tip: If mutating files via shell (sed, rm, etc.), include `# [FILE] path` in your command to ensure the session-ledger hook captures the change correctly.*
-2.  **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `01_HUMAN/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
+2.  **NO GALAXY WRITES**: Agents are strictly prohibited from writing or moving files into `private workspace/Knowledge/Galaxy`. All synthesis must land in `02_MACHINE` for human verification.
 3.  **METADATA v1.5**: All proposed knowledge nodes MUST follow the schema in `03_SYSTEM/Protocols/METADATA_SCHEMA.md`.
     - **Note on Technical Files**: For `.gemini/agents/*.md` or `SKILL.md` files, metadata MUST be placed in Markdown **below** the YAML frontmatter block. Placing V.A.N.T.i.S. metadata (like `Version`) inside the YAML delimiters (`---`) will crash the Gemini CLI boot sequence.
 4.  **ASV REFLEX**: Before finalizing any interaction turn that involves system-level modifications (Tier 1, 2, or 3), the agent MUST execute the Automated System Versioning hook: `node .gemini/hooks/version-incrementer.js <file_path>`.
@@ -160,8 +160,8 @@ Agents MUST proactively load and follow the relevant skill instructions based on
 | **System & Architecture** | |
 | Modify System Architecture, Protocols, or Rules | `architectural-designer` |
 | Draft or optimize LinkedIn content | `linkedin-content-generation`, `precedent-detection`, `linkedin-os` |
-| Process items from `01_HUMAN/Inbox` or analyze research | `inbox-processor`, `concept-extraction` |
-| Process structured AI chat exports from `01_HUMAN/Inbox` | `structured-inbox-project-router` |
+| Process items from `private workspace/Inbox` or analyze research | `inbox-processor`, `concept-extraction` |
+| Process structured AI chat exports from `private workspace/Inbox` | `structured-inbox-project-router` |
 | Convert raw insights into permanent concepts or detect orphan notes | `memory-curator` |
 | Identify cross-domain synergies or map conceptual precedents | `concept-mapper` |
 | Execute Git Branching, Commits, or PRs | `github-ops` |

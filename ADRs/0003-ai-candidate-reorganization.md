@@ -12,7 +12,7 @@ The previous `02_MACHINE/Synthesis/` folder was a "catch-all" for research, patt
 
 We have reorganized the `02_MACHINE` layer. All P10 Lite extracted patterns and concepts are now moved to `02_MACHINE/ai-candidates/`. This directory serves as the "Candidate Layer" (Stage 2 of the Knowledge Pipeline: Information → Insight → Concept).
 
-Files in `ai-candidates` follow the `concept-candidate-<name>.md` schema and must be reviewed by a human before being promoted to `01_HUMAN/Knowledge/Galaxy`.
+Files in `ai-candidates` follow the `concept-candidate-<name>.md` schema and must be reviewed by a human before being promoted to `private workspace/Knowledge/Galaxy`.
 
 ## Alternatives Considered
 

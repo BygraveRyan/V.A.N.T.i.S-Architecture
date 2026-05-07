@@ -46,7 +46,7 @@ Instead of designing from scratch, user requested research into 10 existing self
 - **Reference Documents:** 
   - `02_MACHINE/Synthesis/jarvis-upgrade-v2_karpathy-superskills-synthesis_2026-05-02.md` (comprehensive analysis)
   - `03_SYSTEM/Protocols/governance-gate.md` v1.1.0 (governance layer)
-  - Karpathy files in `01_HUMAN/Inbox/` (cognitive protocol + super skills)
+  - Karpathy files in `private workspace/Inbox/` (cognitive protocol + super skills)
 
 ### Deliverable
 **Single document:** `02_MACHINE/Synthesis/vantis-internal-architecture-design_2026-05-02.md` addressing all three user goals.

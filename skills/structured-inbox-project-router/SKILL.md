@@ -1,6 +1,6 @@
 ---
 name: structured-inbox-project-router
-description: Processes structured AI chat exports from 01_HUMAN/Inbox one file at a time, extracts atomic ideas, routes them into Projects, Business, or 02_MACHINE/AI_Chat_Imports, and finishes with a cross-batch synthesis.
+description: Processes structured AI chat exports from private workspace/Inbox one file at a time, extracts atomic ideas, routes them into Projects, Business, or 02_MACHINE/AI_Chat_Imports, and finishes with a cross-batch synthesis.
 ---
 
 # SKILL: Structured Inbox Project Router
@@ -13,7 +13,7 @@ Process structured AI-chat exports in V.A.N.T.i.S. with higher rigor than the ge
 
 # When To Use
 Activate this skill when:
-- `01_HUMAN/Inbox/` contains structured AI chat exports.
+- `private workspace/Inbox/` contains structured AI chat exports.
 - The source files follow a stable schema such as:
   - `PRIMARY TOPIC`
   - `HIGH-SIGNAL INSIGHTS`
@@ -33,7 +33,7 @@ Do not use this skill for:
 # Core Workflow
 
 ## Step 1 - Scan the Intake Set
-Identify the target files in `01_HUMAN/Inbox/`.
+Identify the target files in `private workspace/Inbox/`.
 
 Default handling:
 - process one file at a time
@@ -62,8 +62,8 @@ Rules:
 ## Step 4 - Check for Duplication
 Check for overlap against:
 - items already processed in the current batch
-- obvious existing project folders in `01_HUMAN/Projects/`
-- obvious existing business material in `01_HUMAN/Business/`
+- obvious existing project folders in `private workspace/Projects/`
+- obvious existing business material in `private workspace/Business/`
 
 Do not merge silently.
 If two items are merged or treated as duplicates, record the rationale explicitly.
@@ -72,14 +72,14 @@ If two items are merged or treated as duplicates, record the rationale explicitl
 Use the following lanes.
 
 ### Lane A - Project
-Route to `01_HUMAN/Projects/<project>/` when:
+Route to `private workspace/Projects/<project>/` when:
 - the item has a clear problem or objective
 - the scope is coherent
 - next steps are identifiable
 - the material reads as something to build, test, or develop
 
 ### Lane B - Business
-Route to `01_HUMAN/Business/...` when:
+Route to `private workspace/Business/...` when:
 - the item is immediately usable in an active business lane
 - the commercial application is concrete now
 - confidence is high
@@ -94,7 +94,7 @@ Route to `02_MACHINE/AI_Chat_Imports/` when:
 - it needs later promotion, refinement, or cross-referencing
 
 ### Hard Constraint
-Never route imported chat material directly to `01_HUMAN/Knowledge/Galaxy/`.
+Never route imported chat material directly to `private workspace/Knowledge/Galaxy/`.
 
 ---
 
@@ -136,7 +136,7 @@ Required sections:
 - `AI_Chat_Imports Count`
 - `Highest-Priority Opportunities`
 - `Lower-Priority / Leave for Now`
-- `Northern Strata Immediate Uses`
+- `private client Immediate Uses`
 - `Recommended Next Moves`
 - `Priority Ranking`
 - `Routing Table`
@@ -162,8 +162,8 @@ Required routing table fields:
 # Protocol Compliance
 
 ## Output & Lineage
-- Project-shaped outputs may be written directly into `01_HUMAN/Projects/`.
-- Business-shaped outputs may be written directly into `01_HUMAN/Business/`.
+- Project-shaped outputs may be written directly into `private workspace/Projects/`.
+- Business-shaped outputs may be written directly into `private workspace/Business/`.
 - Ambiguous but valuable outputs must be staged in `02_MACHINE/AI_Chat_Imports/`.
 - Galaxy promotion is out of scope for this skill.
 

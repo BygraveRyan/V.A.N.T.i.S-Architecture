@@ -9,7 +9,7 @@ Applies To: All V.A.N.T.i.S. Agents (Gemini, Claude, GPT, Local)
 
 REVENUE_ENGINE and CONTENT_ENGINE are two standalone execution systems that are part of the V.A.N.T.i.S. agentic architecture. They are **not** internal VANTIS modules — they are sibling repositories with their own agent rules and should expose either a shared `AGENTS.md` or provider adapters (`CLAUDE.md` / `GEMINI.md` / `CODEX.md`). V.A.N.T.i.S. acts as the **intelligence layer** that receives only validated, promoted outputs from both engines.
 
-These engines are available to V.A.N.T.i.S. for any client engagement, project, or market. They are currently deployed for **Northern Strata (NS)** work but are general-purpose tools within the architecture.
+These engines are available to V.A.N.T.i.S. for any client engagement, project, or market. They are currently deployed for **private client (NS)** work but are general-purpose tools within the architecture.
 
 ---
 
@@ -214,7 +214,7 @@ When creating a new execution engine, follow this checklist:
 - **CONTENT_ENGINE**: Restructured to 4-stage model (01_IDEAS → 02_DRAFTS → 03_LIVE → 04_PERFORMANCE). First productions in progress.
 - **NS_OUTREACH_ENGINE**: Fully scaffolded and verified. First four batches generated (2026-04-20_batch_01–04). Live Firecrawl search confirmed working.
 - **All engines relocated**: Moved to `~/Documents/VANTIS_ENGINES/` (ADR-0007).
-- **Active Client/Context**: Northern Strata (NS) — all engines currently deployed for NS work.
+- **Active Client/Context**: private client (NS) — all engines currently deployed for NS work.
 - **VANTIS Promotion**: No engine has yet promoted validated intelligence to VANTIS. First promotion pending first paying client.
 
 ---

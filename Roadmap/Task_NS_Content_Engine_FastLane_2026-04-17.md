@@ -1,4 +1,4 @@
-# Plan: Northern Strata Content Engine Fast-Lane
+# Plan: private client Content Engine Fast-Lane
 
 **Date**: 2026-04-17 | **Status**: Approved — Pending Execution  
 **Repo**: `CONTENT_ENGINE` (execution) + `V.A.N.T.i.S/CONTENT_ENGINE` (intelligence)
@@ -27,7 +27,7 @@ Not a production run — a standing reference file. Underscore prefix mirrors `_
 8. Platform notes — Facebook = trust/lead, Instagram = visual proof. One platform per run. If calendar says both, ask which.
 9. Calendar pointer — path to `30-DAY_CONTENT_CALENDAR_2026-04-16.csv`, look at Type column
 
-**Target length:** ~80–100 lines. Source data: `NorthernStrata/Brand/BRAND.md`, `CONTENT_STRATEGY_2026-04-16.md`, approved runs in `raw/copy/`.
+**Target length:** ~80–100 lines. Source data: `private-client/Brand/BRAND.md`, `CONTENT_STRATEGY_2026-04-16.md`, approved runs in `raw/copy/`.
 
 ---
 
@@ -72,7 +72,7 @@ asset_destination: raw/copy/[RUN_ID]/
 
 ## Deliverable 3 — NS Daily Post Cheat Sheet (final, depends on 1+2)
 
-**Path:** `/Users/REDACTED/Documents/V.A.N.T.i.S/01_HUMAN/Business/NorthernStrata/NS_DAILY_POST_CHEAT_SHEET.md`
+**Path:** `/Users/REDACTED/Documents/V.A.N.T.i.S/private workspace/Business/private-client/NS_DAILY_POST_CHEAT_SHEET.md`
 
 **Constraint:** Under 40 lines. Every line is an action or a decision. No background explanation.
 
@@ -93,8 +93,8 @@ asset_destination: raw/copy/[RUN_ID]/
 
 ## Critical Reference Files (read-only)
 - `/Users/REDACTED/Documents/CONTENT_ENGINE/.claude/skills/hero-shot/SKILL.md` — canonical skill schema to match
-- `/Users/REDACTED/Documents/V.A.N.T.i.S/01_HUMAN/Business/NorthernStrata/Strategy/CONTENT_STRATEGY_2026-04-16.md` — source of pillars + offer details
-- `/Users/REDACTED/Documents/V.A.N.T.i.S/01_HUMAN/Business/NorthernStrata/Brand/BRAND.md` — voice/visual constraints
+- `/Users/REDACTED/Documents/V.A.N.T.i.S/private workspace/Business/private-client/Strategy/CONTENT_STRATEGY_2026-04-16.md` — source of pillars + offer details
+- `/Users/REDACTED/Documents/V.A.N.T.i.S/private workspace/Business/private-client/Brand/BRAND.md` — voice/visual constraints
 
 ## Verification
 1. **Cold start test:** New session, paste the cheat sheet opening prompt → `01_IDEA.md` created with zero clarifying questions
@@ -105,7 +105,7 @@ asset_destination: raw/copy/[RUN_ID]/
 
 ## Intelligence Integration — Outbound Science (2026-04-17)
 
-Source: `01_HUMAN/Inbox/Archive/The Science of Outbound-Cold Email and Copywriting Course.md`
+Source: `private workspace/Inbox/Archive/The Science of Outbound-Cold Email and Copywriting Course.md`
 
 This section governs how the Notebook LM outreach science maps into the content engine. Every deliverable above must comply.
 

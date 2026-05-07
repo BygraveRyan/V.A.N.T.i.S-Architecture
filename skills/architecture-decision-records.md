@@ -141,5 +141,5 @@ proposed → accepted → [deprecated | superseded by ADR-NNNN]
 ## Mandate Compliance
 
 - Writing a new ADR counts as a vault modification — produce a log entry per the Strict Finality mandate
-- ADRs live in `03_SYSTEM/` (Architectural history area) — not in `01_HUMAN/Knowledge/Galaxy`
+- ADRs live in `03_SYSTEM/` (Architectural history area) — not in `private workspace/Knowledge/Galaxy`
 - No ASV reflex required (ADRs are not `03_SYSTEM/Protocols/` files)

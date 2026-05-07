@@ -8,7 +8,7 @@ Run `bash .gemini/hooks/v_diagnose.sh` and capture the result.
 ## Step 2 — Intelligence Pass
 Review:
 - the most recent daily audit in `02_MACHINE/Daily/`
-- inbox hygiene in `01_HUMAN/Inbox/`
+- inbox hygiene in `private workspace/Inbox/`
 - candidate-layer hygiene in `02_MACHINE/ai-candidates/`
 
 ## Step 3 — Report

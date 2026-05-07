@@ -14,7 +14,7 @@
 
 
 ### IMPACT - What is the result?
-<!-- Explain how the system is better now. e.g., "V.A.N.T.i.S. can now generate Ryan-specific insights." -->
+<!-- Explain how the system is better now. e.g., "V.A.N.T.i.S. can now generate operator-specific insights." -->
 
 
 ---

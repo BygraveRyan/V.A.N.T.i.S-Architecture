@@ -22,7 +22,7 @@ Support professional visibility and authority by synthesizing vault intelligence
 ## [ACTIVATION]
 • user requests content ideas
 • project milestones are achieved
-• significant insights are logged in `01_HUMAN/Daily`
+• significant insights are logged in `private workspace/Daily`
 
 ---
 

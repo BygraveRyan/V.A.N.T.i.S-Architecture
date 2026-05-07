@@ -66,7 +66,7 @@ Update Stage 1 section only.
 - Add `## Job` field
 - Same field renames as above
 
-#### `01_IDEAS/lead-gen/Northern Strata — Social Outreach Posts.md`
+#### `01_IDEAS/lead-gen/private client — Social Outreach Posts.md`
 - Pre-template informal copy brief — not a template idea record
 - Add single comment line at top noting status. Leave in place as historical reference.
 
@@ -78,7 +78,7 @@ Update Stage 1 section only.
 3. `CONTENT_ENGINE/01_IDEAS/01_IDEA.md`
 4. `CONTENT_ENGINE/01_IDEAS/brand/NS_Logo_Reveal_Video_2026-04-09.md`
 5. `CONTENT_ENGINE/01_IDEAS/lead-gen/NS_Social_Outreach_2026-04-13.md`
-6. `CONTENT_ENGINE/01_IDEAS/lead-gen/Northern Strata — Social Outreach Posts.md` (comment only)
+6. `CONTENT_ENGINE/01_IDEAS/lead-gen/private client — Social Outreach Posts.md` (comment only)
 
 ## Files NOT Changed
 - `COMMANDS.md` — commands unchanged

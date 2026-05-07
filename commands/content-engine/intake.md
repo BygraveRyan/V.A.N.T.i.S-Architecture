@@ -9,7 +9,7 @@ Ask for only two things if they are missing:
 
 Title is optional. If the operator does not provide one, derive a concise title from the idea.
 
-Do not ask the operator to provide Audience, Platform, Format, Job, Angle, or Problem Addressed during intake unless the idea is too vague to classify. Derive those fields from the freeform input and Northern Strata context.
+Do not ask the operator to provide Audience, Platform, Format, Job, Angle, or Problem Addressed during intake unless the idea is too vague to classify. Derive those fields from the freeform input and private client context.
 
 ## Step 2 - Derive the structured fields
 

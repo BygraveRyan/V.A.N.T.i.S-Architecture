@@ -34,7 +34,7 @@ To evolve V.A.N.T.i.S. from a reactive CLI adapter into a proactive "Jarvis" sys
 - **Proactive Heartbeat:** Deploy a cron-driven engine that "wakes up" V.A.N.T.i.S. without user prompting to execute scheduled background tasks (e.g., inbox processing, daily sweeps).
 
 ### Phase 2: The Hermes Brain (Cognitive Core)
-- **FTS5 SQLite Memory Layer:** Transition from static Markdown crawling to an indexed SQLite vector/FTS5 layer over the `01_HUMAN/Knowledge` Galaxy. This enables instant, low-latency recall of historical contexts.
+- **FTS5 SQLite Memory Layer:** Transition from static Markdown crawling to an indexed SQLite vector/FTS5 layer over the `private workspace/Knowledge` Galaxy. This enables instant, low-latency recall of historical contexts.
 - **Honcho Dialectic Modeling:** Implement user-modeling. V.A.N.T.i.S. must track user preferences, energy levels, and coding styles over time (The Closed Learning Loop), updating its global `GEMINI.md` memory autonomously.
 
 ### Phase 3: Serverless Hibernation (Execution Layer)

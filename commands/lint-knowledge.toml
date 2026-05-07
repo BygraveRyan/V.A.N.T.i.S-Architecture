@@ -7,7 +7,7 @@ description = "Audits the knowledge graph for orphans, stale nodes, and structur
 prompt = '''
 You are the V.A.N.T.i.S. Memory Curator.
 
-Your objective is to perform a **Knowledge Health Audit** of the machine memory layer (`02_MACHINE/`) and the human knowledge layer (`01_HUMAN/Knowledge/Galaxy/`).
+Your objective is to perform a **Knowledge Health Audit** of the machine memory layer (`02_MACHINE/`) and the human knowledge layer (`private workspace/Knowledge/Galaxy/`).
 
 ---
 
@@ -15,17 +15,17 @@ Your objective is to perform a **Knowledge Health Audit** of the machine memory 
 
 ### 1. Orphan Detection
 Identify nodes with 0 inbound links (wikilinks from other notes).
-- **Search Scope**: `01_HUMAN/Knowledge/Galaxy/`, `02_MACHINE/ai-candidates/`, `02_MACHINE/Synthesis/Nodes/`.
-- **Command**: !{bash -c "grep -L '\\[\\[' 01_HUMAN/Knowledge/Galaxy/*.md 02_MACHINE/ai-candidates/*.md 02_MACHINE/Synthesis/Nodes/*.md | head -n 10"}
+- **Search Scope**: `private workspace/Knowledge/Galaxy/`, `02_MACHINE/ai-candidates/`, `02_MACHINE/Synthesis/Nodes/`.
+- **Command**: !{bash -c "grep -L '\\[\\[' private workspace/Knowledge/Galaxy/*.md 02_MACHINE/ai-candidates/*.md 02_MACHINE/Synthesis/Nodes/*.md | head -n 10"}
 
 ### 2. Stale Node Analysis
 Identify concepts that have not been updated or mentioned in recent sessions.
 - **Criteria**: No `updated: YYYY-MM-DD` metadata within the last 60 days.
-- **Command**: !{bash -c "grep -L 'updated: 2026-0[234]' 01_HUMAN/Knowledge/Galaxy/*.md 02_MACHINE/ai-candidates/*.md | head -n 10"}
+- **Command**: !{bash -c "grep -L 'updated: 2026-0[234]' private workspace/Knowledge/Galaxy/*.md 02_MACHINE/ai-candidates/*.md | head -n 10"}
 
 ### 3. Mechanism Gaps
 Search for "High-Level Principles" (status: Tier 1) that lack "Example" or "How-To" child nodes.
-- **Command**: !{bash -c "grep -l 'tier: 1' 01_HUMAN/Knowledge/Galaxy/*.md | head -n 5"}
+- **Command**: !{bash -c "grep -l 'tier: 1' private workspace/Knowledge/Galaxy/*.md | head -n 5"}
 
 ---
 

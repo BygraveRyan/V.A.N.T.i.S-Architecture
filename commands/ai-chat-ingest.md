@@ -1,10 +1,10 @@
-Process structured AI chat exports from `01_HUMAN/Inbox/` using the shared `structured-inbox-project-router` skill.
+Process structured AI chat exports from `private workspace/Inbox/` using the shared `structured-inbox-project-router` skill.
 
 Version: 1.0.1
 
 ## Step 1 - Scan the inbox
 
-List candidate structured export files in `01_HUMAN/Inbox/` and confirm the target set if the user has not already named it.
+List candidate structured export files in `private workspace/Inbox/` and confirm the target set if the user has not already named it.
 
 ## Step 2 - Load the shared skill
 
@@ -22,10 +22,10 @@ Rules:
 - preserve the original inbox exports unless the user explicitly asks to archive them
 - extract atomic ideas without flattening the source
 - route items only to:
-  - `01_HUMAN/Projects/<project>/`
-  - `01_HUMAN/Business/...`
+  - `private workspace/Projects/<project>/`
+  - `private workspace/Business/...`
   - `02_MACHINE/AI_Chat_Imports/`
-- never route imported chat material directly to `01_HUMAN/Knowledge/Galaxy/`
+- never route imported chat material directly to `private workspace/Knowledge/Galaxy/`
 
 ## Step 4 - Use fan-out only when helpful
 
@@ -42,7 +42,7 @@ End with a single synthesis that includes:
 - counts by destination
 - highest-priority opportunities
 - lower-priority or leave-for-now items
-- Northern Strata immediate uses
+- private client immediate uses
 - final ranking
 
 ## Step 6 - Logging

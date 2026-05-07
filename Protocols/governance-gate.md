@@ -36,12 +36,12 @@ Subagents may read any vault file. Writes are restricted by target path:
 | `02_MACHINE/Synthesis/` | WRITE (with approval) | Synthesized outputs land here only |
 | `02_MACHINE/State/` | WRITE (with approval) | Session state addendums only |
 | `02_MACHINE/Daily/` | WRITE (with approval) | Daily review outputs only |
-| `01_HUMAN/` (any path) | BLOCKED | Human-curated layer; orchestrator writes only |
-| `01_HUMAN/Knowledge/Galaxy` | HARD BLOCK | NO GALAXY WRITES — abort and log |
+| `private workspace/` (any path) | BLOCKED | Human-curated layer; orchestrator writes only |
+| `private workspace/Knowledge/Galaxy` | HARD BLOCK | NO GALAXY WRITES — abort and log |
 | `03_SYSTEM/Protocols/` | BLOCKED | Requires ASV REFLEX + human approval |
 | `logs/` | WRITE (always) | Audit log writes are never blocked |
 
-**Hard Block behaviour:** If a subagent targets `01_HUMAN/Knowledge/Galaxy` for a write, the agent MUST:
+**Hard Block behaviour:** If a subagent targets `private workspace/Knowledge/Galaxy` for a write, the agent MUST:
 1. Abort the write immediately.
 2. Append a blocked-action entry to `logs/YYYY-MM-DD/governance-gate-actions.md`.
 3. Return the blocked payload to the human orchestrator for manual review.
@@ -59,7 +59,7 @@ Subagents may read any vault file. Writes are restricted by target path:
 - Hermes integration work may not consume more than 30 min/day of system-building budget.
 
 **Sandbox validation conditions (all must be true):**
-1. Docker/SSH sandbox is running and path-tested against `01_HUMAN/Knowledge/Galaxy` (write attempt must be blocked by sandbox, not just by this policy).
+1. Docker/SSH sandbox is running and path-tested against `private workspace/Knowledge/Galaxy` (write attempt must be blocked by sandbox, not just by this policy).
 2. Validation run recorded in session-state with `SANDBOX_VALIDATED: true`.
 3. Governance-gate.md version incremented via ASV REFLEX after validation entry.
 
@@ -102,7 +102,7 @@ This file is automatically consulted when any of the following occurs:
 
 | Trigger | Gate Level Activated |
 |---|---|
-| Subagent attempts write to any `01_HUMAN/` path | Layer 2 (BLOCKED) |
+| Subagent attempts write to any `private workspace/` path | Layer 2 (BLOCKED) |
 | Subagent attempts write to `Galaxy` | Layer 2 (HARD BLOCK) |
 | Hermes proposes any file write | Layer 3 (Interim Posture) |
 | Any agent calls external API, webhook, or platform | Layer 1 (Human Approval) |

@@ -5,7 +5,7 @@
 # Cost: Zero agent tokens (pure shell execution)
 
 LEDGER_FILE=".gemini/state/inbox-ledger.csv"
-INBOX_DIR="01_HUMAN/Inbox"
+INBOX_DIR="private workspace/Inbox"
 
 # Initialize ledger if it doesn't exist
 if [ ! -f "$LEDGER_FILE" ]; then

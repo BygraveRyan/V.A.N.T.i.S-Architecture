@@ -63,7 +63,7 @@ Defines the "depth" of the concept to help the AI traverse layers for comprehens
 - **ecosystem**: Platform-specific (e.g., GCP).
 
 ## verified_distinct
-A mandatory "Collision Detection" flag. During creation or overhaul, the agent must check the entire Galaxy for similar concepts. If an overlap >30% exists, the nodes MUST be merged instead of created.
+A mandatory "Collision Detection" flag. During creation or overhaul, the agent must check the entire Galaxy for similar concepts. If a semantic overlap >30% exists (based on intent and scope), the nodes MUST be merged instead of created to prevent graph fragmentation.
 
 ---
 
