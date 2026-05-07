@@ -64,7 +64,7 @@ Every structural decision has a justification:
 | Intelligence | `CLAUDE.md` / `GEMINI.md` | Per-model adapter — mandate enforcement, tool routing, escalation rules |
 | Agent | `AGENTS.md` | Specialised subagents with discrete domains and intent-based triggers |
 | Skill | `.gemini/skills/` | Modular, lazy-loaded capabilities in model-agnostic Markdown |
-| Memory | `01_HUMAN/Knowledge/Galaxy/` | Long-term knowledge graph — Metadata v1.5 schema, Obsidian-compatible |
+| Memory | `private workspace/Knowledge/Galaxy/` | Long-term knowledge graph — Metadata v1.5 schema, Obsidian-compatible |
 | Logging | `logs/YYYY-MM-DD/` | Immutable audit trail — every file mutation, state transition, and agent decision |
 
 ### Multi-Agent Orchestration
@@ -97,10 +97,11 @@ V.A.N.T.i.S. extends agent capabilities via Model Context Protocol servers as co
 ## Repository Layout
 
 ```text
-01_HUMAN/             # Human-authored content — projects, tasks, daily notes, inbox
+private workspace/             # Human-authored content — projects, tasks, daily notes, inbox
 02_MACHINE/           # Agent-generated output — reports, drafts, research, session state
 03_SYSTEM/            # Governance layer — protocols, ADRs, roadmap, rules
 04_ARCHIVES/          # Versioned archive of superseded content
+REVENUE_ENGINE/       # Closed-loop revenue intelligence — insights, opportunities, offers, decisions
 logs/                 # Immutable audit trail — auto-generated, never hand-edited
 .gemini/              # Agent harness — hooks, skills, MCP config (Gemini CLI)
 .claude/              # Agent harness — commands, settings (Claude Code)

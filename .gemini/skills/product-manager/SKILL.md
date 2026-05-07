@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/agents/personas/product-manager.md

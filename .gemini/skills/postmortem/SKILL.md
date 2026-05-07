@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/c-level-advisor/executive-mentor/skills/postmortem/SKILL.md

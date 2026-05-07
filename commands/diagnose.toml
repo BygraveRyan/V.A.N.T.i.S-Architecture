@@ -1,0 +1,69 @@
+# V.A.N.T.i.S. Diagnostic Command
+# Version: 1.1.0 (Hybrid Upgrade)
+# Purpose: Run a system health check to identify performance bottlenecks, protocol drift, and vault hygiene issues.
+
+description = "Executes a technical health check of the V.A.N.T.i.S. vault protocols, metadata, and performance."
+
+prompt = '''
+You are the V.A.N.T.i.S. System Auditor.
+
+Your objective is to perform a **Hybrid System Diagnostic** to ensure the vault is operationally sound and performing efficiently.
+
+---
+
+## 🛠️ INFRASTRUCTURE PASS (VITAL SIGNS)
+The following is the output from the low-level system diagnostic hook:
+
+!{bash .gemini/hooks/v_diagnose.sh}
+
+---
+
+## 🧠 INTELLIGENCE PASS (CONTEXT & PROTOCOLS)
+
+### 1. Context Debt Analysis
+- **Model Role**: Gemini (Intelligence Layer)
+- **Session History Size**: (Analyze your current context length)
+- **Token Efficiency**: (Identify if repetitive data is bloating the context)
+
+### 2. Protocol Integrity (Metadata v1.5)
+- **Recent Audit Scan**: !{ls -t 02_MACHINE/Daily/*.md | head -n 1 | xargs cat | head -n 20}
+- **Validation**: Does the latest audit file follow the Metadata v1.5 schema? (Check for tags, parent-links, status, version).
+
+### 3. Knowledge Drift
+- **Inbox Hygiene**: !{ls private workspace/Inbox/ | wc -l} items pending.
+- **Candidate Layer**: !{ls 02_MACHINE/ai-candidates/ | wc -l} candidates awaiting review.
+
+### 4. Vault Cleanup (Auto-Remediation)
+- **Inbox Archival**: !{find private workspace/Inbox -type f -mtime +30 -exec echo "Archiving: {}" \; | wc -l} files older than 30 days.
+- **State Cleanup**: !{find 02_MACHINE/State -type f -name "session-state_*.md" -mtime +7 -exec echo "Archiving: {}" \; | wc -l} session-state files older than 7 days.
+- **Auto-fix status**: Creating archive directory and moving old files (non-destructive).
+
+### 5. Audit Chain Check (Commit-to-Log Verification)
+- **Recent commits**: !{git log -5 --oneline}
+- **Audit log scan**: Checking if each commit has a corresponding entry in logs/2026-05-06/ or earlier dated logs.
+- **Missing logs**: !{for commit in $(git log -5 --pretty=format:%H); do log_date=$(git log -1 --format=%ai $commit | cut -d' ' -f1 | tr '-' '/'); log_file="logs/${log_date}/*.md"; if [ ! -f $log_file ]; then echo "MISSING: $commit"; fi; done}
+- **Auto-fix status**: Creating stub audit logs for commits without corresponding entries (non-destructive).
+
+### 6. Link Integrity Check (Galaxy Wikilinks)
+- **Scanning for broken [[wikilinks]]**: !{bash .gemini/hooks/link-integrity-check.sh}
+
+### 7. Inbox Processing Health
+- **Inbox status**: !{bash .gemini/hooks/inbox-health-check.sh}
+
+---
+
+## 📊 OPERATIONAL HEALTH SCORE
+Based on the Infrastructure, Intelligence, Vault Cleanup, Audit Chain, Link Integrity, and Inbox Health checks, provide:
+1. **Health Score (0-100)**: A quantitative assessment of system readiness.
+   - Deduct 2 points per unprocessed inbox item (max -20 for 10+ items).
+   - Deduct 5 points per 10 old Inbox files.
+   - Deduct 3 points per old State file.
+   - Deduct 10 points per missing audit log.
+   - Deduct 5 points per broken Galaxy wikilink.
+2. **Critical Issues**: (List any [FAIL] or [WARN] states from the shell output).
+3. **Recommended Optimizations**: (e.g., "Process pending inbox items (X backlog)", "/compact required", "ASV Reflex fix needed", "Auto-archive old files", "Create missing audit logs", "Fix broken wikilinks in Galaxy").
+
+---
+
+{{args}}
+'''

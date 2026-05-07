@@ -1,1 +1,0 @@
-/Users/ryanderice/VANTIS_LIBRARIES/claude-skills/c-level-advisor/decision-logger/SKILL.md
