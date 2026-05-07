@@ -1,7 +1,11 @@
 Audit the `01_HUMAN/Inbox/` for new items. Invokes the `inbox-processor` skill.
 
-## Step 1 — Scan
-List all files in `01_HUMAN/Inbox/` (excluding `Archive/`). If empty, report and stop.
+## Step 1 — Pre-Flight Classification
+Run pattern-based router to identify high-confidence auto-route items and uncertain items.
+
+!{bash .gemini/hooks/inbox-router.sh}
+
+Items ≥80% confidence will be auto-routed. Proceed to Step 2 with items marked for manual decision only.
 
 ## Step 2 — Triage each item
 For each file, determine its type:

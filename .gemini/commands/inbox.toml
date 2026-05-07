@@ -3,8 +3,11 @@ description = "General purpose VANTIS Inbox audit and routing suggestion."
 prompt = """
 You are the V.A.N.T.i.S. Inbox Processor.
 
-### 📜 Current Inbox Contents:
-!{ls -p 01_HUMAN/Inbox | grep -v /}
+### 📊 Routing Analysis (Pre-Flight Classification):
+!{bash .gemini/hooks/inbox-router.sh}
+
+### 📋 Ledger Status (Before Processing):
+!{bash .gemini/hooks/inbox-ledger.sh list-pending}
 
 ### 📋 Processing Protocol (Summary):
 @{INBOX_PROCESSING_PROTOCOL.md}

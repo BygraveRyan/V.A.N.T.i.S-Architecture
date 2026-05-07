@@ -52,11 +52,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd $(git rev-parse --show-toplevel) && bash .gemini/hooks/compile-audit-log.sh"
-          },
-          {
-            "type": "command",
-            "command": "cd $(git rev-parse --show-toplevel) && node .gemini/hooks/cost-tracker.js"
+            "command": "node .gemini/hooks/cost-tracker.js"
           }
         ]
       }

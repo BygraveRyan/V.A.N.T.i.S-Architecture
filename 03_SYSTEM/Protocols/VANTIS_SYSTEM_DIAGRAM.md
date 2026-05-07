@@ -3,7 +3,7 @@
 
 **Vectorised Astral Navigation & Thought Intelligence System**
 
-Version: 1.0
+Version: 1.1
 Architecture Model: Repo-Primary AI Knowledge System
 
 ---
@@ -347,6 +347,35 @@ logs/
 ```
 
 This prevents **knowledge contamination and model collapse**.
+
+---
+
+# Execution Engine Architecture
+
+V.A.N.T.i.S. operates two standalone execution engines as part of its agentic toolchain. These are sibling repositories — not internal modules. They follow an Execution/Intelligence Split: raw work stays in the execution repo; only validated outputs are promoted to V.A.N.T.i.S.
+
+```mermaid
+flowchart TD
+
+RE_Exec[REVENUE_ENGINE Execution Repo<br>~/Documents/VANTIS_ENGINES/revenue-engine/]
+CE_Exec[CONTENT_ENGINE Execution Repo<br>~/Documents/VANTIS_ENGINES/content-engine/]
+
+RE_Intel[REVENUE_ENGINE Intelligence Layer<br>V.A.N.T.i.S/REVENUE_ENGINE/]
+CE_Intel[CONTENT_ENGINE Intelligence Layer<br>V.A.N.T.i.S/CONTENT_ENGINE/]
+
+VANTIS[V.A.N.T.i.S. Intelligence Layer<br>Validated Promotions Only]
+
+RE_Exec -->|"Market insights, validated offers"| RE_Intel
+CE_Exec -->|"Approved content, performance data"| CE_Intel
+
+RE_Exec -->|"Pain points, offer language"| CE_Exec
+CE_Exec -->|"Objections, lead signals"| RE_Exec
+
+RE_Intel --> VANTIS
+CE_Intel --> VANTIS
+```
+
+**Full protocol:** `03_SYSTEM/Protocols/Universals/Rules/EXECUTION_ENGINES.md`
 
 ---
 

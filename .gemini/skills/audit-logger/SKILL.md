@@ -1,42 +1,44 @@
 ---
 name: audit-logger
-description: Ensures high-fidelity audit trails via automated tokenless logging (Tier 1) and model-authored reasoning logs for significant architectural changes (Tier 2).
+description: Ensures durable audit trails via lightweight hook telemetry and selective model-authored reasoning logs when rationale, risks, or handoff context matter.
 ---
 
-# SKILL: Audit Logger (v1.5)
-Version: 1.0.1
+# SKILL: Audit Logger (v1.7)
+Version: 1.2.1
 
 Purpose
-Ensure high-fidelity audit trails. Operates in two tiers: **Automated (tokenless)** for all sessions, and **Reasoning (model-authored)** for significant architectural decisions only.
+Ensure durable audit trails without redundant Git-derived session logs. Operates in two layers: **Lightweight telemetry** for all sessions, and **Reasoning logs** for changes that need intent, risk, or continuity context.
 
 ---
 
 # Audit Tiers
 
-## Tier 1 — Automated (Tokenless) — DEFAULT
-**Mechanism**: Claude Code `PostToolUse` + `Stop` command hooks.
+## Layer 1 — Lightweight Telemetry — DEFAULT
+**Mechanism**: Shared hook telemetry wired through each provider's native config.
 - `session-ledger.sh` captures every file modification in real-time to `.gemini/tmp/session-ledger.jsonl`.
-- `compile-audit-log.sh` compiles the ledger + `git diff --stat` into a structured log at session end.
+- `cost-tracker.js` records lightweight usage/cost telemetry at session end.
+- Git remains the source of truth for file-level history and diffs.
 - **Zero model tokens consumed.** Runs silently on every session.
-- Output: `logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_AutoLog_Session-Audit.md`
 
-## Tier 2 — Reasoning Log (Model-Authored) — SIGNIFICANT CHANGES ONLY
+## Layer 2 — Reasoning Log (Model-Authored) — SELECTIVE
 Invoke this skill manually when:
 - Executing a multi-file architectural change (feat/ branch)
 - Completing a V.A.N.T.i.S. system task from `03_SYSTEM/Roadmap/`
 - Completing a personal or human-centered task from `01_HUMAN/...`
 - Any turn where the **WHY** behind a change is non-obvious from the git diff alone
+- Any turn that needs durable handoff context, explicit risks, or decision rationale
 
 ---
 
-# When to Invoke This Skill (Tier 2)
+# When to Invoke This Skill (Layer 2)
 
-- **Trigger**: Finalizing a turn involving vault modifications that warrant reasoning context.
-- Tier 1 already handles mechanical logging. Tier 2 adds the narrative layer when it matters.
+- **Trigger**: Finalizing a turn involving meaningful changes that warrant reasoning context.
+- Layer 1 already handles telemetry. Layer 2 adds the narrative layer when it matters.
+- Do **not** create a reasoning log just because files changed. If Git history plus session-ledger telemetry fully explains the work, skip it.
 
 ---
 
-# Tier 2 Logging Process
+# Layer 2 Logging Process
 
 Step 0 — ASV Reflex
 Run: `node .gemini/hooks/version-incrementer.js <file_path>` for all Tier 1–3 system files modified.
@@ -44,7 +46,7 @@ Run: `node .gemini/hooks/version-incrementer.js <file_path>` for all Tier 1–3 
 Step 1 — Context Ledger
 ```json
 {
-  "agent": "Claude",
+  "agent": "<Active provider + model>",
   "task": "Hyphenated-Task-Name",
   "files_read": ["file1.md"],
   "files_modified": ["file1.md"],
@@ -55,7 +57,7 @@ Step 1 — Context Ledger
 ```
 
 Step 2 — Filename
-`logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_Claude_TaskDescriptor.md`
+`logs/YYYY-MM-DD/YYYY-MM-DD_HHMMSS_<Agent>_TaskDescriptor.md`
 
 Step 3 — Sections
 - User Request, Reasoning Summary, Files Read, Files Modified (table with ASV status), Outcome + Signals.
@@ -63,7 +65,7 @@ Step 3 — Sections
 ---
 
 # Deterministic Rules
-1. **Tier 1 is always on** — never disable the tokenless hooks.
-2. **Tier 2 is additive** — it supplements, never replaces, Tier 1.
+1. **Layer 1 is always on** — keep lightweight telemetry hooks enabled.
+2. **Layer 2 is selective** — use it when rationale, risks, or continuity context would otherwise be lost.
 3. **Immutability** — never edit or delete existing logs.
-4. **No Silent Actions** — if Tier 1 misses something (e.g., Gemini session), write a Tier 2 log.
+4. **No Silent Decisions** — if lightweight telemetry misses a meaningful change or the rationale would be unclear to the next operator, write a reasoning log.

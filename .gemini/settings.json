@@ -100,12 +100,6 @@
         "matcher": ".*",
         "hooks": [
           {
-            "name": "audit-log-compiler",
-            "type": "command",
-            "command": "bash .gemini/hooks/compile-audit-log.sh",
-            "description": "Compiles the session ledger into a structured audit log."
-          },
-          {
             "name": "cost-tracker",
             "type": "command",
             "command": "node .gemini/hooks/cost-tracker.js",

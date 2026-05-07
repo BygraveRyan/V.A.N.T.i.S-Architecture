@@ -1,5 +1,4 @@
 ---
-Version: 1.1.0
 name: guardian
 description: V.A.N.T.i.S. Guardian - Governance Compliance, Audit Trail & Mandate Enforcement
 tools:

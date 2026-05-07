@@ -1,5 +1,4 @@
 ---
-Version: 1.1.0
 name: researcher
 description: V.A.N.T.i.S. Researcher - Fact-Finding, Source Ingestion & Galaxy Cross-Reference
 tools:

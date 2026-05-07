@@ -1,5 +1,5 @@
 # V.A.N.T.i.S. Skills Index
-Version: 1.0.7
+Version: 1.0.8
 
 Purpose
 This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are **agent-agnostic** — defined as pure Markdown protocols readable and executable by any agent (Gemini CLI, Claude Code, or future agents). They are housed in `.gemini/skills/` for historical reasons but are not Gemini-exclusive.
@@ -82,3 +82,11 @@ This file provides a discoverable index of all V.A.N.T.i.S. skills. Skills are *
 **Purpose:** Detect and surface previously encountered concepts from the Galaxy.
 **Capabilities:** Semantic matching and relationship explanation.
 **Rules:** Read-only access to 01_HUMAN/Knowledge.
+
+---
+
+## structured-inbox-project-router (v1.0.0)
+**Location:** `.gemini/skills/structured-inbox-project-router/`
+**Purpose:** Process structured AI chat exports one file at a time and route them into Projects, Business, or staged AI chat imports.
+**Capabilities:** Atomic extraction, duplicate detection, controlled routing, and final batch synthesis.
+**Output Location:** `01_HUMAN/Projects/`, `01_HUMAN/Business/`, `02_MACHINE/AI_Chat_Imports/`

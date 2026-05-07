@@ -15,41 +15,40 @@ This schema is designed for **high-velocity, high-volume knowledge scaling (100+
 
 Every Galaxy node MUST include this frontmatter.
 
+> **CRITICAL (AGENT/SKILL FILES)**: For files parsed by Gemini CLI (e.g., `.gemini/agents/*.md`, `SKILL.md`), you MUST separate Technical Configuration (YAML) from Semantic Metadata (Markdown). Placing unrecognized keys like `version` or `schema_version` inside the `---` block will cause the CLI to fail at startup.
+
+## For Standard Galaxy Nodes (Markdown Notes)
+Standard nodes use the unified YAML block:
+
 ```yaml
 ---
 id: concept-<domain>-<name>
-type: concept | framework | mental-model | method | definition | pattern
-status: seed | developing | evergreen | deprecated
-
-# CATEGORIZATION (For Robust Scaling)
-domain:
-  - <primary-domain>
-abstraction_layer: foundational | component | systemic | strategic | ecosystem
-verified_distinct: true  # Human confirms no overlap with existing nodes
-
-# CORE METADATA
-created: YYYY-MM-DD
-Updated: 2026-03-26
+...
 version: 1
-schema_Version: 1.6
-
-# LINEAGE & SOVEREIGNTY
-source: human-original | ai-assisted | ai-candidate
-source_project: <project-id> | global
-confidence: low | medium | high
-
-# RELATIONSHIPS (Pure Concept Graph)
-related_concepts:
-  - concept-id-1
-  - concept-id-2
-aliases:
-  - Alias 1
-
-# DISCOVERY
-tags:
-  - tag1
+schema_Version: 1.7
+...
 ---
 ```
+
+## For Agent & Skill Definitions (Technical Files)
+Follow the "Intelligence Split":
+
+```yaml
+---
+# TECHNICAL CONFIGURATION (CLI Parsable)
+name: architect
+description: ...
+tools:
+  - read_file
+---
+# SEMANTIC METADATA (Protocol Compliance)
+Version: 1.1.0
+Schema: 1.6
+Status: evergreen
+...
+```
+
+---
 
 ---
 
