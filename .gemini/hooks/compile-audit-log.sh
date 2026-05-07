@@ -12,49 +12,87 @@ cat > /dev/null
 
 LEDGER=".gemini/tmp/session-ledger.jsonl"
 
-# Exit silently if no ledger or ledger is empty — nothing happened this session
-if [ ! -f "$LEDGER" ] || [ ! -s "$LEDGER" ]; then
+git_safe() {
+  git -c core.fsmonitor=false "$@" 2>/dev/null
+}
+
+GIT_FILTERS=(
+  --
+  .
+  ":(exclude,glob)logs/**/*_AutoLog_Session-Audit.md"
+  ":(exclude,glob)02_MACHINE/State/precompact-snapshot_*.md"
+  ":(exclude,glob).gemini/tmp/**"
+)
+
+HAS_LEDGER=false
+if [ -f "$LEDGER" ] && [ -s "$LEDGER" ]; then
+  HAS_LEDGER=true
+fi
+
+# Only skip if ledger is empty AND the remaining working tree is clean after
+# excluding hook-generated files that would otherwise trigger the hook again.
+FILTERED_STATUS=$(git_safe status --porcelain "${GIT_FILTERS[@]}")
+if [ "$HAS_LEDGER" = false ] && [ -z "$FILTERED_STATUS" ]; then
   exit 0
 fi
 
 DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H%M%S)
-BRANCH=$(git branch --show-current 2>/dev/null || echo "unknown")
+BRANCH=$(git_safe branch --show-current || echo "unknown")
 LOG_DIR="logs/$DATE"
 LOG_FILE="$LOG_DIR/${DATE}_${TIME}_AutoLog_Session-Audit.md"
 
 mkdir -p "$LOG_DIR"
 
-# --- Build file list from ledger ---
-if command -v jq >/dev/null 2>&1; then
-  FILES_MODIFIED=$(jq -r '.file' "$LEDGER" | sort -u)
-  FIRST_TS=$(head -1 "$LEDGER" | jq -r '.timestamp')
-  LAST_TS=$(tail -1 "$LEDGER" | jq -r '.timestamp')
-  ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
-  FILE_COUNT=$(jq -r '.file' "$LEDGER" | sort -u | wc -l | tr -d ' ')
-  AGENT_NAME=$(jq -r '.agent // empty' "$LEDGER" | grep -v '^$' | sort -u | paste -sd "," - | sed 's/,/ \& /g')
-else
-  FILES_MODIFIED=$(grep -o '"file":"[^"]*"' "$LEDGER" | sed 's/"file":"//;s/"//' | sort -u)
-  FIRST_TS=$(head -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
-  LAST_TS=$(tail -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
-  ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
-  FILE_COUNT=$(echo "$FILES_MODIFIED" | grep -c .)
-  AGENT_NAME=$(grep -o '"agent":"[^"]*"' "$LEDGER" | sed 's/"agent":"//;s/"//' | sort -u | paste -sd "," - | sed 's/,/ \& /g')
+# --- Build file list from ledger (if present) ---
+FILES_LIST="_(No Write/Edit tool calls this session. See git status below for all changes.)_"
+FIRST_TS="unknown"
+LAST_TS="unknown"
+ENTRY_COUNT="0"
+FILE_COUNT="0"
+AGENT_NAME=""
+
+if [ "$HAS_LEDGER" = true ]; then
+  if command -v jq >/dev/null 2>&1; then
+    FILES_MODIFIED=$(jq -r '.file' "$LEDGER" | sort -u)
+    FIRST_TS=$(head -1 "$LEDGER" | jq -r '.timestamp')
+    LAST_TS=$(tail -1 "$LEDGER" | jq -r '.timestamp')
+    ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
+    FILE_COUNT=$(jq -r '.file' "$LEDGER" | sort -u | wc -l | tr -d ' ')
+    AGENT_NAME=$(jq -r '.agent // empty' "$LEDGER" | grep -v '^$' | sort -u | paste -sd "," - | sed 's/,/ \& /g')
+  else
+    FILES_MODIFIED=$(grep -o '"file":"[^"]*"' "$LEDGER" | sed 's/"file":"//;s/"//' | sort -u)
+    FIRST_TS=$(head -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
+    LAST_TS=$(tail -1 "$LEDGER" | grep -o '"timestamp":"[^"]*"' | sed 's/"timestamp":"//;s/"//')
+    ENTRY_COUNT=$(wc -l < "$LEDGER" | tr -d ' ')
+    FILE_COUNT=$(echo "$FILES_MODIFIED" | grep -c .)
+    AGENT_NAME=$(grep -o '"agent":"[^"]*"' "$LEDGER" | sed 's/"agent":"//;s/"//' | sort -u | paste -sd "," - | sed 's/,/ \& /g')
+  fi
+  FILES_LIST=$(echo "$FILES_MODIFIED" | sed 's/^/- /')
 fi
 
 if [ -z "$AGENT_NAME" ]; then
   AGENT_NAME="Unknown Agent"
 fi
 
-FILES_LIST=$(echo "$FILES_MODIFIED" | sed 's/^/- /')
-
 # --- Git context ---
-GIT_STAT=$(git diff --stat HEAD 2>/dev/null)
+GIT_STAT=$(git_safe diff --stat HEAD "${GIT_FILTERS[@]}")
 if [ -z "$GIT_STAT" ]; then
   GIT_STAT="No uncommitted changes at session end."
 fi
 
-LAST_COMMIT=$(git log -1 --pretty=format:"%h — %s" 2>/dev/null || echo "No commits yet")
+LAST_COMMIT=$(git_safe log -1 --pretty=format:"%h — %s" || echo "No commits yet")
+
+GIT_STATUS="$FILTERED_STATUS"
+if [ -z "$GIT_STATUS" ]; then
+  GIT_STATUS="Working tree clean."
+fi
+
+TODAY=$(date +%Y-%m-%d)
+GIT_TODAY_LOG=$(git_safe log --since="${TODAY} 00:00:00" --until="${TODAY} 23:59:59" --oneline || echo "")
+if [ -z "$GIT_TODAY_LOG" ]; then
+  GIT_TODAY_LOG="No commits made today."
+fi
 
 # --- Write the log ---
 cat > "$LOG_FILE" <<EOF
@@ -79,8 +117,19 @@ $FILES_LIST
 
 **Last Commit:** $LAST_COMMIT
 
+### All Changed Files (git status)
+\`\`\`
+$GIT_STATUS
+\`\`\`
+
+### Uncommitted Diff (--stat HEAD)
 \`\`\`
 $GIT_STAT
+\`\`\`
+
+### Commits Made Today
+\`\`\`
+$GIT_TODAY_LOG
 \`\`\`
 
 ---

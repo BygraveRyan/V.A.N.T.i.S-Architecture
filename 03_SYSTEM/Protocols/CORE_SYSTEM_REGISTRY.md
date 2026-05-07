@@ -1,5 +1,5 @@
 # CORE SYSTEM REGISTRY (CSR)
-Version: 1.0.17
+Version: 1.0.23
 
 This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System Versioning (ASV) engine. Files listed here will have their `Version: X.Y.Z` metadata incremented automatically upon modification.
 
@@ -28,12 +28,18 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | :--- | :--- | :--- |
 | `03_SYSTEM/Protocols/METADATA_SCHEMA.md` | Galaxy Metadata Spec | Major.Minor |
 | `03_SYSTEM/Protocols/MACHINE_LAYER_PROTOCOL.md` | AI Execution Sandbox Rules | Major.Minor |
+| `03_SYSTEM/Protocols/Council_Orchestration_Protocol.md` | Multi-Agent Coordination Protocol | Major.Minor |
 | `03_SYSTEM/Protocols/AGENT_PERMISSIONS.md` | Domain Restrictions | Major.Minor |
 | `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` | Signal Interpretation | Major.Minor |
 | `03_SYSTEM/Protocols/CONCEPT_NAMING_PROTOCOL.md` | Naming Standards | Major.Minor |
 | `03_SYSTEM/Protocols/GALAXY_LINKING_RULES.md` | Graph Logic | Major.Minor |
 | `03_SYSTEM/Protocols/VANTIS_DIAGNOSTIC_PROTOCOL.md` | System Health Check | Major.Minor |
+| `03_SYSTEM/Protocols/AGENCY_CHAINING_PROTOCOL.md` | Recursive Execution Protocol | Major.Minor |
+| `03_SYSTEM/Protocols/KARPATHY_VALIDATION.md` | Karpathy Protocol Validation Suite | Major.Minor |
+| `03_SYSTEM/Protocols/OPENROUTER_HANDOFF_TEMPLATE.md` | OpenRouter Build Handoff Template | Major.Minor |
+| `03_SYSTEM/Protocols/governance-gate.md` | Autonomous Action & Write Sandbox Policy | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/Rules/SHARED_RULES.md` | Shared Operational Rules | Major.Minor |
+| `03_SYSTEM/Protocols/Universals/Rules/EXECUTION_ENGINES.md` | Execution Engine Operating Protocol | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/architect.md` | Architect Role | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/strategist.md` | Strategist Role | Major.Minor |
 | `03_SYSTEM/Protocols/Universals/researcher.md` | Researcher Role | Major.Minor |
@@ -58,6 +64,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `03_SYSTEM/Protocols/LINKEDIN_POST_TEMPLATE.md` | Content Structure | Patch |
 | `03_SYSTEM/Protocols/DYNAMIC_GALAXY_SCAFFOLDER.md` | Templater Logic | Patch |
 | `03_SYSTEM/Protocols/System_Intelligence_Center.md` | Dataview Dashboard | Patch |
+| `03_SYSTEM/Protocols/VANTIS_SYSTEM_DIAGRAM.md` | System Architecture Diagram | Patch |
 | `03_SYSTEM/ADRs/README.md` | Decision Log | Patch |
 | `03_SYSTEM/Roadmap/VANTIS_Upgrade_Dashboard.md` | System Roadmap | Patch |
 | `03_SYSTEM/Roadmap/Task_Candidate_Schema_Alignment.md` | Schema Alignment Task | Patch |
@@ -80,6 +87,13 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `.gemini/skills/linkedin-content-generation/SKILL.md` | Content Strategy | Patch |
 | `.gemini/skills/memory-curator/SKILL.md` | Galaxy Promotion | Patch |
 | `.gemini/skills/precedent-detection/SKILL.md` | Concept Matching | Patch |
+| `.gemini/skills/structured-inbox-project-router/SKILL.md` | Structured AI Chat Routing | Patch |
+| `.gemini/skills/evaluator-judge/SKILL.md` | Quality Gatekeeper | Patch |
+| `.gemini/skills/fan-out/SKILL.md` | Parallel Research | Patch |
+| `.gemini/skills/parent-orchestrator-qa/SKILL.md` | Builder & Auditor | Patch |
+| `.gemini/skills/sequential-pipeline/SKILL.md` | Specialist Handoffs | Patch |
+| `.gemini/skills/multi-agent-debate/SKILL.md` | Stochastic Consensus | Patch |
+| `.gemini/skills/structured-debate/SKILL.md` | Adversarial Critique | Patch |
 
 ---
 
@@ -97,6 +111,7 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `.claude/commands/gh/issue.md` | Issue management command | Patch |
 | `.claude/commands/gh/pulse.md` | Pulse sync backup command | Patch |
 | `.claude/commands/gh/publish.md` | Portfolio mirror deploy command | Patch |
+| `.claude/commands/openrouter.md` | Claude OpenRouter fallback and build-staging command | Patch |
 | `.claude/agents/architect.md` | Claude Architect Subagent | Patch |
 | `.claude/agents/strategist.md` | Claude Strategist Subagent | Patch |
 | `.claude/agents/researcher.md` | Claude Researcher Subagent | Patch |
@@ -107,7 +122,9 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 | `.codex/commands/daily.md` | Codex daily session review command | Patch |
 | `.codex/commands/eod.md` | Codex end-of-day master audit command | Patch |
 | `.codex/commands/inbox.md` | Codex inbox audit and routing command | Patch |
+| `.codex/commands/ai-chat-ingest.md` | Codex structured AI chat ingestion command | Patch |
 | `.codex/commands/context-budget.md` | Codex context budget audit command | Patch |
+| `.codex/commands/openrouter.md` | Codex OpenRouter fallback and build-staging command | Patch |
 | `.codex/commands/gh-pr.md` | Codex PR review alias command | Patch |
 | `.codex/commands/gh-issue.md` | Codex issue management alias command | Patch |
 | `.codex/commands/gh-pulse.md` | Codex pulse sync alias command | Patch |
@@ -130,4 +147,4 @@ This registry defines the **Watch List** for the V.A.N.T.i.S. Automated System V
 - All non-markdown files.
 
 ---
-*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-03-31*
+*Managed by V.A.N.T.i.S. ASV Hook | Updated: 2026-05-06*

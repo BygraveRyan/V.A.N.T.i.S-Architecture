@@ -1,5 +1,4 @@
 ---
-Version: 1.2.0
 name: strategist
 description: V.A.N.T.i.S. Strategist - Business Architecture, Leverage, Prioritisation & LinkedIn Presence
 tools:

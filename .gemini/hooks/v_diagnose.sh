@@ -9,6 +9,10 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+git_safe() {
+    git -c core.fsmonitor=false "$@" 2>/dev/null
+}
+
 echo -e "${BLUE}=== V.A.N.T.i.S. SYSTEM DIAGNOSTIC ===${NC}"
 echo -e "Date: $(date +%Y-%m-%d)"
 echo ""
@@ -48,7 +52,7 @@ fi
 # --- 3. PROTOCOL DRIFT (ASV REFLEX) ---
 echo ""
 echo -e "${YELLOW}[3/5] AUDITING PROTOCOL DRIFT...${NC}"
-DIRTY_PROTOCOLS=$(git status --porcelain 03_SYSTEM/Protocols/ | wc -l | xargs)
+DIRTY_PROTOCOLS=$(git_safe status --porcelain 03_SYSTEM/Protocols/ | wc -l | xargs)
 if [ "$DIRTY_PROTOCOLS" -gt 0 ]; then
     echo -e "  [${YELLOW}WARN${NC}] $DIRTY_PROTOCOLS uncommitted changes in 03_SYSTEM/Protocols/."
     echo -e "         Ensure the 'ASV Reflex' (version increment) was applied."
@@ -78,9 +82,34 @@ for file in "${CORE_FILES[@]}"; do
     fi
 done
 
-# --- 5. AUDIT TRAIL VERIFICATION ---
+# --- 5. GALAXY INTEGRITY (LINK CHECK) ---
 echo ""
-echo -e "${YELLOW}[5/5] VERIFYING TODAY'S AUDIT TRAIL...${NC}"
+echo -e "${YELLOW}[5/6] VERIFYING GALAXY LINK INTEGRITY...${NC}"
+GALAXY_DIR="01_HUMAN/Knowledge/Galaxy"
+BROKEN_LINKS=0
+
+# This is a basic check for links like [[concept-name]] that don't have a matching file
+# We extract all [[...]] links and check if the file exists
+if [ -d "$GALAXY_DIR" ]; then
+    ALL_LINKS=$(grep -roh "\[\[[^]]*\]\]" "$GALAXY_DIR" | sed 's/\[\[//;s/\]\]//' | sort -u)
+    for link in $ALL_LINKS; do
+        # Handle links with aliases [[file|alias]]
+        file_part=$(echo "$link" | cut -d'|' -f1)
+        if [ ! -f "$GALAXY_DIR/$file_part.md" ] && [ ! -f "$GALAXY_DIR/$file_part" ]; then
+            echo -e "  [${RED}FAIL${NC}] Broken Link: [[$link]]"
+            BROKEN_LINKS=$((BROKEN_LINKS + 1))
+        fi
+    done
+    if [ $BROKEN_LINKS -eq 0 ]; then
+        echo -e "  [${GREEN}PASS${NC}] Galaxy link integrity confirmed."
+    else
+        echo -e "  [${YELLOW}WARN${NC}] $BROKEN_LINKS broken links found in the Galaxy."
+    fi
+fi
+
+# --- 6. AUDIT TRAIL VERIFICATION ---
+echo ""
+echo -e "${YELLOW}[6/6] VERIFYING TODAY'S AUDIT TRAIL...${NC}"
 TODAY=$(date +%Y-%m-%d)
 LOG_DIR="logs/$TODAY"
 if [ -d "$LOG_DIR" ]; then

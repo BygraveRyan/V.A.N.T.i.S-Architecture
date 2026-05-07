@@ -82,6 +82,9 @@ Ensure the following sections are filled with high-signal content:
 3. Update the LATEST symlink so Gemini orients in one read next session:
 `cd 02_MACHINE/State && ln -sf session-state_$(date +%Y-%m-%d).md session-state_LATEST.md`
 
+4. Perform Vault Pulse Sync (Auto Git Push):
+`bash .gemini/hooks/pulse-sync.sh`
+
 ---
 
 ## CONSTRAINTS

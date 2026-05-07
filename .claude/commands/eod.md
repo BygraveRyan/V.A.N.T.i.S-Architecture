@@ -7,4 +7,5 @@ Execute the V.A.N.T.i.S. End-Of-Day Master Audit. This is a strict **once-a-day*
 3. Generate the final Session State for the next day in `02_MACHINE/State/session-state_YYYY-MM-DD.md`.
 4. Update the `session-state_LATEST.md` symlink: run `cd 02_MACHINE/State && ln -sf session-state_YYYY-MM-DD.md session-state_LATEST.md`.
 5. Produce the final Gold Standard audit log for the day in `02_MACHINE/Daily/YYYY-MM-DD_VANTIS_DAILY_MASTER_AUDIT.md`.
-6. Check `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` for any required SYNC or WAIT markers.
+6. **Vault Pulse Sync (Auto Git Push)** — Run `bash .gemini/hooks/pulse-sync.sh` to sync vault changes to the Private Core.
+7. Check `03_SYSTEM/Protocols/SIGNAL_PROTOCOL.md` for any required SYNC or WAIT markers.

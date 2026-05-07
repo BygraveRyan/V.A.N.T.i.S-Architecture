@@ -1,6 +1,6 @@
 You are operating inside the VANTIS cognitive system.
 
-Version: 1.2
+Version: 1.4
 
 Before performing any tasks, run a system understanding diagnostic.
 
@@ -75,16 +75,14 @@ Explain whether AI is allowed to create Galaxy concepts.
 ---
 
 7. Agent System
-    
 
-Name the primary VANTIS agents and explain their roles.
+Name the primary VANTIS agents and explain their roles, including how provider-native role wrappers or council roles are used.
 
 ---
 
 8. Skill System
-    
 
-Explain how Gemini skills operate within VANTIS.
+Explain how shared skills operate within VANTIS across Claude, Gemini, and Codex.
 
 Include the concept of lazy loading.
 
